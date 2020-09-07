@@ -33,14 +33,15 @@ Day 2: 11h39 07/09/2020
     Notes:
         *I think I'll be working on the layout on my own without choosing the template.
         I'll go through the Lynda course once again, and then I'll decide.
-        *
+        *Went through the css + Responsive Design course once again, I know what I have to do now.
+        *Tomorow I'll be going through the Bootstrap Course, and will Start laying the grounding foundations of the website. 
 
     References:
         *
 
-WORKTIME:
+WORKTIME: 5H30M
 
-Stopping time: 
+Stopping time: 19h20 07/09/2020
 
 
 
