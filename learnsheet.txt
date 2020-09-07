@@ -12,6 +12,8 @@ Day 1: 15h47 06/09/2020
     References:
         *How to use an HTML Template:
             -https://www.youtube.com/watch?v=3rulGv3JK7c
+        *Template source:
+            -https://www.youtube.com/watch?v=gKMYZi4j_YU
         *Donuts reference Websites:
             -https://www.doughnutplant.com/
             -https://www.dusdonuts.com/
@@ -19,9 +21,26 @@ Day 1: 15h47 06/09/2020
             -https://www.supermoonbakehouse.com/
             -https://www.dunwelldoughnuts.com/
 
+WORKTIME: 2H08M
+
+Stopping time: 06/09/2020 21h22
+
+
+Day 2: 11h39 07/09/2020
+
+    STEP 1 IN PROGRESS
+
+    Notes:
+        *I think I'll be working on the layout on my own without choosing the template.
+        I'll go through the Lynda course once again, and then I'll decide.
+        *
+
+    References:
+        *
+
 WORKTIME:
 
-Stopping time: 06/09/2020
+Stopping time: 
 
 
 
