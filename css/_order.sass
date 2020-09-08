@@ -9,6 +9,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr
     // grid-template-rows: 100px 100px 100px 100px
     grid-template-rows: 8vh 0.4fr minmax(30vh,max-content) 8vh
+    grid-gap: 20px
     grid-template-areas: "navo navo navo navo" "menu menu menu menu" "menug menug menug menug" "footer footer footer footer"
     justify-content: center
 
@@ -21,7 +22,19 @@
 
 
 .nav-order
+    background-color: $white
     grid-area: navo
+
+// Cart
+
+.cart
+    display: none
+    position: fixed
+    top: 0
+    right: 0
+    height: 100vh
+    width: 40vw
+    background-color: transparentize(pink, 0.5 )
     
     
 
@@ -33,6 +46,7 @@
 
 .menu
     grid-area: menu    
+    background-color: $dark-gray
     
 
 
@@ -43,6 +57,31 @@
 
 .menu-grid
     grid-area: menug
+    background-color: $green
+
+// Item Popup
+
+.item-chosen-container
+    display: none
+    // display: flex
+    justify-content: center
+    position: fixed
+    z-index: 100
+    height: 100vh
+    width: 100%
+    bottom: 0
+    left: 0
+    background-color: transparentize(black, 0.4 )
+
+.item-chosen
+    position: fixed
+    border-radius: 12px
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.15)
+    align-self: center
+    background-color: white
+    height: 70%
+    width: 27%
+
     
     
 
@@ -52,5 +91,10 @@
 
 
 
-.footer
+.footer-order
+    background-color: $beige
+    position: absolute
     grid-area: footer
+    height: 8vh
+    width: 100%
+    bottom: 0
