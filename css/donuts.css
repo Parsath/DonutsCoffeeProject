@@ -125,54 +125,11 @@ body {
 }
 
 .footer {
-  -ms-grid-row: 4;
+  -ms-grid-row: 6;
   -ms-grid-column: 1;
   -ms-grid-column-span: 4;
   grid-area: footer;
   background-color: #dabb8a;
   height: 8vh;
 }
-
-.container-order {
-  display: -ms-grid;
-  display: grid;
-  height: 100vh;
-  -ms-grid-columns: 1fr 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-  -ms-grid-rows: 8vh 0.4fr minmax(30vh, max-content) 8vh;
-      grid-template-rows: 8vh 0.4fr minmax(30vh, -webkit-max-content) 8vh;
-      grid-template-rows: 8vh 0.4fr minmax(30vh, max-content) 8vh;
-      grid-template-areas: "navo navo navo navo" "menu menu menu menu" "menug menug menug menug" "footer footer footer footer";
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.nav-order {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 4;
-  grid-area: navo;
-}
-
-.menu {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 4;
-  grid-area: menu;
-}
-
-.menu-grid {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 4;
-  grid-area: menug;
-}
-
-.footer {
-  -ms-grid-row: 4;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 4;
-  grid-area: footer;
-}
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=donuts.css.map */

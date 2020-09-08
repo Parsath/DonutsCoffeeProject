@@ -1,0 +1,123 @@
+//////////////////////// STRUCTURE ////////////////////////   
+
+
+
+
+.container-structure
+    display: grid
+    height: 100vh
+    grid-template-columns: 1fr 1fr 1fr 1fr
+    grid-template-areas:    "nav nav nav nav" "home home home home" "about about about about" "location location location location" "contact contact contact contact" "footer footer footer footer"
+    justify-content: center
+
+
+
+
+//////////////////////// NAVBAR ////////////////////////   
+
+
+
+
+.nav
+    grid-area: nav
+    background-color: $beige
+    height: 10vh
+
+
+
+
+//////////////////////// HOME ////////////////////////   
+
+
+
+
+.home
+    grid-area: home
+    background-color: $blue-bell
+    height: 90vh
+
+
+
+
+//////////////////////// ABOUT ////////////////////////   
+
+
+
+
+.about
+    grid-area: about
+    background-color: $dark-gray
+    height: 50vh
+    display: flex
+    flex-direction: row
+    justify-content: center
+
+.about-container
+    display: flex
+    background-color: transparentize(pink , 0.5 )
+    width: 80%
+    height: 80%
+    align-self: center
+    justify-content: space-between
+
+.about-container > *
+    flex: 1
+
+.about-image
+    background-color: transparentize(white , 0.5 )
+    // flex-grow: 1
+    // // display: inline-block
+    // width: 50%
+    // height: 100%
+
+.about-description
+    background-color: transparentize(gray , 0.5 )
+    // flex-grow: 1
+    // // display: inline-block
+    // width: 50%
+    // height: 100%
+
+@media screen and ( max-width: 700px )
+    .about-container
+        flex-direction: column
+
+
+
+
+//////////////////////// LOCATION ////////////////////////   
+
+
+
+
+.location
+    grid-area: location
+    background-color: $green
+    height: 50vh
+
+
+
+
+//////////////////////// CONTACT ////////////////////////   
+
+
+
+
+.contact
+    grid-area: contact
+    background-color: $white
+    height: 50vh
+
+
+
+
+//////////////////////// FOOTER ////////////////////////   
+
+
+
+
+.footer
+    grid-area: footer
+    background-color: $beige 
+    height: 8vh
+
+    

@@ -1,0 +1,56 @@
+//////////////////////// STRUCTURE ORDER ////////////////////////   
+
+
+
+
+.container-order
+    display: grid
+    height: 100vh
+    grid-template-columns: 1fr 1fr 1fr 1fr
+    // grid-template-rows: 100px 100px 100px 100px
+    grid-template-rows: 8vh 0.4fr minmax(30vh,max-content) 8vh
+    grid-template-areas: "navo navo navo navo" "menu menu menu menu" "menug menug menug menug" "footer footer footer footer"
+    justify-content: center
+
+
+
+
+//////////////////////// NAVBAR ORDER PAGE ////////////////////////    
+
+
+
+
+.nav-order
+    grid-area: navo
+    
+    
+
+
+//////////////////////// MENU TITLE ////////////////////////    
+
+
+
+
+.menu
+    grid-area: menu    
+    
+
+
+//////////////////////// MENU GRID ////////////////////////    
+
+
+
+
+.menu-grid
+    grid-area: menug
+    
+    
+
+
+//////////////////////// FOOTER ////////////////////////    
+
+
+
+
+.footer
+    grid-area: footer
