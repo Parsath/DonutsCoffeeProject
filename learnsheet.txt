@@ -48,19 +48,24 @@ Day 3: 12h40 08/09/2020
 
     STEP 1 IN PROGRESS
 
+    STEP 1 COMPLETED AT 20h24 08/09/2020
+
     Notes:
         *Process: Creating the structure of the website
+        *The structure is complete, now I have to get back and re learn the bootstrap course and then go for the content design
 
     References:
-        *
+        *Grid Structure for Products:
+            -https://youtu.be/r4BgE0hYUaw
 
-WORKTIME:
+WORKTIME: 4H10M
 
-Stopping time: 
+Stopping time: 08/09/2020 20h24 
 
 
 
 
 
 REFERENCES:
-    *   
+    *Grid Structure for Products:
+        -https://youtu.be/r4BgE0hYUaw

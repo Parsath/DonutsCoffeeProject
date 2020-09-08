@@ -7,8 +7,7 @@
     display: grid
     height: 100vh
     grid-template-columns: 1fr 1fr 1fr 1fr
-    // grid-template-rows: 100px 100px 100px 100px
-    grid-template-rows: 8vh 0.4fr minmax(30vh,max-content) 8vh
+    grid-template-rows: 8vh 0.4fr minmax(min-content,fit-content) 8vh
     grid-gap: 20px
     grid-template-areas: "navo navo navo navo" "menu menu menu menu" "menug menug menug menug" "footer footer footer footer"
     justify-content: center
@@ -56,8 +55,34 @@
 
 
 .menu-grid
+    display: flex
+    justify-content: center
     grid-area: menug
     background-color: $green
+    grid-gap: 30px
+
+.product-grid
+    display: grid
+    border-radius: 20px
+    grid-template-columns: 1fr 1fr
+    grid-template-rows: auto
+    grid-gap: 70px
+    background-color: transparentize(pink, 0.5 )
+    height: 80%
+    width: 50%
+    align-self: center
+    margin-top: 20px
+    margin-bottom: 8vh
+
+.item
+    display: flex
+    height: 400px
+    border-radius: 20px
+    background-color: transparentize(pink, 0.5 )
+    justify-content: center
+    align-content: center
+    text-align: center
+
 
 // Item Popup
 
@@ -79,8 +104,31 @@
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.15)
     align-self: center
     background-color: white
-    height: 70%
-    width: 27%
+    height: 70vh
+    width: 25vw
+
+@media screen and ( max-width: 1300px )
+    .item-chosen
+        height: 70vh
+        width: 25vw
+
+@media screen and ( max-width: 1000px )
+    .product-grid
+        grid-template-columns: 1fr
+
+@media screen and ( max-width: 750px )
+    .item-chosen
+        height: 65vh
+        width: 60vw
+
+@media screen and ( max-width: 600px )
+    .item
+        height: 300px
+
+@media screen and ( max-width: 400px )
+    .item-chosen
+        height: 65vh
+        width: 70vw
 
     
     
@@ -93,8 +141,8 @@
 
 .footer-order
     background-color: $beige
-    position: absolute
+    position: fixed
     grid-area: footer
-    height: 8vh
     width: 100%
     bottom: 0
+    margin-top: 20px
