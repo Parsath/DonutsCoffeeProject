@@ -63,6 +63,22 @@ WORKTIME: 4H10M
 Stopping time: 08/09/2020 20h24 
 
 
+Day 4: 11h40 09/09/2020
+
+    STEP 2:
+        -Complete the front office Design
+
+    Notes:
+        *
+
+    References:
+        *
+
+WORKTIME:
+
+Stopping time: 09/09/2020
+
+
 
 
 
