@@ -22,41 +22,99 @@
     position: fixed
     top: 0
     left: 0
-    width: 100%
+    width: 100% 
     grid-area: nav
     display: flex
     justify-content: center
     background-color: $dark-gray
     height: 10vh
+    z-index: 100
 
 .navbar-index
     display: flex
     align-self: center
     justify-content: space-between
     width: 96%
-
-.nav-links
-    font-size: 1.3em
-    align-self: center
+    margin: 0
 
 .title
     color: $green
-    font-size: 40px
+    font-size: 45px
+
+.navbar-nav
+    font-size: 1.2em
+    justify-self: center
+    align-self: center
+
+.nav-item:after, .nav-item:before
+    transition: all .5s
+
+.nav-item
+    color: #aaa !important
+    margin: 20px
+    position: relative
+    &::after
+        position: absolute
+        bottom: 0
+        left: 0
+        right: 0
+        margin: auto
+        width: 0%
+        content: '.'
+        color: transparent
+        background: $white
+        height: 1px
+
+.nav-item:hover:after
+    width: 100%
+
+.nav-item:hover
+    color: $white !important
 
 .order-now
     align-self: center
 
 .order-button
-    font-size: 20px
+    font-size: 22px
+    border-radius: 5px
+
+
+@media screen and ( max-width: 1300px )
+    .navbar-index-container
+        width: 98%
 
 @media screen and ( max-width: 980px )
-    // .nav-title
-    //     width: 100vw
-    //     display: flex
-    //     justify-content: center
-    //     background-color: transparentize(pink,0.5 )
+    .navbar-index-container
+        &.burger-stuff
+            height: 100%
+            transition-delay: 0s
+            > ul 
+            > li 
+                opacity: 1
+                transition-delay: .5s
     .navbar-nav
-        display: none
+        display: flex
+        flex-direction: column !important
+        justify-content: space-evenly
+        align-items: center
+        height: 90vw
+        transition: all .5s
+        // overflow: hidden
+        z-index: -1
+        opacity: 0
+        &.burger-nav-links
+            z-index: auto
+            opacity: 1
+    .nav-item
+        transition: .5s
+        transition-delay: 0s
+        margin: 0
+        &.burger-nav-link
+            font:
+                weight: 700
+                size: 1.25em
+    .nav-title
+        align-self: center
     .order-now
         display: flex
         position: fixed
@@ -64,10 +122,36 @@
         left: 0
         width: 100%
         justify-content: center
-        margin-right: 40px
     .order-button
         background-color: $dark-gray
         width: 80%
+        
+@media screen and ( max-width: 500px )
+    .navbar-index-container
+        width: 97.7%
+    .title
+        font-size: 35px
+    .nav-title
+        z-index: auto
+        opacity: 1
+        transition: .5s
+        overflow: hidden
+        &.burger-nav-title
+            opacity: 0
+            z-index: -1
+    .navbar-nav
+        transition: all .5s
+        &.burger-nav-links
+            margin-right: 25%
+    .navbar-index
+        &.burger-nav-index
+            justify-content: space-evenly
+        
+@media screen and ( max-width: 350px )
+    .title
+        font-size: 24px
+    .navbar-index-container
+        width: 95%
 
 
 
@@ -92,18 +176,36 @@
     flex-direction: column
     justify-content: space-around
 
-.donut-img
+.donut
     width: 340px
     align-self: center
+    margin-top: -20px
+    transition: margin 1s, opacity 1s, transform 0.3s
+    transition-timing-function: ease-in-out
+    opacity: 0
+    &:hover
+        transform: scale(1.2)
+        cursor: pointer
+    &.donut-animation
+        opacity: 1
+        margin-top: 20px
 
 .donut-shadow
-    width: 180px
     height: 10px
     color: black
     align-self: center
     background-color: gray
     border-radius: 100%
     box-shadow: 0 2px 5px 3px gray
+    width: 120px
+    opacity: 0
+    transition-property: width, opacity
+    transition-delay: .3s
+    transition-duration: .7s
+    transition-timing-function: ease-out
+    &.donut-shadow-animation
+        opacity: 1
+        width: 150px
 
 .doname-container
     display: flex
@@ -134,19 +236,37 @@
     flex: 1 1 0px
     display: flex
     justify-content: center
+    opacity: 0
+    transition-property: opacity
+    transition-delay: 1s
+    transition-duration: 0.3s
+    transition-timing-function: ease
+    &.get-it-animation
+        opacity: 1
     
 .get
     align-self: center
     font-size: 25px
+    font-weight: 600
     width: 10vw
+    border-radius: 10px
 
 .fa-arrow-right
     font-weight: 100
+    font-size: 80%
 
 .donut-name
     display: flex
     justify-content: center
     flex: 1 1 0px
+    opacity: 0
+    transform: scale(0.95)
+    transition-property: opacity, transform
+    transition-duration: 1s
+    transition-timing-function: ease-out
+    &.donut-name-animation
+        transform: scale(1.0)
+        opacity: 1
 
 .donut-name > h1
     font-size: 5.2em
@@ -156,22 +276,6 @@
     margin-right: 30px
     align-self: center
     color: $dark-gray
-
-// @media screen and ( max-width: 1200px )
-//     .donut-name > h1
-//         font-size: 4.4em
-
-// @media screen and ( max-width: 980px )
-//     .donut-name > h1
-//         font-size: 3.7em
-
-// @media screen and ( max-width: 980px )
-//     .donut-name > h1
-//         font-size: 3.7em
-
-// @media screen and ( max-width: 812px )
-//     .donut-name > h1
-//         font-size: 3.2em
 
 @media screen and ( max-width: 750px )
     .home
@@ -187,27 +291,10 @@
         width: 40vw
     .donut-name 
         display: none
-    .donut-img
+    .donut
         width: 250px
     .donut-shadow
         width: 140px
-
-// @media screen and ( max-width: 680px )
-//     .donut-name > h1
-//         font-size: 2.2em
-
-// @media screen and ( max-width: 630px )
-//     .donut-name > h1
-//         font-size: 1.7em
-
-// @media screen and ( max-width: 500px )
-//     .donut-name > h1
-//         font-size: 1.8em
-
-// @media screen and ( max-width: 560px )
-//     .donut-name > h1
-//         font-size: 1.5em
-//         text-align: center
     
 
 
@@ -228,28 +315,35 @@
 
 .about-container
     display: flex
-    background-color: transparentize(pink , 0.5 )
     width: 80%
     height: 80%
     align-self: center
     justify-content: space-between
 
 .about-container > *
-    flex: 1
+    flex: 1 1 0
 
 .about-image
-    background-color: transparentize(white , 0.5 )
-    // flex-grow: 1
-    // // display: inline-block
-    // width: 50%
-    // height: 100%
+    overflow: hidden
+    // align-self: center
+
+.carousel-about-container
+    width: 100%
+    display: flex
+    overflow: hidden
+    justify-content: center
+    align-content: center
+
+.carousel-about-image
+    max-width: 100%
+    height: auto
+    overflow: hidden
 
 .about-description
     background-color: transparentize(gray , 0.5 )
-    // flex-grow: 1
-    // // display: inline-block
-    // width: 50%
-    // height: 100%
+
+.image-about-container
+
 
 @media screen and ( max-width: 700px )
     .about-container

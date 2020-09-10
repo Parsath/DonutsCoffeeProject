@@ -74,9 +74,24 @@ Day 4: 11h40 09/09/2020
     References:
         *
 
-WORKTIME:
+WORKTIME: 4H19M
 
-Stopping time: 09/09/2020
+Stopping time: 09/09/2020 17h17
+
+
+Day 5: 11h27 10/09/2020
+
+    STEP 2 IN PROGRESS
+
+    Notes:
+        *I need to fix the "About" & "Home" Carousel sections
+
+    References:
+        *
+
+WORKTIME: 5H47
+
+Stopping time: 10/09/2020 19h55
 
 
 
