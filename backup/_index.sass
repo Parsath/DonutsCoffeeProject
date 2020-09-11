@@ -1,0 +1,445 @@
+//////////////////////// STRUCTURE ////////////////////////   
+
+
+
+
+.container-structure
+    display: grid
+    height: 100vh
+    grid-template-columns: 1fr 1fr 1fr 1fr
+    grid-template-areas:    "nav nav nav nav" "home home home home" "about about about about" "location location location location" "contact contact contact contact" "footer footer footer footer"
+    justify-content: center
+
+
+
+
+//////////////////////// NAVBAR ////////////////////////   
+
+
+
+
+.navbar-index-container
+    position: fixed
+    top: 0
+    left: 0
+    width: 100% 
+    grid-area: nav
+    display: flex
+    justify-content: center
+    background-color: $white
+    height: 10vh
+    z-index: 100
+
+.navbar-index
+    display: flex
+    align-self: center
+    justify-content: space-between
+    width: 96%
+    margin: 0
+
+.title
+    color: $green
+    font-size: 45px
+
+.navbar-nav
+    font-size: 1.2em
+    justify-self: center
+    align-self: center
+
+.nav-item:after, .nav-item:before
+    transition: all .5s
+
+.nav-item
+    color: transparentize($dark-gray,0.4 ) !important
+    margin: 20px
+    position: relative
+    &::after
+        position: absolute
+        bottom: 0
+        left: 0
+        right: 0
+        margin: auto
+        width: 0%
+        content: '.'
+        color: transparent
+        background: $dark-gray
+        height: 1px
+
+.nav-item:hover:after
+    width: 100%
+
+.nav-item:hover
+    color: $dark-gray !important
+
+.order-now
+    align-self: center
+
+.order-button
+    font-size: 25px
+    border-radius: 5px
+    font-weight: 600
+
+
+@media screen and ( max-width: 1300px )
+    .navbar-index-container
+        width: 98%
+
+@media screen and ( max-width: 980px )
+    .navbar-index-container
+        &.burger-stuff
+            height: 100%
+            transition-delay: 0s
+            > ul 
+            > li 
+                opacity: 1
+                transition-delay: .5s
+    .navbar-nav
+        display: flex
+        flex-direction: column !important
+        justify-content: space-evenly
+        align-items: center
+        height: 90vw
+        transition: all .5s
+        // overflow: hidden
+        z-index: -1
+        opacity: 0
+        &.burger-nav-links
+            z-index: auto
+            opacity: 1
+    .nav-item
+        transition: .5s
+        transition-delay: 0s
+        margin: 0
+        &.burger-nav-link
+            font:
+                weight: 700
+                size: 1.25em
+    .nav-title
+        align-self: center
+    .order-now
+        display: flex
+        position: fixed
+        bottom: 3px
+        left: 0
+        width: 100%
+        justify-content: center
+    .order-button
+        background-color: $white
+        width: 80%
+        
+@media screen and ( max-width: 500px )
+    .navbar-index-container
+        width: 97.7%
+    .title
+        font-size: 35px
+    .nav-title
+        z-index: auto
+        opacity: 1
+        transition: .5s
+        overflow: hidden
+        &.burger-nav-title
+            opacity: 0
+            z-index: -1
+    .navbar-nav
+        transition: all .5s
+        &.burger-nav-links
+            margin-right: 25%
+    .navbar-index
+        &.burger-nav-index
+            justify-content: space-evenly
+        
+@media screen and ( max-width: 350px )
+    .title
+        font-size: 24px
+    .navbar-index-container
+        width: 95%
+
+
+
+
+//////////////////////// HOME ////////////////////////   
+
+
+
+
+.home
+    grid-area: home
+    margin-top: 10vh
+    background:
+        color: $white
+    height: 90vh
+    width: 100%
+    display: flex
+
+.donut-container
+    display: flex
+    flex: 1 1 0px   
+    flex-direction: column
+    justify-content: space-around
+
+.donut
+    width: 340px
+    align-self: center
+    margin-top: -20px
+    transition: margin 1s, opacity 1s, transform 0.3s
+    transition-timing-function: ease-in-out
+    opacity: 0
+    &:hover
+        transform: scale(1.2)
+        cursor: pointer
+    &.donut-animation
+        opacity: 1
+        margin-top: 20px
+
+.donut-shadow
+    height: 10px
+    color: black
+    align-self: center
+    background-color: gray
+    border-radius: 100%
+    box-shadow: 0 2px 5px 3px gray
+    width: 120px
+    opacity: 0
+    transition-property: width, opacity
+    transition-delay: .3s
+    transition-duration: .7s
+    transition-timing-function: ease-out
+    &.donut-shadow-animation
+        opacity: 1
+        width: 150px
+
+.doname-container
+    display: flex
+    flex: 1 1 0px
+    flex-direction: column
+
+// .space classes are for doname-container, to position the button well
+
+.space
+    flex: 1 1 0px
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr
+    grid-template-areas: "void void button" "void void button"
+
+.space-1
+    grid-area: void
+
+.get-it-button
+    display: flex
+    grid-area: button
+    flex-direction: column
+    justify-content: center
+
+.space-2
+    flex: 1 1 0px
+
+.get-it
+    flex: 1 1 0px
+    display: flex
+    justify-content: center
+    opacity: 0
+    transition-property: opacity
+    transition-delay: 1s
+    transition-duration: 0.3s
+    transition-timing-function: ease
+    &.get-it-animation
+        opacity: 1
+    
+.get
+    align-self: center
+    font-size: 25px
+    font-weight: 600
+    width: 10vw
+    border-radius: 10px
+
+.fa-arrow-right
+    font-weight: 100
+    font-size: 80%
+
+.donut-name
+    display: flex
+    justify-content: center
+    flex: 1 1 0px
+    opacity: 0
+    transform: scale(0.95)
+    transition-property: opacity, transform
+    transition-duration: 1s
+    transition-timing-function: ease-out
+    &.donut-name-animation
+        transform: scale(1.0)
+        opacity: 1
+
+.donut-name > h1
+    font-size: 5.2em
+    line-height: 0.8em
+    text-align: center
+    font-weight: 500
+    margin-right: 30px
+    align-self: center
+    color: $dark-gray
+
+@media screen and ( max-width: 750px )
+    .home
+        flex-direction: column
+    .donut-container
+    .doname-container
+        margin-bottom: 10vh
+        flex: 0 1 0px
+    .space
+        display: flex
+        justify-content: center
+    .get
+        width: 40vw
+    .donut-name 
+        display: none
+    .donut
+        width: 250px
+    .donut-shadow
+        width: 140px
+    
+
+
+
+
+//////////////////////// ABOUT ////////////////////////   
+
+
+
+
+.about
+    grid-area: about
+    background-color: $dark-gray
+    height: 90vh
+    display: flex
+    flex-direction: row
+    justify-content: center
+
+.about-container
+    display: flex
+    width: 80%
+    height: 80%
+    align-self: center
+    align-items: center
+    justify-content: space-between
+
+.about-container > *
+    flex: 1 1 0
+
+.about-image
+    overflow: hidden
+    // align-self: center
+
+.carousel-about-container
+    width: 100%
+    display: flex
+    overflow: hidden
+    justify-content: center
+    align-content: center
+
+.carousel-about-image
+    max-width: 100%
+    height: auto
+    overflow: hidden
+
+.about-description
+    display: grid
+    overflow: hidden
+    // justify-content: center
+    // align-items: center
+    grid-template-columns: repeat(3, 1fr)
+    grid-template-rows: auto
+    grid-gap: 10px
+    background-color: transparentize(pink , 0.5 )
+
+.section1
+    display: grid
+    grid-template-columns: auto
+    grid-template-rows: repeat(2, 1fr) 
+    background: transparentize(gray, 0.5 )
+
+.section2
+    display: grid
+    grid-template-columns: auto
+    grid-template-rows: repeat(2, 1fr) 
+    background: transparentize(green, 0.5 )
+
+.section3
+    display: grid
+    grid-template-columns: auto
+    grid-template-rows: repeat(2, 1fr) 
+    background: transparentize(black, 0.5 )
+
+.about-section-space-up
+    display: block
+    backgroudn-color: transparentize(white, 0.5 )
+    width: 100%
+    height: 50%
+
+.about-section-space-down
+    display: block
+    backgroudn-color: transparentize(white, 0.5 )
+    height: 50%
+    width: 100%
+
+.about-section-title
+    text-align: center
+
+.about-section-text
+    text-align: center
+
+.image-about-container
+
+
+@media screen and ( max-width: 700px )
+    .about-description
+        grid-gap: 10px
+        grid-template-rows: repeat(3, minmax(min-content,fit-content))
+        grid-template-columns: auto
+        grid-auto-flow: row
+    .about-container
+        flex-direction: column
+    .section1
+        // grid-template-rows:  repeat(3, 1fr)
+        // grid-template-columns: auto
+
+
+
+
+
+//////////////////////// LOCATION ////////////////////////   
+
+
+
+
+.location
+    grid-area: location
+    background-color: $white
+    height: 90vh
+
+
+
+
+//////////////////////// CONTACT ////////////////////////   
+
+
+
+
+.contact
+    grid-area: contact
+    background-color: $dark-gray
+    height: 90vh
+
+
+
+
+//////////////////////// FOOTER ////////////////////////   
+
+
+
+
+.footer
+    grid-area: footer
+    background-color: $beige 
+    height: 10vh
+
+    

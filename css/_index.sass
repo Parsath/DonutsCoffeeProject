@@ -26,7 +26,7 @@
     grid-area: nav
     display: flex
     justify-content: center
-    background-color: $dark-gray
+    background-color: $white
     height: 10vh
     z-index: 100
 
@@ -50,7 +50,7 @@
     transition: all .5s
 
 .nav-item
-    color: #aaa !important
+    color: transparentize($dark-gray,0.4 ) !important
     margin: 20px
     position: relative
     &::after
@@ -62,21 +62,22 @@
         width: 0%
         content: '.'
         color: transparent
-        background: $white
+        background: $dark-gray
         height: 1px
 
 .nav-item:hover:after
     width: 100%
 
 .nav-item:hover
-    color: $white !important
+    color: $dark-gray !important
 
 .order-now
     align-self: center
 
 .order-button
-    font-size: 22px
+    font-size: 25px
     border-radius: 5px
+    font-weight: 400
 
 
 @media screen and ( max-width: 1300px )
@@ -123,7 +124,7 @@
         width: 100%
         justify-content: center
     .order-button
-        background-color: $dark-gray
+        background-color: $white
         width: 80%
         
 @media screen and ( max-width: 500px )
@@ -158,37 +159,39 @@
 
 //////////////////////// HOME ////////////////////////   
 
-
-
-
 .home
     grid-area: home
     margin-top: 10vh
-    background:
-        color: $white
+    background-color: $white
     height: 90vh
     width: 100%
-    display: flex
+    display: grid
+    grid-template-columns: repeat(12, 1fr)
+    grid-template-rows: repeat(4, 1fr)
+    grid-template-areas: "arrow arrow donut donut donut donut name name name name arrowr arrowr" "arrow arrow donut donut donut donut name name name name arrowr arrowr" "arrow arrow donut donut donut donut name name name name arrowr arrowr" "arrow arrow title title title title title title title title arrowr arrowr"
 
 .donut-container
+    grid-area: donut
     display: flex
-    flex: 1 1 0px   
     flex-direction: column
     justify-content: space-around
+// .donut-container > *
+//     flex: 1 1 0px
 
 .donut
-    width: 340px
-    align-self: center
-    margin-top: -20px
-    transition: margin 1s, opacity 1s, transform 0.3s
+    max-width: 100%
+    width: 100%
+    height: auto
+    transform: translateY(-20px)
+    transition: transform 1s, opacity 1s
     transition-timing-function: ease-in-out
     opacity: 0
+    z-index: 1
     &:hover
-        transform: scale(1.2)
         cursor: pointer
     &.donut-animation
         opacity: 1
-        margin-top: 20px
+        transform: translateY(20px)
 
 .donut-shadow
     height: 10px
@@ -197,104 +200,252 @@
     background-color: gray
     border-radius: 100%
     box-shadow: 0 2px 5px 3px gray
-    width: 120px
+    max-width: 100%
     opacity: 0
-    transition-property: width, opacity
-    transition-delay: .3s
-    transition-duration: .7s
-    transition-timing-function: ease-out
+    transform: scale(0.9)
+    transition: opacity .7s ease .3s, transform 1s ease-in-out
     &.donut-shadow-animation
         opacity: 1
-        width: 150px
+        transform: scale(1.0)
 
-.doname-container
+.name-container
+    grid-area: title
+    transform: translateY(10vh)
     display: flex
-    flex: 1 1 0px
-    flex-direction: column
+    justify-content: space-evenly
+    text-align: center
+    margin-bottom: 2px
 
-// .space classes are for doname-container, to position the button well
+.name-container-space
+    width: 100%
 
-.space
-    flex: 1 1 0px
-    display: grid
-    grid-template-columns: 1fr 1fr 1fr
-    grid-template-areas: "void void button" "void void button"
-
-.space-1
-    grid-area: void
-
-.get-it-button
-    display: flex
-    grid-area: button
-    flex-direction: column
-    justify-content: center
-
-.space-2
-    flex: 1 1 0px
-
-.get-it
-    flex: 1 1 0px
-    display: flex
-    justify-content: center
-    opacity: 0
-    transition-property: opacity
-    transition-delay: 1s
-    transition-duration: 0.3s
-    transition-timing-function: ease
-    &.get-it-animation
-        opacity: 1
-    
-.get
-    align-self: center
-    font-size: 25px
-    font-weight: 600
-    width: 10vw
-    border-radius: 10px
-
-.fa-arrow-right
-    font-weight: 100
-    font-size: 80%
-
-.donut-name
-    display: flex
-    justify-content: center
-    flex: 1 1 0px
+.doname
+    grid-are: title
+    display: block
+    text-align: center
+    width: 100%
     opacity: 0
     transform: scale(0.95)
-    transition-property: opacity, transform
-    transition-duration: 1s
-    transition-timing-function: ease-out
+    transition: opacity 1s ease, transform 1s ease-in-out 
     &.donut-name-animation
         transform: scale(1.0)
         opacity: 1
 
-.donut-name > h1
-    font-size: 5.2em
-    line-height: 0.8em
+.get-it-container
+    grid-area: name
+    height: 100%
+    width: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+.get-it
+    // font-weight: 600
+    background: none
+    border: 2px solid $dark-gray
+    text-transform: uppercase
+    padding: 12px 20px
     text-align: center
-    font-weight: 500
-    margin-right: 30px
-    align-self: center
-    color: $dark-gray
+    width: 16vw
+    cursor: pointer
+    font-size: 2vw
+    border-radius: 10px
+    transition: color .4s linear
+    position: relative
+    opacity: 0
+    transform: translateX(10px)
+    transition: opacity .3s ease 1s, transform .3s ease-out 1s
+    &.get-it-animation
+        opacity: 1
+        transform: translateX(0px)
+    &:hover
+        color: $white
+
+.get-it::before
+    content: ""
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    z-index: -1
+    background: $dark-gray
+    transition: transform 0.5s
+    transform-origin: 0 0
+    transition-timing-function: cubic-bezier( 0.5, 1.6 , 0.4 , 0.7 )
+    transform: scaleX(0)
+
+.get-it:hover::before
+    transform: scaleX(1)
+            
+.btn-get
+    z-index: 1
 
 @media screen and ( max-width: 750px )
     .home
+        display: flex
         flex-direction: column
-    .donut-container
-    .doname-container
-        margin-bottom: 10vh
-        flex: 0 1 0px
+        justify-content: center
+        align-items: center
+    .name-container
+        display: none
     .space
         display: flex
         justify-content: center
-    .get
-        width: 40vw
-    .donut-name 
-        display: none
+    .get-it
+        font-size: 6vw
+        width: 50vw
     .donut
         width: 250px
     .donut-shadow
         width: 140px
+
+// .arrow
+//     grid-area: arrow
+
+// .arrowr
+//     grid-area: arrowr
+
+
+
+
+
+
+// .home
+//     grid-area: home
+//     margin-top: 10vh
+//     background:
+//         color: $white
+//     height: 90vh
+//     width: 100%
+//     display: flex
+
+// .donut-container
+//     display: flex
+//     flex: 1 1 0px   
+//     flex-direction: column
+//     justify-content: space-around
+
+// .donut
+//     width: 340px
+//     align-self: center
+//     margin-top: -20px
+//     transition: margin 1s, opacity 1s, transform 0.3s
+//     transition-timing-function: ease-in-out
+//     opacity: 0
+//     &:hover
+//         transform: scale(1.2)
+//         cursor: pointer
+//     &.donut-animation
+//         opacity: 1
+//         margin-top: 20px
+
+// .donut-shadow
+//     height: 10px
+//     color: black
+//     align-self: center
+//     background-color: gray
+//     border-radius: 100%
+//     box-shadow: 0 2px 5px 3px gray
+//     width: 120px
+//     opacity: 0
+//     transition-property: width, opacity
+//     transition-delay: .3s
+//     transition-duration: .7s
+//     transition-timing-function: ease-out
+//     &.donut-shadow-animation
+//         opacity: 1
+//         width: 150px
+
+// .doname-container
+//     display: flex
+//     flex: 1 1 0px
+//     flex-direction: column
+
+// // .space classes are for doname-container, to position the button well
+
+// .space
+//     flex: 1 1 0px
+//     display: grid
+//     grid-template-columns: 1fr 1fr 1fr
+//     grid-template-areas: "void void button" "void void button"
+
+// .space-1
+//     grid-area: void
+
+// .get-it-button
+//     display: flex
+//     grid-area: button
+//     flex-direction: column
+//     justify-content: center
+
+// .space-2
+//     flex: 1 1 0px
+
+// .get-it
+//     flex: 1 1 0px
+//     display: flex
+//     justify-content: center
+//     opacity: 0
+//     transition-property: opacity
+//     transition-delay: 1s
+//     transition-duration: 0.3s
+//     transition-timing-function: ease
+//     &.get-it-animation
+//         opacity: 1
+    
+// .get
+//     align-self: center
+//     font-size: 25px
+//     font-weight: 600
+//     width: 10vw
+//     border-radius: 10px
+
+// .fa-arrow-right
+//     font-weight: 100
+//     font-size: 80%
+
+// .donut-name
+//     display: flex
+//     justify-content: center
+//     flex: 1 1 0px
+//     opacity: 0
+//     transform: scale(0.95)
+//     transition-property: opacity, transform
+//     transition-duration: 1s
+//     transition-timing-function: ease-out
+//     &.donut-name-animation
+//         transform: scale(1.0)
+//         opacity: 1
+
+// .donut-name > h1
+//     font-size: 5.2em
+//     line-height: 0.8em
+//     text-align: center
+//     font-weight: 500
+//     margin-right: 30px
+//     align-self: center
+//     color: $dark-gray
+
+// @media screen and ( max-width: 750px )
+//     .home
+//         flex-direction: column
+//     .donut-container
+//     .doname-container
+//         margin-bottom: 10vh
+//         flex: 0 1 0px
+//     .space
+//         display: flex
+//         justify-content: center
+//     .get
+//         width: 40vw
+//     .donut-name 
+//         display: none
+//     .donut
+//         width: 250px
+//     .donut-shadow
+//         width: 140px
     
 
 
@@ -308,46 +459,139 @@
 .about
     grid-area: about
     background-color: $dark-gray
-    height: 50vh
+    height: 90vh
     display: flex
     flex-direction: row
     justify-content: center
 
 .about-container
-    display: flex
+    display: grid
     width: 80%
     height: 80%
     align-self: center
-    justify-content: space-between
-
-.about-container > *
-    flex: 1 1 0
+    grid-template-columns: 1fr 1fr
 
 .about-image
     overflow: hidden
-    // align-self: center
+    max-width: 100%
+    align-self: center
 
 .carousel-about-container
     width: 100%
-    display: flex
+    // display: flex
+    // THE NO SLIDING EFFECT IS CAUSED BY FLEX 
     overflow: hidden
     justify-content: center
     align-content: center
+    opacity: 0
+    transition: opacity 1s ease-in, transform .6s ease-in-out
+    &.carousel-about-image-animation
+        opacity: 1
 
 .carousel-about-image
     max-width: 100%
     height: auto
-    overflow: hidden
 
 .about-description
-    background-color: transparentize(gray , 0.5 )
+    display: grid
+    overflow: hidden
+    // justify-content: center
+    // align-items: center
+    grid-template-columns: repeat(3, 1fr)
+    grid-template-rows: auto
+    grid-gap: 10px
+    align-self: center
+    // background-color: transparentize(pink , 0.5 )
 
-.image-about-container
+.section1
+    display: grid
+    grid-template-columns: auto
+    grid-template-rows: repeat(2, 1fr) 
+    opacity: 0
+    transform: translateY(10px)
+    transition: opacity 1s ease-in, transform .6s ease-in-out
+    // background: transparentize(gray, 0.5 )
+    &.section-up-animation
+        opacity: 1
+        transform: translateY(0px)
 
 
-@media screen and ( max-width: 700px )
+.section2
+    display: grid
+    grid-template-columns: auto
+    grid-template-rows: repeat(2, 1fr) 
+    opacity: 0
+    transform: translateY(-10px)
+    transition: opacity 1s ease-in, transform .6s ease-in-out
+    // background: transparentize(green, 0.5 )
+    &.section-down-animation
+        opacity: 1
+        transform: translateY(0px)
+
+.section3
+    display: grid
+    grid-template-columns: auto
+    grid-template-rows: repeat(2, 1fr) 
+    opacity: 0
+    transform: translateY(10px)
+    transition: opacity 1s ease-in, transform .6s ease-in-out
+    // background: transparentize(black, 0.5 )
+    &.section-up-animation
+        opacity: 1
+        transform: translateY(0px)
+
+.about-section-space-up
+    display: block
+    backgroudn-color: transparentize(white, 0.5 )
+    width: 100%
+    height: 50%
+
+.about-section-space-down
+    display: block
+    backgroudn-color: transparentize(white, 0.5 )
+    height: 50%
+    width: 100%
+
+.about-section-title
+    text-align: center
+
+.about-section-text
+    text-align: center
+
+@media screen and ( max-width: 1070px )
     .about-container
+        display: flex
         flex-direction: column
+    .about-container > *
+        flex: 1 1 0px
+@media screen and ( max-width: 700px )
+    .about-description
+        grid-gap: 10px
+        grid-template-rows: repeat(3, minmax(min-content,fit-content))
+        grid-template-columns: auto
+        grid-auto-flow: row
+    .about-container
+        grid-template-rows: 1fr fit-content
+        grid-template-columns: auto
+        flex-direction: column
+    .section1
+        display: block
+    .section2
+        display: block
+    .section3
+        display: block
+    .about-section-space-up
+        display: none
+    .about-section-space-down
+        display: none
+    .about-section-para
+        font-size: 0.8em
+        line-height: 0.9em
+    .about-section-title
+        font-size: 1.6em
+        line-height: 0.9em
+    
+
 
 
 
@@ -359,8 +603,8 @@
 
 .location
     grid-area: location
-    background-color: $green
-    height: 50vh
+    background-color: $white
+    height: 90vh
 
 
 
@@ -372,8 +616,8 @@
 
 .contact
     grid-area: contact
-    background-color: $white
-    height: 50vh
+    background-color: $dark-gray
+    height: 90vh
 
 
 

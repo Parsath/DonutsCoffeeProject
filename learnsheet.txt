@@ -85,6 +85,7 @@ Day 5: 11h27 10/09/2020
 
     Notes:
         *I need to fix the "About" & "Home" Carousel sections
+        *Think about importing a carousel from inspiration websites
 
     References:
         *
@@ -93,6 +94,27 @@ WORKTIME: 5H47
 
 Stopping time: 10/09/2020 19h55
 
+
+Day 6: 16h40 11/09/2020
+
+    STEP 2 IN PROGRESS
+
+    Notes:
+        *Situations:   
+            1)Broken Carousel on about-image
+            2)Broken Grid in about-description
+            3)Need to add Carousel in Home
+            4)Animate the About-image
+        *Solved:
+            1 - 2 - 4
+        *Need to fix 3
+
+    References:
+        *
+
+WORKTIME: 4H53M
+
+Stopping time: 11/09/2020 22h41
 
 
 
