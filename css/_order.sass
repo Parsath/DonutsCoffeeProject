@@ -8,7 +8,6 @@
     height: 100vh
     grid-template-columns: 1fr 1fr 1fr 1fr
     grid-template-rows: 8vh 0.4fr minmax(min-content,fit-content) 8vh
-    grid-gap: 20px
     grid-template-areas: "navo navo navo navo" "menu menu menu menu" "menug menug menug menug" "footer footer footer footer"
     justify-content: center
 
@@ -20,9 +19,25 @@
 
 
 
-.nav-order
+.nav-order-container
+    position: fixed
     background-color: $white
+    top: 0
+    left: 0
+    width: 100%
+    height: 10vh
     grid-area: navo
+    display: flex
+    justify-content: center
+    align-items: center
+
+.nav-order
+    display: flex
+    align-self: center
+    justify-content: space-between
+    width: 96%
+    // background: transparentize(pink,.5 )
+    margin: 0
 
 // Cart
 
@@ -35,10 +50,40 @@
     width: 30vw
     background-color: transparentize($beige, 0.2 )
 
+.cart-button
+    width: 3vw
+    display: flex
+    justify-content: flex-end
+    align-items: center
+
+.shopping-cart-icon
+    font-size: 2.5vw
+    color: $green
+    margin: 0
+    padding: 0
+
+@media screen and ( max-width: 1100px )
+    .cart-button
+        width: 5vw
+    .shopping-cart-icon
+        font-size: 3.5vw
+
 @media screen and ( max-width: 900px )
     .cart
         width: 100%
         z-index: 10000
+
+@media screen and ( max-width: 750px )
+    .cart-button
+        width: 8vw
+    .shopping-cart-icon
+        font-size: 5vw
+
+@media screen and ( max-width: 500px )
+    .cart-button
+        width: 12vw
+    .shopping-cart-icon
+        font-size: 8vw
     
     
     
@@ -51,7 +96,11 @@
 
 .menu
     grid-area: menu    
-    background-color: $dark-gray
+    margin-top: 10vh
+    display: flex
+    height: 8vh
+    justify-content: center
+    align-items: center
     
 
 
@@ -66,36 +115,76 @@
     grid-area: menug
     // background-color: $green
     grid-gap: 30px
+    margin-bottom: 8vh
 
 .product-grid
     display: grid
     border-radius: 20px
-    grid-template-columns: 1fr 1fr
+    grid-template-columns: 1fr 1fr 1fr
     grid-template-rows: auto
     grid-gap: 70px
     // background-color: transparentize(pink, 0.5 )
     height: 80%
-    width: 50%
+    width: 70%
     align-self: center
     margin-top: 20px
     margin-bottom: 8vh
 
 .item
     display: flex
-    height: 400px
+    height: 500px
     border-radius: 20px
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    // background-color: transparentize(pink, 0.5 )
+    flex-direction: column
     justify-content: center
     align-content: center
     text-align: center
+    transition: opacity .5s ease-in-out, transform .5s ease-in-out
+    opacity: 0
+    transform: translateX(-15px)
+    &.is-showing
+        opacity: 1
+        transform: translateX(0px)
+
+
+.item > *
+    flex: 1 1 0px
+
+.item-img
+
+.donut-order-img
+    border-top-left-radius: 20px
+    border-top-right-radius: 20px
+    max-width: 100%
+    height: auto
+
+.item-desc
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-between
+
+.item-name-container
+    width: 95%
+
+.item-description
+    font-size: 1vw
+
+.item-price-container
+    display: flex
+    width: 90%
+    justify-content: space-between
+    align-items: center
+    flex-shrink: 1
+    margin-bottom: 2px
+
+
 
 
 // Item Popup
 
 .item-chosen-container
     display: none
-    display: flex
+    // display: flex
     justify-content: center
     position: fixed
     z-index: 100
@@ -119,23 +208,54 @@
         height: 70vh
         width: 25vw
 
+@media screen and ( max-width: 1270px )
+    .product-grid
+        grid-template-columns: 1fr 1fr
+        width: 50%
+    .item
+        height: 500px
+
 @media screen and ( max-width: 1000px )
+    .item-description
+        font-size: 1.5vw
     .product-grid
         grid-template-columns: 1fr
 
 @media screen and ( max-width: 750px )
+    .item-description
+        font-size: 2.5vw
     .item-chosen
         height: 65vh
         width: 60vw
 
 @media screen and ( max-width: 600px )
     .item
-        height: 300px
+        height: 400px
+    .add-to-cart
+        font-size: 13px
+    .price
+        font-size: 13px
+
+@media screen and ( max-width: 500px )
+    .item-price-container
+        display: flex
+        flex-direction: column
+        flex: 1 1 0px
+        width: 90%
+        justify-content: center
+        align-items: center
+        margin-bottom: 2px
 
 @media screen and ( max-width: 400px )
+    .item-description
+        font-size: 3vw
     .item-chosen
         height: 65vh
         width: 70vw
+
+@media screen and ( max-width: 360px )
+    .item-description
+        font-size: 3.5vw
 
     
     
@@ -150,6 +270,10 @@
     background-color: $beige
     position: fixed
     grid-area: footer
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 8vh
     width: 100%
     bottom: 0
-    margin-top: 20px
+    left: 0

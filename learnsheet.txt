@@ -117,6 +117,40 @@ WORKTIME: 4H53M
 Stopping time: 11/09/2020 22h41
 
 
+Day 7: 12/09/2020 11h25
+
+    STEP 2 IN PROGRESS
+
+    Notes:
+        *Actual Problem: 
+            -Abrupt Animation finishing in sliding Carousel
+            -Transparent Buttons in carousel
+
+    References:
+        *
+
+WORKTIME: 3H10M
+
+Stopping time: 12/09/2020 Unknown
+
+
+Day 8: 12h12 13/09/2020
+
+    STEP 2 IN PROGRESS
+
+    Notes:
+        *
+
+    References:
+        *
+
+WORKTIME: +30M
+
+Stopping time: 13/09/2020
+
+
+
+
 
 
 REFERENCES:

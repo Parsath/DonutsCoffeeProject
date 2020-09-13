@@ -176,12 +176,13 @@
     flex-direction: column
     justify-content: space-around
 // .donut-container > *
-//     flex: 1 1 0px
+    // flex: 1 1 0px
 
 .donut
-    max-width: 100%
-    width: 100%
-    height: auto
+    // max-width: 100%
+    // width: 100%
+    height: 362px
+    object-fit: contain
     transform: translateY(-20px)
     transition: transform 1s, opacity 1s
     transition-timing-function: ease-in-out
@@ -192,6 +193,8 @@
     &.donut-animation
         opacity: 1
         transform: translateY(20px)
+
+
 
 .donut-shadow
     height: 10px
@@ -219,7 +222,7 @@
 .name-container-space
     width: 100%
 
-.doname
+.doname-1
     grid-are: title
     display: block
     text-align: center
@@ -230,6 +233,20 @@
     &.donut-name-animation
         transform: scale(1.0)
         opacity: 1
+
+.name2
+    display: none
+
+.name3
+    display: none
+
+.arrow-next
+    background: transparentize($dark-gray,0.80 )
+    box-shadow: inset 0px 0px 10px 14px transparentize($dark-gray,0.80 )
+
+.arrow-back
+    background: transparentize($dark-gray,0.80 )
+    box-shadow: inset 0px 0px 10px 14px transparentize($dark-gray,0.80 )
 
 .get-it-container
     grid-area: name
@@ -475,6 +492,7 @@
     overflow: hidden
     max-width: 100%
     align-self: center
+    border-radius: 10px
 
 .carousel-about-container
     width: 100%
@@ -605,6 +623,50 @@
     grid-area: location
     background-color: $white
     height: 90vh
+    display: flex
+    justify-content: center
+    align-items: center
+
+.location-container
+    display: flex
+    height: 80%
+    width: 80%
+
+.location-container > *
+    flex: 1 1 0px
+
+.map-container
+    display: flex
+    justify-content: center
+    align-items: center
+
+.google-map
+    width: 100%
+    height: 100%
+
+
+.schedule-container
+    background-color: $white
+    display: flex
+    justify-content: space-between
+    align-items: center
+    flex-direction: column
+
+.schedule-list
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    flex-direction: column
+    text-align: center
+    justify-content: center
+    align-items: center
+
+
+@media screen and ( max-width: 1000px )
+    .location-container
+        flex-direction: column
+    
 
 
 
@@ -618,6 +680,31 @@
     grid-area: contact
     background-color: $dark-gray
     height: 90vh
+    display: flex
+    justify-content: center
+    align-items: center
+
+.contact-container
+    height: 65%
+    width: 65%
+    // background: transparentize(pink, .5 )
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-around
+
+.contact-para
+    text-align: center
+
+.contact-facebook
+    font-size: 50px
+    color: $white
+    transition: color .1s ease-out
+    &:hover
+        color: #6d84b4
+
+.facebook-icon
+    text-decoration: none
 
 
 
@@ -627,9 +714,49 @@
 
 
 
+body
+    background: $beige
+    
 .footer
     grid-area: footer
     background-color: $beige 
     height: 10vh
+    display: flex
+    justify-content: center
+    align-items: center
+
+.footer-container
+    width: 95%
+    height: 100%
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+.footer-icons
+    width: 7vw
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+
+.footer-facebook
+    font-size: 50px
+    color: $dark-gray
+    &:hover
+        color: #3b5998
+        
+
+.footer-instagram
+    font-size: 50px
+    color: $dark-gray
+    &:hover
+        color: #5851DB
+        
+
+
+@media screen and ( max-width: 980px )
+    .footer
+        margin-bottom: 4vh
+    
 
     

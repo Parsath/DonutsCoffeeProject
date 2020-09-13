@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/DonutsLogo.jpg">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -10,8 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Belleza&family=Montserrat&family=Mr+Dafoe&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="css/styles.css" rel="stylesheet" media="all" type="text/css">
     <script src="js/functions.js" type="text/javascript"></script>
+    <link href="css/styles.css" rel="stylesheet" media="all" type="text/css">
     <title>Donuts Coffee</title>
 </head>
 <body>
@@ -21,7 +22,7 @@
 
         <nav class="navbar-index-container navbar navbar-expand navbar-light d-print"> 
             <div class="navbar-index">
-                <a class="navbar-brand nav-title" href="https://www.facebook.com/Donuts-coffee-110127663851789" target="_blank">
+                <a class="navbar-brand nav-title" href="index.html">
                     <div class="title">Donuts Coffee</div>
                 </a>
                 
@@ -76,23 +77,23 @@
 
         <div class="home" id="home">
             <div class="donut-container">
-                <div id="carousel-donuts" class="carousel slide" data-ride="carousel">
+                <div id="carousel-donuts" class="carousel slide" data-ride="carousel" data-interval="5000">
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
+                        <div class="carousel-item active donut-1">
                             <img class="d-block w-100 donut" src="images/Carousel/DonutCarousel1.png" alt="First slide">
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item donut-2">
                             <img class="d-block w-100 donut" src="images/Carousel/DonutCarousel2.png" alt="Second slide">
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item donut-3">
                             <img class="d-block w-100 donut" src="images/Carousel/DonutCarousel3.png" alt="">
                         </div>
                     </div>
-                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <a class="carousel-control-prev arrow-back" href="#carousel-donuts" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon arrow" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
-                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <a class="carousel-control-next arrow-next" href="#carousel-donuts" role="button" data-slide="next">
                         <span class="carousel-control-next-icon arrowr" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
@@ -103,8 +104,10 @@
                 <button class="get-it btn-get">Get it!</button>
             </div>
             <div class="name-container">
-                <div class="doname">
-                    <h1>Space Nut</h1>
+                <div class="doname-1">
+                    <h1 class="name1">Space Nut</h1>
+                    <h1 class="name2">Revolution</h1>
+                    <h1 class="name3">Sweet Spice</h1>
                 </div>
             </div>
         </div>
@@ -174,7 +177,7 @@
                 <div class="about-description">
                     <div class="section1">
                         <div class="about-section-para">
-                            <h4 class="dark-bg about-section-title">About-description</h4>
+                            <h5 class="dark-bg about-section-title">About-description</h5>
                             <p class="dark-bg about-section-text">
                                 fugit ipsum rerum quos ut nisi.
                             </p>
@@ -184,7 +187,7 @@
                     <div class="section2">
                         <div class="about-section-space-up"></div>
                         <div class="about-section-para">
-                            <h4 class="dark-bg about-section-title">About-description</h4>
+                            <h5 class="dark-bg about-section-title">About-description</h5>
                             <p class="dark-bg about-section-text">
                                 eveniet blanditiis aut numquam quam magni veniam distinctio 
                             </p>
@@ -192,7 +195,7 @@
                     </div>
                     <div class="section3">
                         <div class="about-section-para">
-                            <h4 class="dark-bg about-section-title">About-description</h4>
+                            <h5 class="dark-bg about-section-title">About-description</h5>
                             <p class="dark-bg about-section-text">
                                 Lorem ipsum, dcepturi facere ratione, voluptas provident 
                             </p>
@@ -206,19 +209,44 @@
         <!----------------------------- Location ---------------------------->
 
         <div class="location" id="location">
-            <h1>Location</h1>
+            <div class="location-container">
+                <div class="map-container">
+                    <iframe class="google-map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12769.774693600466!2d10.2561804!3d36.8557977!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x921829ef3734b7fc!2sDONUTS%20COFFEE!5e0!3m2!1sen!2stn!4v1599998184159!5m2!1sen!2stn" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>    
+                </div>
+                <div class="schedule-container">
+                    <h3 class="white-bg schedule-title">Schedule title</h3>
+                    <ul class="white-bg schedule-list">
+                        <li class="schedule-item">14h => 19h</li>
+                        <li class="schedule-item">12h => 23h</li>
+                        <li class="schedule-item">10h => 26h</li>
+                    </ul>
+                    <p class="white-bg schedule-notes">Shht</p>
+                </div>
+            </div>
         </div>
 
         <!----------------------------- Contact ---------------------------->
 
         <div class="contact" id="contact">
-            <h1>Contact</h1>
+            <div class="contact-container">
+                <h1 class="dark-bg contact-title">Contact</h4>
+                <h4 class="dark-bg contact-para">You can reach us by phone: +216 94 697 621. Or through our facebook: </h4>
+                <a href="https://www.facebook.com/Donuts-coffee-110127663851789" target="_blank" class="facebook-icon"> <i class="fa fa-facebook-square contact-facebook" aria-hidden="true"></i></a>
+
+            </div>
         </div>
 
         <!----------------------------- Footer ---------------------------->
 
         <div class="footer">
-            <h1>Footer</h1>
+            <div class="footer-container">
+                <div class="footer-icons">
+                    <a href="https://www.facebook.com/Donuts-coffee-110127663851789" target="_blank" class="facebook-footer-icon"><i class="fa fa-facebook-square footer-facebook" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/donuts_coffee_official/" target="_blank" class="instagram-footer-icon"><i class="fa fa-instagram footer-instagram" aria-hidden="true"></i></a>
+                </div>
+                <h6 class="footer-notes">Powered by Natural Ingredients</h6>
+
+            </div>
         </div>
 
     </div>

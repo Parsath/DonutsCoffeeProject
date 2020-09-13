@@ -20,35 +20,158 @@ $(function(){
  $( document ).ready(function() {
 
     var donutWidth = $(".donut").width();
-    var donutShadow = donutWidth * 60 /100;
+    var donutShadow = donutWidth * 40 /100;
 
     $(".donut").addClass("donut-animation");
     $(".donut-shadow").addClass("donut-shadow-animation");
-    $(".doname").addClass("donut-name-animation");
+    $(".doname-1").addClass("donut-name-animation");
     $(".get-it").addClass("get-it-animation");
     $(".donut-shadow").css({
         "width": " "+ donutShadow +"px"
     });
+
+
+    $("#carousel-donuts").on('slide.bs.carousel', function(car){
+
+        var thisDonut = car.relatedTarget;
+
+        if(car.direction == 'left')
+        { 
+             
+            $('.donut').removeClass("donut-animation");
+            $(".donut-shadow").removeClass("donut-shadow-animation");
+
+            if( $(thisDonut).hasClass("donut-1") )
+            {
+
+                $('.doname-1').removeClass("donut-name-animation");
+
+                setTimeout(function(){
+                    $('.name3').css({
+                        "display" : "none"
+                    });
+                    $('.name1').css({
+                        "display" : "inline"
+                    });
+                    $('.doname-1').addClass("donut-name-animation");
+                    $(".donut-shadow").addClass("donut-shadow-animation");
+                    $(".donut").addClass("donut-animation");
+                }, 1000);
+            }
+            else if( $(thisDonut).hasClass("donut-2") )
+            {
+
+                $('.doname-1').removeClass("donut-name-animation");
+
+                setTimeout(function(){
+                    $('.name1').css({
+                        "display" : "none"
+                    });
+                    $('.name2').css({
+                        "display" : "inline"
+                    });
+                    $('.doname-1').addClass("donut-name-animation");
+                    $(".donut-shadow").addClass("donut-shadow-animation");
+                    $(".donut").addClass("donut-animation");
+                }, 1000);
+    
+            }
+            else if( $(thisDonut).hasClass("donut-3") )
+            {
+
+                $('.doname-1').removeClass("donut-name-animation");
+
+                setTimeout(function(){
+                    $('.name2').css({
+                        "display" : "none"
+                    });
+                    $('.name3').css({
+                        "display" : "inline"
+                    });
+                    $('.doname-1').addClass("donut-name-animation");
+                    $(".donut-shadow").addClass("donut-shadow-animation");
+                    $(".donut").addClass("donut-animation");
+                }, 1000);
+    
+            }
+        }
+
+        else if(car.direction == 'right')
+        { 
+             
+            $('.donut').removeClass("donut-animation");
+            $(".donut-shadow").removeClass("donut-shadow-animation");
+
+            if( $(thisDonut).hasClass("donut-1") )
+            {
+
+                $('.doname-1').removeClass("donut-name-animation");
+
+                setTimeout(function(){
+                    $('.name2').css({
+                        "display" : "none"
+                    });
+                    $('.name1').css({
+                        "display" : "inline"
+                    });
+                    $('.doname-1').addClass("donut-name-animation");
+                    $(".donut-shadow").addClass("donut-shadow-animation");
+                    $(".donut").addClass("donut-animation");
+                }, 1000);
+            }
+            else if( $(thisDonut).hasClass("donut-2") )
+            {
+
+                $('.doname-1').removeClass("donut-name-animation");
+
+                setTimeout(function(){
+                    $('.name3').css({
+                        "display" : "none"
+                    });
+                    $('.name2').css({
+                        "display" : "inline"
+                    });
+                    $('.doname-1').addClass("donut-name-animation");
+                    $(".donut-shadow").addClass("donut-shadow-animation");
+                    $(".donut").addClass("donut-animation");
+                }, 1000);
+    
+            }
+            else if( $(thisDonut).hasClass("donut-3") )
+            {
+
+                $('.doname-1').removeClass("donut-name-animation");
+
+                setTimeout(function(){
+                    $('.name1').css({
+                        "display" : "none"
+                    });
+                    $('.name3').css({
+                        "display" : "inline"
+                    });
+                    $('.doname-1').addClass("donut-name-animation");
+                    $(".donut-shadow").addClass("donut-shadow-animation");
+                    $(".donut").addClass("donut-animation");
+                }, 1000);
+    
+            }
+        }
+
+
+    });
+
+    $(function(){
+        $('#carousel-donuts').carousel({
+            interval: 3000
+        });
+    });
 });
-
-
-//  $( document ).ready(function() {
-
-//     var donutWidth = $(".donut").width();
-//     var donutShadow = donutWidth * 60 /100;
-
-//     $(".donut").addClass("donut-animation");
-//     $(".donut-shadow").addClass("donut-shadow-animation");
-//     $(".donut-name").addClass("donut-name-animation");
-//     $(".get-it").addClass("get-it-animation");
-//     $(".donut-shadow").css({
-//         "width": " "+ donutShadow +"px"
-//     });
-// });
 
 
 
  ///////////////////// ABOUT ///////////////////////////////
+
+
 
  $(window).scroll(function(){
   
@@ -66,7 +189,30 @@ $(function(){
  });
 
  $(function(){
-     $('.carousel').carousel({
-         interval: 3000
+     $('#carousel-about').carousel({
+         interval: 5000
      });
  });
+
+
+
+ ///////////////////// ORDER-PRODUCT GRID ///////////////////////////////
+
+ 
+$(".product-grid").ready(function(){
+
+    console.log("salut");
+
+    $(".product-grid .item").each(function(i){
+
+        setTimeout(function(){
+            $(".product-grid .item").eq(i).addClass("is-showing");
+
+        },150 * (i+1) );
+
+    });
+
+});
+//  $(".product-grid").ready(function(){
+
+//  });
