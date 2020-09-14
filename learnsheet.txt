@@ -154,14 +154,14 @@ Day 9: 12h46 14/09/2020
     STEP 2 IN PROGRESS
 
     Notes:
-        *
+        *Rest
 
     References:
         *
 
-WORKTIME:
+WORKTIME: 2h10M
 
-Stopping time: 14/09/2020
+Stopping time: 14/09/2020 19h11
 
 
 

@@ -734,10 +734,12 @@ body
     align-items: center
 
 .footer-icons
+    // background-color: transparentize(pink,.5 )
     width: 7vw
     display: flex
     justify-content: space-between
-    align-items: center
+    align-items: flex-start
+    margin-bottom: 10px
 
 
 .footer-facebook
@@ -758,6 +760,21 @@ body
 @media screen and ( max-width: 980px )
     .footer
         margin-bottom: 4vh
-    
+
+@media screen and ( max-width: 750px )
+    .footer-facebook
+        font-size: 30px
+    .footer-instagram
+        font-size: 30px
+
+@media screen and ( max-width: 500px )
+    .footer-icons
+        // background-color: transparentize(pink,.5 )
+        width: 9vw
+    .footer-facebook
+        font-size: 15px
+    .footer-instagram
+        font-size: 15px
+        
 
     

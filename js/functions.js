@@ -9,8 +9,51 @@ $(function(){
         $(".nav-title").toggleClass("burger-nav-title");
     });
 
-    $(".donut").click(function(){
+    
+    
+    $("#home-link").click(function() {
+        $('html, body').animate({
+            scrollTop: $("#home").offset().top - ($(window).height() * 10 / 100)
+        }, 500);
     });
+
+    $("#about-link").click(function() {
+        $('html, body').animate({
+            scrollTop: $("#about").offset().top - ($(window).height() * 10 / 100)
+        }, 500);
+    });
+    
+    $("#findus-link").click(function() {
+        $('html, body').animate({
+            scrollTop: $("#location").offset().top - ($(window).height() * 10 / 100)
+        }, 500);
+    });
+
+    $("#contact-link").click(function() {
+        $('html, body').animate({
+            scrollTop: $("#contact").offset().top - ($(window).height() * 10 / 100)
+        }, 500);
+    });
+
+    if($(window).width() < 980 )
+    {
+    
+        $("#home-link").click(function() {
+            $("input#burger").trigger("click");
+        });
+    
+        $("#about-link").click(function() {
+            $("input#burger").trigger("click");
+        });
+        
+        $("#findus-link").click(function() {
+            $("input#burger").trigger("click");
+        });
+    
+        $("#contact-link").click(function() {
+            $("input#burger").trigger("click");
+        });
+    }
  });
 
 
@@ -171,30 +214,6 @@ $(function(){
             window.location.href='order.html';
         });
     });
-    
-    $("#home-link").click(function() {
-        $('html, body').animate({
-            scrollTop: $("#home").offset().top - ($(window).height() * 10 / 100)
-        }, 500);
-    });
-
-    $("#about-link").click(function() {
-        $('html, body').animate({
-            scrollTop: $("#about").offset().top - ($(window).height() * 10 / 100)
-        }, 500);
-    });
-    
-    $("#findus-link").click(function() {
-        $('html, body').animate({
-            scrollTop: $("#location").offset().top - ($(window).height() * 10 / 100)
-        }, 500);
-    });
-
-    $("#contact-link").click(function() {
-        $('html, body').animate({
-            scrollTop: $("#contact").offset().top - ($(window).height() * 10 / 100)
-        }, 500);
-    });
 });
 
 
@@ -233,9 +252,6 @@ $(function(){
 
 
 $(".product-grid").ready(function(){
-
-    console.log("salut");
-
     $(".product-grid .item").each(function(i){
 
         setTimeout(function(){
