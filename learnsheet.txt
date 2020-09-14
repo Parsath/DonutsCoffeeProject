@@ -144,9 +144,24 @@ Day 8: 12h12 13/09/2020
     References:
         *
 
-WORKTIME: +30M
+WORKTIME: 4H20M
 
-Stopping time: 13/09/2020
+Stopping time: 13/09/2020 Unknown
+
+
+Day 9: 12h46 14/09/2020
+
+    STEP 2 IN PROGRESS
+
+    Notes:
+        *
+
+    References:
+        *
+
+WORKTIME:
+
+Stopping time: 14/09/2020
 
 
 

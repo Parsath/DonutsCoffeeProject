@@ -53,6 +53,7 @@
     color: transparentize($dark-gray,0.4 ) !important
     margin: 20px
     position: relative
+    cursor: pointer
     &::after
         position: absolute
         bottom: 0
@@ -273,11 +274,11 @@
     opacity: 0
     transform: translateX(10px)
     transition: opacity .3s ease 1s, transform .3s ease-out 1s
+    &:hover
+        color: $white
     &.get-it-animation
         opacity: 1
         transform: translateX(0px)
-    &:hover
-        color: $white
 
 .get-it::before
     content: ""
