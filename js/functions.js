@@ -278,4 +278,28 @@ $(function(){
         $(".cart").toggleClass("cart-pop-up");
         $(".shopping-cart-icon").toggleClass("cart-button-clicked");
     });
-})
+});
+
+
+
+///////////////////// ORDER ITEM POPUP ///////////////////////////////
+
+
+
+
+$(function(){
+    $(".close-item-chosen").click(function(){
+        $(".item-chosen-container").removeClass("item-chosen-popup-container");
+        $(".item-chosen").removeClass("item-chosen-popup");
+        $(".item-chosen").css({
+            "z-index":"-1"
+        });
+    });
+    $(".add-to-cart").click(function(){
+        $(".item-chosen-container").addClass("item-chosen-popup-container");
+        $(".item-chosen").addClass("item-chosen-popup");
+        $(".item-chosen").css({
+            "z-index":"9999999"
+        });
+    });
+});

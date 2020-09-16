@@ -48,7 +48,7 @@
     top: 0
     right: 0
     height: 100vh
-    background-color: transparentize($green, 0.02 )
+    background-color: transparentize($dark-gray, 0.02 )
     opacity: 0
     width: 0vw
     transition: width .5s ease, opacity .1s linear
@@ -75,7 +75,7 @@
     flex: 1 1 0px
 
 .cart-item 
-    border-bottom: thin solid $dark-gray
+    border-bottom: thin solid $white
     margin: 5px
     // background: transparentize(black , .5 )
     height: 200px
@@ -250,8 +250,9 @@
 .item-img
 
 .donut-order-img
-    border-top-left-radius: 20px
-    border-top-right-radius: 20px
+    border-radius: 100%
+    // border-top-left-radius: 20px
+    // border-top-right-radius: 20px
     max-width: 100%
     height: auto
 
@@ -281,8 +282,7 @@
 // Item Popup
 
 .item-chosen-container
-    display: none
-    // display: flex
+    display: flex
     justify-content: center
     position: fixed
     z-index: 100
@@ -291,18 +291,103 @@
     bottom: 0
     left: 0
     background-color: transparentize(black, 0.4 )
+    z-index: -1
+    transform: scale(0)
+    opacity: 0
+    border-radius: 50%
+    transition: transform .2s ease, opacity .4s ease, border-radius 1s ease
+    &.item-chosen-popup-container
+        z-index: 9999
+        transform: scale(1)
+        opacity: 1
+        border-radius: 0px
+        
 
 .item-chosen
     position: fixed
-    border-radius: 12px
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.15)
+    border-radius: 15px
     align-self: center
     background-color: white
-    height: 70vh
+    height: 85vh
     width: 25vw
     display: flex
     flex-direction: column
     align-items: center
+    transition: opacity .4s ease
+    z-index: -1
+    opacity: 0
+    &.item-chosen-popup
+        opacity: 1
+
+.item-chosen > *
+    flex: 1 1 0px
+
+.item-chosen-img-container
+    width: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+
+.donut-order-img-chosen
+    width: 80%
+    border-radius: 50%
+    height: auto
+
+.item-chosen-desc-container
+    width: 100%
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+
+.item-title
+
+.item-desc
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: flex-start
+    height: 40%
+    
+.item-desc-text
+    flex-shrink: 1
+
+.item-desc-user-input
+    flex-grow: 1
+
+#donut-instructions
+    width: 90%
+    font-size: 16px
+    margin-bottom: 5px
+
+.item-add-btn-container
+    width: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-bottom: 3px
+
+.item-add-btn
+    width: 80%
+    font-size: 20px
+ 
+.close-item-chosen-container
+    position: absolute
+    top: 0
+    right: 0
+    width: 4vw
+    height: 4vw
+    display: flex
+    justify-content: center
+    align-items: center
+
+.close-item-chosen
+    color: transparentize( $dark-gray , .2 )
+    font-size: 25px
+    &:hover
+        cursor: pointer
+        color: $dark-gray 
 
 .item-chosen img
     flex-grow: 1
@@ -339,6 +424,9 @@
         font-size: 13px
     .price
         font-size: 13px
+    .close-item-chosen-container
+        width: 6vw
+        height: 6vw
 
 @media screen and ( max-width: 500px )
     .item-price-container
@@ -360,6 +448,9 @@
 @media screen and ( max-width: 360px )
     .item-description
         font-size: 3.5vw
+    .close-item-chosen-container
+        width: 7.5vw
+        height: 7.5vw
 
     
     
@@ -377,7 +468,7 @@
     display: flex
     justify-content: center
     align-items: center
-    height: 8vh
+    height: 7vh
     width: 100%
     bottom: 0
     left: 0

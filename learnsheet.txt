@@ -164,6 +164,28 @@ WORKTIME: 2h10M
 Stopping time: 14/09/2020 19h11
 
 
+Day 10: 11h15 15/09/2020
+
+    STEP 2 IN PROGRESS
+
+    STEP 2 Complete at 15h00
+    
+    STEP 3: 
+        -Learn Symfony, and get ready for the real DEAL.
+
+    Notes:
+        *Front-office COMPLETE.
+        *Now, let's have a deep dive in back end
+        *From now on, I'll be moving to the "Learning Symfony" repo, so that each learnsheet stays focused on one Subject primarily.
+
+    References:
+        *
+
+WORKTIME: 2H32
+
+Stopping time: 15/09/2020 17h15
+
+
 
 
 
