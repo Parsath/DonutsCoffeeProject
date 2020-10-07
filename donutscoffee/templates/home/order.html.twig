@@ -1,0 +1,278 @@
+{% extends 'base.html.twig' %}
+
+{% block body_class %}order-body{% endblock %}
+
+{% block body %}
+    <div class="container-order" onload="orderLoaded()">
+
+        <!----------------------------- Navbar ---------------------------->
+
+        <div class="nav-order-container">
+            <div class="nav-order">
+                <a class="navbar-brand nav-title" href="{{ path('app_homepage') }}">
+                    <div class="title">Donuts Coffee</div>
+                </a>
+                <div class="cart-button-container">
+                    <button class="shopping-cart-button">
+                        <i class="fa fa-shopping-cart shopping-cart-icon" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="cart">
+                    <div class="cart-title">
+                        <h4 class="dark-bg">Your Order</h4>
+                    </div>
+                    <div class="cart-content-container">
+                        <div class="cart-item">
+                            <div class="cart-details">
+                                <div class="number-container">
+                                    <span class="dark-bg number">2x</span>
+                                </div>
+                                <div class="dark-bg name">Space-nut</div>
+                                <div class="price-container">
+                                    <span class="dark-bg price">2.000dt</span>
+                                </div>
+                            </div>
+                            <div class="cart-buttons-container">
+                                <div class="cart-buttons">
+                                    <button class="edit-cart btn btn-outline-light">Edit</button>
+                                    <button class="remove-cart btn btn-outline-light">Remove</button>
+                                </div>
+                                <div class="space"></div>
+                            </div>
+                        </div>
+                        <div class="cart-item">
+                            <div class="cart-details">
+                                <div class="number-container">
+                                    <span class="dark-bg number">2x</span>
+                                </div>
+                                <div class="dark-bg name">Space-nut</div>
+                                <div class="price-container">
+                                    <span class="dark-bg price">2.000dt</span>
+                                </div>
+                            </div>
+                            <div class="cart-buttons-container">
+                                <div class="cart-buttons">
+                                    <button class="edit-cart btn btn-outline-light">Edit</button>
+                                    <button class="remove-cart btn btn-outline-light">Remove</button>
+                                </div>
+                                <div class="space"></div>
+                            </div>
+                        </div>
+                        <div class="cart-item">
+                            <div class="cart-details">
+                                <div class="number-container">
+                                    <span class="dark-bg number">2x</span>
+                                </div>
+                                <div class="dark-bg name">Space-nut</div>
+                                <div class="price-container">
+                                    <span class="dark-bg price">2.000dt</span>
+                                </div>
+                            </div>
+                            <div class="cart-buttons-container">
+                                <div class="cart-buttons">
+                                    <button class="edit-cart btn btn-outline-light">Edit</button>
+                                    <button class="remove-cart btn btn-outline-light">Remove</button>
+                                </div>
+                                <div class="space"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart-name">
+                        <label for="client-name" class="dark-bg">Name:</label>
+                        <input class="form-control name-input" placeholder="Order by the name of" aria-label="Client-name" aria-describedby="basic-addon1" type="text" id="client-name" />
+                    </div>
+                    <div class="cart-space"></div>
+                    <div class="cart-validation-choice">
+                        <button class="btn btn-outline-light btn-choice">Delivery</button>
+                        <button class="btn btn-outline-light btn-choice">Pickup</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!----------------------------- Product Menu ---------------------------->
+
+        <div class="menu">
+            <h1 class="menu-title">Menu</h1>
+        </div>
+
+        <div class="menu-grid">
+            <div class="product-grid">
+                <div class="item">
+                    <div class="item-img">
+                        <img src="images/OrderNow/Donut Gourmand.jpg" alt="Item" class="donut-order-img">
+                    </div>
+                    <div class="item-desc">
+                        <div class="item-name-container">
+                            <h5 class="white-bg item-name">Space-nut</h5>
+                            <p class="white-bg item-description">Chocolat filled donut</p>
+                        </div>
+                        <div class="item-price-container">
+                            <div class="white-bg price">2.000dt</div>
+                            <button class="btn btn-outline-secondary add-to-cart" role="button">Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-img">
+                        <img src="images/OrderNow/Chocolat Brownies Donut.jpg" alt="Item" class="donut-order-img">
+                    </div>
+                    <div class="item-desc">
+                        <div class="item-name-container">
+                            <h5 class="white-bg item-name">Mushroom Donut</h5>
+                            <p class="white-bg item-description">Chocolat Donut with chocolat topping and lots of chocolat.</p>
+                        </div>
+                        <div class="item-price-container">
+                            <div class="white-bg price">9.000dt</div>
+                            <button class="btn btn-outline-secondary add-to-cart" role="button">Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-img">
+                        <img src="images/OrderNow/MoanutR.jpg" alt="Item" class="donut-order-img">
+                    </div>
+                    <div class="item-desc">
+                        <div class="item-name-container">
+                            <h5 class="white-bg item-name">Donutello</h5>
+                            <p class="white-bg item-description">A Moanut.. Simply a Moanut</p>
+                        </div>
+                        <div class="item-price-container">
+                            <div class="white-bg price">8.000dt</div>
+                            <button class="btn btn-outline-secondary add-to-cart" role="button">Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-img">
+                        <img src="images/OrderNow/Strawberry Donut.jpg" alt="Item" class="donut-order-img">
+                    </div>
+                    <div class="item-desc">
+                        <div class="item-name-container">
+                            <h5 class="white-bg item-name">Strawberry Donut</h5>
+                            <p class="white-bg item-description">I just don't know anymore..</p>
+                        </div>
+                        <div class="item-price-container">
+                            <div class="white-bg price">4.500dt</div>
+                            <button class="btn btn-outline-secondary add-to-cart" role="button">Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-img">
+                        <img src="images/OrderNow/MoanutR.jpg" alt="Item" class="donut-order-img">
+                    </div>
+                    <div class="item-desc">
+                        <div class="item-name-container">
+                            <h5 class="white-bg item-name">Donutello</h5>
+                            <p class="white-bg item-description">A Moanut.. Simply a Moanut</p>
+                        </div>
+                        <div class="item-price-container">
+                            <div class="white-bg price">8.000dt</div>
+                            <button class="btn btn-outline-secondary add-to-cart" role="button">Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-img">
+                        <img src="images/OrderNow/Strawberry Donut.jpg" alt="Item" class="donut-order-img">
+                    </div>
+                    <div class="item-desc">
+                        <div class="item-name-container">
+                            <h5 class="white-bg item-name">Strawberry Donut</h5>
+                            <p class="white-bg item-description">I just don't know anymore..</p>
+                        </div>
+                        <div class="item-price-container">
+                            <div class="white-bg price">4.500dt</div>
+                            <button class="btn btn-outline-secondary add-to-cart" role="button">Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-img">
+                        <img src="images/OrderNow/MoanutR.jpg" alt="Item" class="donut-order-img">
+                    </div>
+                    <div class="item-desc">
+                        <div class="item-name-container">
+                            <h5 class="white-bg item-name">Donutello</h5>
+                            <p class="white-bg item-description">A Moanut.. Simply a Moanut</p>
+                        </div>
+                        <div class="item-price-container">
+                            <div class="white-bg price">8.000dt</div>
+                            <button class="btn btn-outline-secondary add-to-cart" role="button">Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-img">
+                        <img src="images/OrderNow/Strawberry Donut.jpg" alt="Item" class="donut-order-img">
+                    </div>
+                    <div class="item-desc">
+                        <div class="item-name-container">
+                            <h5 class="white-bg item-name">Strawberry Donut</h5>
+                            <p class="white-bg item-description">I just don't know anymore..</p>
+                        </div>
+                        <div class="item-price-container">
+                            <div class="white-bg price">4.500dt</div>
+                            <button class="btn btn-outline-secondary add-to-cart" role="button">Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-img">
+                        <img src="images/OrderNow/Donut Gourmand.jpg" alt="Item" class="donut-order-img">
+                    </div>
+                    <div class="item-desc">
+                        <div class="item-name-container">
+                            <h5 class="white-bg item-name">Space-nut</h5>
+                            <p class="white-bg item-description">Chocolat filled donut</p>
+                        </div>
+                        <div class="item-price-container">
+                            <div class="white-bg price">2.000dt</div>
+                            <button class="btn btn-outline-secondary add-to-cart" role="button">Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-chosen-container">
+                    <div class="item-chosen">
+                        <div class="item-chosen-img-container">
+                            <img src="images/OrderNow/Donut Gourmand.jpg" alt="Item" class="donut-order-img-chosen">
+                        </div>
+                        <div class="item-chosen-desc-container">
+                            <div class="item-title">
+                                <h5 class="donut-chosen-title">Space-nut</h5>
+                            </div>
+                            <div class="item-desc">
+                                <div class="item-desc-text">This is Space-nut desc</div>
+                                <div class="item-desc-user-input">
+                                    <label for="donut-instructions" class="user-input-item">Description: </label>
+                                    <textarea type="text" id="donut-instructions" class="form-control" placeholder="Specific instructions written here"></textarea>
+                                </div>
+                            </div>
+                            <div class="item-add-btn-container">
+                                <button class="btn btn-outline-dark item-add-btn">Add To Cart</button>
+                            </div>
+                        </div>
+
+                        <div class="close-item-chosen-container">
+                            <i class="fa fa-times white close-item-chosen" aria-hidden="true" role="button"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!----------------------------- Footer ---------------------------->
+
+        <div class="footer-order">
+            <div class="footer-container">
+                <div class="footer-icons">
+                    <a href="https://www.facebook.com/Donuts-coffee-110127663851789" target="_blank" class="facebook-footer-icon"><i class="fa fa-facebook-square footer-facebook" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/donuts_coffee_official/" target="_blank" class="instagram-footer-icon"><i class="fa fa-instagram footer-instagram" aria-hidden="true"></i></a>
+                </div>
+                <h6 class="footer-notes">Powered by Natural Ingredients</h6>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

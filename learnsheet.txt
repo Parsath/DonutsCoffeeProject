@@ -194,14 +194,14 @@ Day 11: 17h28 07/10/2020
         -Complete The Backend of the website
 
     Notes:
-        *
+        *Integrated my front-end work in the symfony project, tomorow I'm starting to Work on the back end (officially)
 
     References:
         *
 
-WORKTIME:
+WORKTIME: 2H13M
 
-Stopping time: 30/10/2020
+Stopping time: 30/10/2020 21h20
 
 
 

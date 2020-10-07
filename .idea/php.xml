@@ -40,6 +40,13 @@
       <path value="$PROJECT_DIR$/donutscoffee/vendor/doctrine/lexer" />
       <path value="$PROJECT_DIR$/donutscoffee/vendor/doctrine/annotations" />
       <path value="$PROJECT_DIR$/donutscoffee/vendor/sensio/framework-extra-bundle" />
+      <path value="$PROJECT_DIR$/donutscoffee/vendor/symfony/twig-bundle" />
+      <path value="$PROJECT_DIR$/donutscoffee/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/donutscoffee/vendor/symfony/twig-bridge" />
+      <path value="$PROJECT_DIR$/donutscoffee/vendor/twig/extra-bundle" />
+      <path value="$PROJECT_DIR$/donutscoffee/vendor/symfony/http-client" />
+      <path value="$PROJECT_DIR$/donutscoffee/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/donutscoffee/vendor/sensiolabs/security-checker" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />

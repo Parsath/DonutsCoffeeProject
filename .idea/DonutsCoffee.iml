@@ -13,6 +13,7 @@
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/psr/container" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/psr/log" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/sensio/framework-extra-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/sensiolabs/security-checker" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/cache" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/cache-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/config" />
@@ -27,6 +28,7 @@
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/finder" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/flex" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/framework-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/http-client" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/http-client-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/http-foundation" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/http-kernel" />
@@ -40,10 +42,15 @@
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/process" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/routing" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/service-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/translation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/twig-bridge" />
+      <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/twig-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/var-dumper" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/var-exporter" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/web-server-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/yaml" />
+      <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/twig/extra-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/twig/twig" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

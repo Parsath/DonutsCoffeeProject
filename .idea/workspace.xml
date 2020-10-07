@@ -20,25 +20,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78eefde1-11fc-48e1-8306-5004a97884e9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/donutscoffee/public/css/_general.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/donutscoffee/public/css/_hamburger.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/donutscoffee/public/css/_index.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/donutscoffee/public/css/_order.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/donutscoffee/public/css/donuts.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/donutscoffee/public/css/donuts.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/donutscoffee/public/css/order.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/donutscoffee/public/css/order.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/donutscoffee/public/css/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/donutscoffee/public/css/styles.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/donutscoffee/public/css/styles.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/donutscoffee/public/js/functions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/donutscoffee/public/js/jquery-3.5.0.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/donutscoffee/src/Controller/DonutController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/public/images/Carousel/DonutCarousel1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/public/images/Carousel/DonutCarousel2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/public/images/Carousel/DonutCarousel3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/public/images/Carousel/Homer1000.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/public/images/Carousel/Homer1500.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/public/images/Carousel/Homer400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/public/images/Carousel/Homer700.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/public/images/Carousel/homer1000r.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/public/images/Carousel/homer700r.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/public/images/CreampieDonut.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/public/images/Donuts Palette.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/public/images/DonutsExpo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/public/images/DonutsExpo2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/public/images/DonutsLogo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/public/images/Font 1.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/public/images/Font 2.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/public/images/Menu Charte.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/public/images/OrderNow/Chocolat Brownies Donut.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/public/images/OrderNow/Chocolat damier.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/public/images/OrderNow/Donut Gourmand.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/public/images/OrderNow/Gauffre.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/public/images/OrderNow/Iceshake.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/public/images/OrderNow/Moanut.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/public/images/OrderNow/MoanutR.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/public/images/OrderNow/Oreo Donut.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/public/images/OrderNow/Ratio idéal.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/public/images/OrderNow/Salty.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/public/images/OrderNow/Speculoos Donut.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/public/images/OrderNow/Strawberry Donut.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/public/images/Palette.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/public/images/Screenshot/About.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/public/images/Screenshot/Contact &amp; Footer.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/public/images/Screenshot/Contact.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/public/images/Screenshot/Find Us.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/public/images/Title Font.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/public/images/beautifuldonuts.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/src/Controller/DonutOrderController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/templates/home/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donutscoffee/templates/home/order.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/DonutsCoffee.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DonutsCoffee.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/donutscoffee/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/donutscoffee/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/donutscoffee/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/donutscoffee/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/donutscoffee/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/donutscoffee/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/donutscoffee/src/Controller/DonutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/donutscoffee/src/Controller/DonutController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/donutscoffee/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/donutscoffee/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,6 +122,13 @@
       <path value="$PROJECT_DIR$/donutscoffee/vendor/doctrine/lexer" />
       <path value="$PROJECT_DIR$/donutscoffee/vendor/doctrine/annotations" />
       <path value="$PROJECT_DIR$/donutscoffee/vendor/sensio/framework-extra-bundle" />
+      <path value="$PROJECT_DIR$/donutscoffee/vendor/symfony/twig-bundle" />
+      <path value="$PROJECT_DIR$/donutscoffee/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/donutscoffee/vendor/symfony/twig-bridge" />
+      <path value="$PROJECT_DIR$/donutscoffee/vendor/twig/extra-bundle" />
+      <path value="$PROJECT_DIR$/donutscoffee/vendor/symfony/http-client" />
+      <path value="$PROJECT_DIR$/donutscoffee/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/donutscoffee/vendor/sensiolabs/security-checker" />
     </include_path>
   </component>
   <component name="ProjectId" id="1iYRITE368PDGF2FswqTF0yE26F" />
@@ -132,7 +166,7 @@
       <option name="presentableId" value="Default" />
       <updated>1602082459393</updated>
       <workItem from="1602082461261" duration="599000" />
-      <workItem from="1602088171056" duration="2915000" />
+      <workItem from="1602088171056" duration="8761000" />
     </task>
     <servers />
   </component>
@@ -151,17 +185,25 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="2067" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602093759904">
+      <screen x="1360" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2067" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1360.728/1360.0.1920.1040@1360.0.1920.1040" timestamp="1602093759904" />
     <state x="2100" y="261" key="FileChooserDialogImpl" timestamp="1602089734986">
       <screen x="1360" y="0" width="1920" height="1040" />
     </state>
     <state x="2100" y="261" key="FileChooserDialogImpl/0.0.1360.728/1360.0.1920.1040@1360.0.1920.1040" timestamp="1602089734986" />
-    <state x="2063" y="243" key="NewPhpClassDialog" timestamp="1602090609798">
+    <state x="2063" y="243" key="NewPhpClassDialog" timestamp="1602093605891">
       <screen x="1360" y="0" width="1920" height="1040" />
     </state>
-    <state x="2063" y="243" key="NewPhpClassDialog/0.0.1360.728/1360.0.1920.1040@1360.0.1920.1040" timestamp="1602090609798" />
+    <state x="2063" y="243" key="NewPhpClassDialog/0.0.1360.728/1360.0.1920.1040@1360.0.1920.1040" timestamp="1602093605891" />
     <state x="1821" y="165" key="SettingsEditor" timestamp="1602089743604">
       <screen x="1360" y="0" width="1920" height="1040" />
     </state>
     <state x="1821" y="165" key="SettingsEditor/0.0.1360.728/1360.0.1920.1040@1360.0.1920.1040" timestamp="1602089743604" />
+    <state x="2137" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602097930851">
+      <screen x="1360" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2137" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1360.728/1360.0.1920.1040@1360.0.1920.1040" timestamp="1602097930851" />
   </component>
 </project>
