@@ -186,6 +186,24 @@ WORKTIME: 2H32
 Stopping time: 15/09/2020 17h15
 
 
+Day 11: 17h28 07/10/2020
+
+    STEP 3 Completed 30/09/2020
+    
+    STEP 4:
+        -Complete The Backend of the website
+
+    Notes:
+        *
+
+    References:
+        *
+
+WORKTIME:
+
+Stopping time: 30/10/2020
+
+
 
 
 

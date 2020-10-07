@@ -1,0 +1,10 @@
+
+###> symfony/framework-bundle ###
+/donutscoffee/.env.local
+/donutscoffee/.env.local.php
+/donutscoffee/.env.*.local
+/donutscoffee/config/secrets/prod/prod.decrypt.private.php
+/donutscoffee/public/bundles/
+/donutscoffee/var/
+/donutscoffee/vendor/
+###< symfony/framework-bundle ###
