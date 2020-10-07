@@ -1,0 +1,135 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*, *:after, *:before {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+.title {
+  font-family: 'Mr Dafoe', cursive;
+}
+
+h1, h2 {
+  font-family: 'Belleza', sans-serif;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container-structure {
+  display: -ms-grid;
+  display: grid;
+  height: 100vh;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-areas: "nav nav nav nav" "home home home home" "about about about about" "location location location location" "contact contact contact contact" "footer footer footer footer";
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.nav {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: nav;
+  background-color: #dabb8a;
+  height: 10vh;
+}
+
+.home {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: home;
+  background-color: #B7ADCF;
+  height: 90vh;
+}
+
+.about {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: about;
+  background-color: #303435;
+  height: 50vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.about-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: rgba(255, 192, 203, 0.5);
+  width: 80%;
+  height: 80%;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.about-container > * {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.about-image {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.about-description {
+  background-color: rgba(128, 128, 128, 0.5);
+}
+
+@media screen and (max-width: 700px) {
+  .about-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.location {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: location;
+  background-color: #ABD238;
+  height: 50vh;
+}
+
+.contact {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: contact;
+  background-color: #f5f6f7;
+  height: 50vh;
+}
+
+.footer {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: footer;
+  background-color: #dabb8a;
+  height: 8vh;
+}
+/*# sourceMappingURL=donuts.css.map */
