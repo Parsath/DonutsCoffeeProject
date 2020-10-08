@@ -100,7 +100,7 @@
             <div class="product-grid">
                 <div class="item">
                     <div class="item-img">
-                        <img src="images/OrderNow/Donut Gourmand.jpg" alt="Item" class="donut-order-img">
+                        <img src="{{ asset('images/OrderNow/Donut Gourmand.jpg') }}" alt="Item" class="donut-order-img">
                     </div>
                     <div class="item-desc">
                         <div class="item-name-container">
@@ -115,7 +115,7 @@
                 </div>
                 <div class="item">
                     <div class="item-img">
-                        <img src="images/OrderNow/Chocolat Brownies Donut.jpg" alt="Item" class="donut-order-img">
+                        <img src="{{ asset('images/OrderNow/Chocolat Brownies Donut.jpg') }}" alt="Item" class="donut-order-img">
                     </div>
                     <div class="item-desc">
                         <div class="item-name-container">
@@ -130,7 +130,7 @@
                 </div>
                 <div class="item">
                     <div class="item-img">
-                        <img src="images/OrderNow/MoanutR.jpg" alt="Item" class="donut-order-img">
+                        <img src="{{ asset('images/OrderNow/MoanutR.jpg') }}" alt="Item" class="donut-order-img">
                     </div>
                     <div class="item-desc">
                         <div class="item-name-container">
@@ -145,7 +145,7 @@
                 </div>
                 <div class="item">
                     <div class="item-img">
-                        <img src="images/OrderNow/Strawberry Donut.jpg" alt="Item" class="donut-order-img">
+                        <img src="{{ asset('images/OrderNow/Strawberry Donut.jpg') }}" alt="Item" class="donut-order-img">
                     </div>
                     <div class="item-desc">
                         <div class="item-name-container">
@@ -160,7 +160,7 @@
                 </div>
                 <div class="item">
                     <div class="item-img">
-                        <img src="images/OrderNow/MoanutR.jpg" alt="Item" class="donut-order-img">
+                        <img src="{{ asset('images/OrderNow/MoanutR.jpg') }}" alt="Item" class="donut-order-img">
                     </div>
                     <div class="item-desc">
                         <div class="item-name-container">
@@ -175,7 +175,7 @@
                 </div>
                 <div class="item">
                     <div class="item-img">
-                        <img src="images/OrderNow/Strawberry Donut.jpg" alt="Item" class="donut-order-img">
+                        <img src="{{ asset('images/OrderNow/Strawberry Donut.jpg') }}" alt="Item" class="donut-order-img">
                     </div>
                     <div class="item-desc">
                         <div class="item-name-container">
@@ -190,7 +190,7 @@
                 </div>
                 <div class="item">
                     <div class="item-img">
-                        <img src="images/OrderNow/MoanutR.jpg" alt="Item" class="donut-order-img">
+                        <img src="{{ asset('images/OrderNow/MoanutR.jpg') }}" alt="Item" class="donut-order-img">
                     </div>
                     <div class="item-desc">
                         <div class="item-name-container">
@@ -205,7 +205,7 @@
                 </div>
                 <div class="item">
                     <div class="item-img">
-                        <img src="images/OrderNow/Strawberry Donut.jpg" alt="Item" class="donut-order-img">
+                        <img src="{{ asset('images/OrderNow/Strawberry Donut.jpg') }}" alt="Item" class="donut-order-img">
                     </div>
                     <div class="item-desc">
                         <div class="item-name-container">
@@ -220,7 +220,7 @@
                 </div>
                 <div class="item">
                     <div class="item-img">
-                        <img src="images/OrderNow/Donut Gourmand.jpg" alt="Item" class="donut-order-img">
+                        <img src="{{ asset('images/OrderNow/Donut Gourmand.jpg') }}" alt="Item" class="donut-order-img">
                     </div>
                     <div class="item-desc">
                         <div class="item-name-container">
@@ -236,7 +236,7 @@
                 <div class="item-chosen-container">
                     <div class="item-chosen">
                         <div class="item-chosen-img-container">
-                            <img src="images/OrderNow/Donut Gourmand.jpg" alt="Item" class="donut-order-img-chosen">
+                            <img src="{{ asset('images/OrderNow/Donut Gourmand.jpg') }}" alt="Item" class="donut-order-img-chosen">
                         </div>
                         <div class="item-chosen-desc-container">
                             <div class="item-title">
@@ -276,3 +276,10 @@
     </div>
 {% endblock %}
 
+{% block javascripts %}
+    <script>
+        var home = "{{ path('app_order') }}"
+    </script>
+
+    {{ parent() }}
+{% endblock %}

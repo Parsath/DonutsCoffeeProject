@@ -7,7 +7,7 @@
 
         <nav class="navbar-index-container navbar navbar-expand navbar-light d-print">
             <div class="navbar-index">
-                <a class="navbar-brand nav-title" href={{ path('app_homepage') }}">
+                <a class="navbar-brand nav-title" href="{{ path('app_homepage') }}">
                     <div class="title">Donuts Coffee</div>
                 </a>
 
@@ -65,13 +65,13 @@
                 <div id="carousel-donuts" class="carousel slide" data-ride="carousel" data-interval="5000">
                     <div class="carousel-inner">
                         <div class="carousel-item active donut-1">
-                            <img class="d-block w-100 donut" src="images/Carousel/DonutCarousel1.png" alt="First slide">
+                            <img class="d-block w-100 donut" src="{{ asset('images/Carousel/DonutCarousel1.png') }}" alt="First slide">
                         </div>
                         <div class="carousel-item donut-2">
-                            <img class="d-block w-100 donut" src="images/Carousel/DonutCarousel2.png" alt="Second slide">
+                            <img class="d-block w-100 donut" src="{{ asset('images/Carousel/DonutCarousel2.png') }}" alt="Second slide">
                         </div>
                         <div class="carousel-item donut-3">
-                            <img class="d-block w-100 donut" src="images/Carousel/DonutCarousel3.png" alt="">
+                            <img class="d-block w-100 donut" src="{{ asset('images/Carousel/DonutCarousel3.png') }}" alt="">
                         </div>
                     </div>
                     <a class="carousel-control-prev arrow-back" href="#carousel-donuts" role="button" data-slide="prev">
@@ -86,7 +86,7 @@
                 <div class="donut-shadow"></div>
             </div>
             <div class="get-it-container button">
-                <button class="get-it btn-get" href="{{ path('app_order') }}">Get it!</button>
+                <button class="get-it btn-get">Get it!</button>
             </div>
             <div class="name-container">
                 <div class="doname-1">
@@ -148,13 +148,13 @@
                     <div id="carousel-about" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner" role="listbox">
                             <div class="carousel-item active carousel-about-container">
-                                <img class="w-100 carousel-about-image" src="images/DonutsExpo2.jpg" alt="First slide">
+                                <img class="w-100 carousel-about-image" src="{{ asset('images/DonutsExpo2.jpg') }}" alt="First slide">
                             </div>
                             <div class="carousel-item carousel-about-container">
-                                <img class="w-100 carousel-about-image" src="images/DonutsExpo.jpg" alt="Second slide">
+                                <img class="w-100 carousel-about-image" src="{{ asset('images/DonutsExpo.jpg') }}" alt="Second slide">
                             </div>
                             <div class="carousel-item carousel-about-container">
-                                <img class="w-100 carousel-about-image" src="images/CreampieDonut.jpg" alt="Third slide">
+                                <img class="w-100 carousel-about-image" src="{{ asset('images/CreampieDonut.jpg') }}" alt="Third slide">
                             </div>
                         </div>
                     </div>
@@ -214,7 +214,7 @@
 
         <div class="contact" id="contact">
             <div class="contact-container">
-                <h1 class="dark-bg contact-title">Contact</h4>
+                <h1 class="dark-bg contact-title">Contact</h1>
                     <h4 class="dark-bg contact-para">You can reach us by phone: +216 94 697 621. Or through our facebook: </h4>
                     <a href="https://www.facebook.com/Donuts-coffee-110127663851789" target="_blank" class="facebook-icon"> <i class="fa fa-facebook-square contact-facebook" aria-hidden="true"></i></a>
 
@@ -234,4 +234,12 @@
         </div>
 
     </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        var home = "{{ path('app_order') }}"
+    </script>
+
+    {{ parent() }}
 {% endblock %}

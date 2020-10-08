@@ -53,6 +53,7 @@
       <path value="$PROJECT_DIR$/donutscoffee/vendor/symfony/monolog-bridge" />
       <path value="$PROJECT_DIR$/donutscoffee/vendor/symfony/monolog-bundle" />
       <path value="$PROJECT_DIR$/donutscoffee/vendor/symfony/debug-bundle" />
+      <path value="$PROJECT_DIR$/donutscoffee/vendor/symfony/asset" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />

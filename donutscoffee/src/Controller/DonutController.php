@@ -18,12 +18,12 @@ class DonutController extends AbstractController
         return $this->render('home/index.html.twig');
     }
 
-    /**
-     * @Route("/order", name="app_order")
-     */
-    public function orderpage()
-    {
-        return $this->render('home/order.html.twig');
-    }
+//    /**
+//     * @Route("/order", name="app_order")
+//     */
+//    public function orderpage()
+//    {
+//        return $this->render('home/order.html.twig');
+//    }
 
 }

@@ -9,11 +9,11 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DonutOrderController extends AbstractController
 {
-//    /**
-//     * @Route("/order", name="app_order")
-//     */
-//    public function homepage()
-//    {
-//        return $this->render('home/order.html.twig');
-//    }
+    /**
+     * @Route("/order", name="app_order")
+     */
+    public function homepage()
+    {
+        return $this->render('home/order.html.twig');
+    }
 }

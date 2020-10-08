@@ -211,7 +211,7 @@ $(function(){
 
     $(function(){
         $('.get-it').click(function(){
-            window.location.href='order.html';
+            window.location.href= home;
         });
     });
 });
