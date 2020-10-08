@@ -214,9 +214,9 @@ Day 12: 13h18 08/10/2020
     References:
         *
 
-WORKTIME:
+WORKTIME: 2H08M
 
-Stopping time: 08/10/2020 
+Stopping time: 08/10/2020 16h00 
 
 
 
