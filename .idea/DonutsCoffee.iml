@@ -9,6 +9,7 @@
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/doctrine/annotations" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/doctrine/lexer" />
+      <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/monolog/monolog" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/psr/cache" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/psr/container" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/psr/log" />
@@ -19,6 +20,7 @@
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/config" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/console" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/debug" />
+      <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/debug-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/dependency-injection" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/dotenv" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/error-handler" />
@@ -33,6 +35,8 @@
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/http-foundation" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/http-kernel" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/mime" />
+      <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/monolog-bridge" />
+      <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/monolog-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/polyfill-intl-idn" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/polyfill-intl-normalizer" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/polyfill-mbstring" />
@@ -42,11 +46,13 @@
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/process" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/routing" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/service-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/stopwatch" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/translation-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/twig-bridge" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/twig-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/var-dumper" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/var-exporter" />
+      <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/web-profiler-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/web-server-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/symfony/yaml" />
       <excludeFolder url="file://$MODULE_DIR$/donutscoffee/vendor/twig/extra-bundle" />

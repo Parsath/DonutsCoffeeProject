@@ -47,6 +47,12 @@
       <path value="$PROJECT_DIR$/donutscoffee/vendor/symfony/http-client" />
       <path value="$PROJECT_DIR$/donutscoffee/vendor/symfony/translation-contracts" />
       <path value="$PROJECT_DIR$/donutscoffee/vendor/sensiolabs/security-checker" />
+      <path value="$PROJECT_DIR$/donutscoffee/vendor/symfony/web-profiler-bundle" />
+      <path value="$PROJECT_DIR$/donutscoffee/vendor/symfony/stopwatch" />
+      <path value="$PROJECT_DIR$/donutscoffee/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/donutscoffee/vendor/symfony/monolog-bridge" />
+      <path value="$PROJECT_DIR$/donutscoffee/vendor/symfony/monolog-bundle" />
+      <path value="$PROJECT_DIR$/donutscoffee/vendor/symfony/debug-bundle" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />

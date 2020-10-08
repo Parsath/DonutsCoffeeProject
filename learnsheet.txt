@@ -201,7 +201,22 @@ Day 11: 17h28 07/10/2020
 
 WORKTIME: 2H13M
 
-Stopping time: 30/10/2020 21h20
+Stopping time: 07/10/2020 21h20
+
+
+Day 12: 13h18 08/10/2020
+
+    STEP 4 IN PROGRESS
+
+    Notes:
+        *
+
+    References:
+        *
+
+WORKTIME:
+
+Stopping time: 08/10/2020 
 
 
 
