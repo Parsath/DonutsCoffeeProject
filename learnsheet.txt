@@ -219,6 +219,21 @@ WORKTIME: 2H08M
 Stopping time: 08/10/2020 16h00 
 
 
+Day 13: 11h48 09/10/2020
+
+    STEP 4 IN PROGRESS
+
+    Notes:
+        *
+
+    References:
+        *
+
+WORKTIME: 
+
+Stopping time: 09/10/2020 
+
+
 
 
 
