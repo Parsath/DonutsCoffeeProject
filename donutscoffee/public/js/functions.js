@@ -60,7 +60,7 @@ $(function(){
  ///////////////////// HOME ///////////////////////////////
 
 
- $( document ).ready(function() {
+ $(document).ready(function() {
 
     var donutWidth = $(".donut").width();
     var donutShadow = donutWidth * 40 /100;
@@ -90,6 +90,9 @@ $(function(){
                 $('.doname-1').removeClass("donut-name-animation");
 
                 setTimeout(function(){
+                    $('.name2').css({
+                        "display" : "none"
+                    });
                     $('.name3').css({
                         "display" : "none"
                     });
@@ -107,6 +110,9 @@ $(function(){
                 $('.doname-1').removeClass("donut-name-animation");
 
                 setTimeout(function(){
+                    $('.name3').css({
+                        "display" : "none"
+                    });
                     $('.name1').css({
                         "display" : "none"
                     });
@@ -125,6 +131,9 @@ $(function(){
                 $('.doname-1').removeClass("donut-name-animation");
 
                 setTimeout(function(){
+                    $('.name1').css({
+                        "display" : "none"
+                    });
                     $('.name2').css({
                         "display" : "none"
                     });
@@ -151,6 +160,9 @@ $(function(){
                 $('.doname-1').removeClass("donut-name-animation");
 
                 setTimeout(function(){
+                    $('.name3').css({
+                        "display" : "none"
+                    });
                     $('.name2').css({
                         "display" : "none"
                     });
@@ -168,6 +180,9 @@ $(function(){
                 $('.doname-1').removeClass("donut-name-animation");
 
                 setTimeout(function(){
+                    $('.name1').css({
+                        "display" : "none"
+                    });
                     $('.name3').css({
                         "display" : "none"
                     });
@@ -186,6 +201,9 @@ $(function(){
                 $('.doname-1').removeClass("donut-name-animation");
 
                 setTimeout(function(){
+                    $('.name2').css({
+                        "display" : "none"
+                    });
                     $('.name1').css({
                         "display" : "none"
                     });
@@ -262,9 +280,6 @@ $(".product-grid").ready(function(){
     });
 
 });
-//  $(".product-grid").ready(function(){
-
-//  });
 
 
 

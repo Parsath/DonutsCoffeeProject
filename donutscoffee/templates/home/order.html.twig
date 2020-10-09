@@ -98,6 +98,24 @@
 
         <div class="menu-grid">
             <div class="product-grid">
+                {% for article in articles %}
+                    <div class="item">
+                        <div class="item-img">
+                            <img src="{{ article.link }}" alt="Item" class="donut-order-img">
+                        </div>
+                        <div class="item-desc">
+                            <div class="item-name-container">
+                                <h5 class="white-bg item-name">{{ article.name }}</h5>
+                                <p class="white-bg item-description">{{ article.description }}</p>
+                            </div>
+                            <div class="item-price-container">
+                                <div class="white-bg price">{{ article.price }}dt</div>
+                                <button class="btn btn-outline-secondary add-to-cart" role="button">Add To Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                {% endfor %}
                 <div class="item">
                     <div class="item-img">
                         <img src="{{ asset('images/OrderNow/Donut Gourmand.jpg') }}" alt="Item" class="donut-order-img">
@@ -169,66 +187,6 @@
                         </div>
                         <div class="item-price-container">
                             <div class="white-bg price">8.000dt</div>
-                            <button class="btn btn-outline-secondary add-to-cart" role="button">Add To Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="item-img">
-                        <img src="{{ asset('images/OrderNow/Strawberry Donut.jpg') }}" alt="Item" class="donut-order-img">
-                    </div>
-                    <div class="item-desc">
-                        <div class="item-name-container">
-                            <h5 class="white-bg item-name">Strawberry Donut</h5>
-                            <p class="white-bg item-description">I just don't know anymore..</p>
-                        </div>
-                        <div class="item-price-container">
-                            <div class="white-bg price">4.500dt</div>
-                            <button class="btn btn-outline-secondary add-to-cart" role="button">Add To Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="item-img">
-                        <img src="{{ asset('images/OrderNow/MoanutR.jpg') }}" alt="Item" class="donut-order-img">
-                    </div>
-                    <div class="item-desc">
-                        <div class="item-name-container">
-                            <h5 class="white-bg item-name">Donutello</h5>
-                            <p class="white-bg item-description">A Moanut.. Simply a Moanut</p>
-                        </div>
-                        <div class="item-price-container">
-                            <div class="white-bg price">8.000dt</div>
-                            <button class="btn btn-outline-secondary add-to-cart" role="button">Add To Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="item-img">
-                        <img src="{{ asset('images/OrderNow/Strawberry Donut.jpg') }}" alt="Item" class="donut-order-img">
-                    </div>
-                    <div class="item-desc">
-                        <div class="item-name-container">
-                            <h5 class="white-bg item-name">Strawberry Donut</h5>
-                            <p class="white-bg item-description">I just don't know anymore..</p>
-                        </div>
-                        <div class="item-price-container">
-                            <div class="white-bg price">4.500dt</div>
-                            <button class="btn btn-outline-secondary add-to-cart" role="button">Add To Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="item-img">
-                        <img src="{{ asset('images/OrderNow/Donut Gourmand.jpg') }}" alt="Item" class="donut-order-img">
-                    </div>
-                    <div class="item-desc">
-                        <div class="item-name-container">
-                            <h5 class="white-bg item-name">Space-nut</h5>
-                            <p class="white-bg item-description">Chocolat filled donut</p>
-                        </div>
-                        <div class="item-price-container">
-                            <div class="white-bg price">2.000dt</div>
                             <button class="btn btn-outline-secondary add-to-cart" role="button">Add To Cart</button>
                         </div>
                     </div>
