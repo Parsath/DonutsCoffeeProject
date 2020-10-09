@@ -229,7 +229,7 @@ Day 13: 11h48 09/10/2020
     References:
         *
 
-WORKTIME: +25M
+WORKTIME: 2H45M
 
 Stopping time: 09/10/2020 
 
