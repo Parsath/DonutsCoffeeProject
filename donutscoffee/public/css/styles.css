@@ -371,6 +371,7 @@ body.order-body {
 }
 
 .donut-shadow {
+  width: 0;
   height: 10px;
   color: black;
   -ms-flex-item-align: center;

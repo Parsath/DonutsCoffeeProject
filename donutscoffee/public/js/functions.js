@@ -57,21 +57,27 @@ $(function(){
  });
 
 
+
  ///////////////////// HOME ///////////////////////////////
 
 
+
  $(document).ready(function() {
+     var donutWidth = $(".donut").width();
+     var donutShadow = donutWidth * 40 /100;
+     $(".donut-shadow").css({
+         "width": " "+ donutShadow +"px"
+     });
 
-    var donutWidth = $(".donut").width();
-    var donutShadow = donutWidth * 40 /100;
+     $(".donut").addClass("donut-animation");
+     $(".donut-shadow").addClass("donut-shadow-animation");
+     $(".doname-1").addClass("donut-name-animation");
+     $(".get-it").addClass("get-it-animation");
 
-    $(".donut").addClass("donut-animation");
-    $(".donut-shadow").addClass("donut-shadow-animation");
-    $(".doname-1").addClass("donut-name-animation");
-    $(".get-it").addClass("get-it-animation");
-    $(".donut-shadow").css({
-        "width": " "+ donutShadow +"px"
-    });
+
+
+
+
 
 
     $("#carousel-donuts").on('slide.bs.carousel', function(car){
@@ -79,8 +85,8 @@ $(function(){
         var thisDonut = car.relatedTarget;
 
         if(car.direction == 'left')
-        { 
-             
+        {
+
             $('.donut').removeClass("donut-animation");
             $(".donut-shadow").removeClass("donut-shadow-animation");
 
@@ -123,7 +129,7 @@ $(function(){
                     $(".donut-shadow").addClass("donut-shadow-animation");
                     $(".donut").addClass("donut-animation");
                 }, 1000);
-    
+
             }
             else if( $(thisDonut).hasClass("donut-3") )
             {
@@ -144,13 +150,13 @@ $(function(){
                     $(".donut-shadow").addClass("donut-shadow-animation");
                     $(".donut").addClass("donut-animation");
                 }, 1000);
-    
+
             }
         }
 
         else if(car.direction == 'right')
-        { 
-             
+        {
+
             $('.donut').removeClass("donut-animation");
             $(".donut-shadow").removeClass("donut-shadow-animation");
 
@@ -193,7 +199,7 @@ $(function(){
                     $(".donut-shadow").addClass("donut-shadow-animation");
                     $(".donut").addClass("donut-animation");
                 }, 1000);
-    
+
             }
             else if( $(thisDonut).hasClass("donut-3") )
             {
@@ -214,7 +220,7 @@ $(function(){
                     $(".donut-shadow").addClass("donut-shadow-animation");
                     $(".donut").addClass("donut-animation");
                 }, 1000);
-    
+
             }
         }
 

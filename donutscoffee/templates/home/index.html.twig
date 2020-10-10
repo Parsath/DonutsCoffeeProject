@@ -1,6 +1,21 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <script>
+        $(".donut-1 img").one("load", function() {
+            var donutWidth = $(".donut").width();
+            var donutShadow = donutWidth * 40 /100;
+            $(".donut-shadow").css({
+                // "visibility": "visible",
+                "width": " "+ donutShadow +"px"
+            });
+        }).each(function() {
+            if(this.complete) {
+                // $(this).load(); // For jQuery < 3.0
+                $(this).trigger('load'); // For jQuery >= 3.0
+            }
+        });
+    </script>
     <div class="container-structure">
 
         <!----------------------------- Navbar ---------------------------->
@@ -73,7 +88,7 @@
                             {% endif %}
                             {% if var == 1 %}
                                 <div class="carousel-item active donut-{{ var }}">
-                                    <img class="d-block w-100 donut" src="{{ article.link }}" alt="First slide">
+                                    <img class="d-block w-100 donut" src="{{ article.link }}" loading="eager" alt="First slide">
                                 </div>
                                 {% set var = var + 1 %}
                             {% endif %}

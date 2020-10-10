@@ -231,10 +231,32 @@ Day 13: 11h48 09/10/2020
 
 WORKTIME: 2H45M
 
-Stopping time: 09/10/2020 
+Stopping time: 09/10/2020 Unknown
+
+
+Day 14: 12h48 10/10/2020
+
+    STEP 4 IN PROGRESS
+
+    Notes:
+        *
+
+    References:
+        *Admin Panel creation:
+            -https://www.youtube.com/watch?v=pXbEcGUtHgo
+
+WORKTIME: 
+
+Stopping time: 10/10/2020
+
 
 /// TODO:
         -Add a Preloader in the index page so that the page is only loaded when all files and images are loaded.
+        DONE
+        -Add a "slug" field to the Article entity, so that it becomes accessible from the order screen, once you open it.
+            UPDATE: -Will instead install "doctrine-extensions-bundle" and use it to create a slug from the name of the Article.
+        -Create an Admin Panel. Reference:
+            -https://www.youtube.com/watch?v=pXbEcGUtHgo
 
 ///
 
@@ -246,3 +268,5 @@ Stopping time: 09/10/2020
 REFERENCES:
     *Grid Structure for Products:
         -https://youtu.be/r4BgE0hYUaw
+    *Admin Panel creation:
+        -https://www.youtube.com/watch?v=pXbEcGUtHgo
