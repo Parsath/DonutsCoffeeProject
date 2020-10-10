@@ -239,20 +239,20 @@ Day 14: 12h48 10/10/2020
     STEP 4 IN PROGRESS
 
     Notes:
-        *
+        *yes
 
     References:
         *Admin Panel creation:
             -https://www.youtube.com/watch?v=pXbEcGUtHgo
 
-WORKTIME: 
+WORKTIME: 3H23M
 
-Stopping time: 10/10/2020
+Stopping time: 10/10/2020 17h35
 
 
 /// TODO:
         -Add a Preloader in the index page so that the page is only loaded when all files and images are loaded.
-        
+
             DONE 10/10/2020
 
         -Add a "slug" field to the Article entity, so that it becomes accessible from the order screen, once you open it.
