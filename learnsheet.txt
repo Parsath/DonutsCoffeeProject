@@ -252,7 +252,9 @@ Stopping time: 10/10/2020
 
 /// TODO:
         -Add a Preloader in the index page so that the page is only loaded when all files and images are loaded.
-        DONE
+        
+            DONE 10/10/2020
+
         -Add a "slug" field to the Article entity, so that it becomes accessible from the order screen, once you open it.
             UPDATE: -Will instead install "doctrine-extensions-bundle" and use it to create a slug from the name of the Article.
         -Create an Admin Panel. Reference:

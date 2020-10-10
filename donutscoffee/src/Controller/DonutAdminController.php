@@ -18,13 +18,13 @@ class DonutAdminController extends AbstractController
     public function new(EntityManagerInterface $em)
     {
         $article = new Article();
-        $article->setName("Donut Neo");
+        $article->setName("Donut Neo 4");
         $article->setPrice(4.00);
-        $article->setAvailability(1);
-        $article->setCarousel(1);
+        $article->setAvailability(0);
+        $article->setCarousel(0);
         $article->setDescription("Dunno Names Anymore");
         $article->setLink("/images/Carousel/DonutCarousel1.png");
-        $article->setQuantity(11);
+        $article->setQuantity(0);
 
         $em->persist($article);
         $em->flush();
