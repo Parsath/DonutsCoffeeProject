@@ -316,11 +316,11 @@ $(function(){
             "z-index":"-1"
         });
     });
-    $(".add-to-cart").click(function(){
-        $(".item-chosen-container").addClass("item-chosen-popup-container");
-        $(".item-chosen").addClass("item-chosen-popup");
-        $(".item-chosen").css({
-            "z-index":"9999999"
-        });
-    });
+    // $(".add-to-cart").click(function(){
+    //     $(".item-chosen-container").addClass("item-chosen-popup-container");
+    //     $(".item-chosen").addClass("item-chosen-popup");
+    //     $(".item-chosen").css({
+    //         "z-index":"9999999"
+    //     });
+    // });
 });

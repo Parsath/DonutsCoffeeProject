@@ -1468,6 +1468,11 @@ body {
   margin-bottom: 2px;
 }
 
+a.add-to-cart:hover {
+  color: #f5f6f7 !important;
+  cursor: pointer;
+}
+
 .item-chosen-container {
   display: -webkit-box;
   display: -ms-flexbox;

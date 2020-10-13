@@ -250,6 +250,21 @@ WORKTIME: 3H23M
 Stopping time: 10/10/2020 17h35
 
 
+Day 15: 13h50 13/10/2020
+
+    STEP 4 IN PROGRESS
+
+    Notes:
+        *Made the ADD TO CART button dynamic
+
+    References:
+        *
+
+WORKTIME: 1H33M
+
+Stopping time: 13/10/2020
+
+
 /// TODO:
         -Add a Preloader in the index page so that the page is only loaded when all files and images are loaded.
 
@@ -257,6 +272,9 @@ Stopping time: 10/10/2020 17h35
 
         -Add a "slug" field to the Article entity, so that it becomes accessible from the order screen, once you open it.
             UPDATE: -Will instead install "doctrine-extensions-bundle" and use it to create a slug from the name of the Article.
+
+            DONE 13/10/2020
+
         -Create an Admin Panel. Reference:
             -https://www.youtube.com/watch?v=pXbEcGUtHgo
 
