@@ -265,6 +265,21 @@ WORKTIME: 1H33M
 Stopping time: 13/10/2020
 
 
+Day 15: 12h13 14/10/2020
+
+    STEP 4 IN PROGRESS
+
+    Notes:
+        *
+
+    References:
+        *
+
+WORKTIME: 
+
+Stopping time: 14/10/2020
+
+
 /// TODO:
         -Add a Preloader in the index page so that the page is only loaded when all files and images are loaded.
 
@@ -274,6 +289,10 @@ Stopping time: 13/10/2020
             UPDATE: -Will instead install "doctrine-extensions-bundle" and use it to create a slug from the name of the Article.
 
             DONE 13/10/2020
+
+        -When click "Add to cart", add the donut item in the Cart, if Confirm is clicked, create Line Items then Create Order.
+
+        -Create LineItem and Order entities + relations with the item
 
         -Create an Admin Panel. Reference:
             -https://www.youtube.com/watch?v=pXbEcGUtHgo
