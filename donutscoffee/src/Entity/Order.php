@@ -3,8 +3,11 @@
 namespace App\Entity;
 
 use App\Repository\OrderRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
+use App\Entity\StatusEnum;
 
 /**
  * @ORM\Entity(repositoryClass=OrderRepository::class)
@@ -54,6 +57,16 @@ class Order
      * @ORM\Column(type="string", length=255)
      */
     private $name;
+
+    /**
+     * @ORM\OneToMany(targetEntity=LineItem::class, mappedBy="orderArticle")
+     */
+    private $lineItems;
+
+    public function __construct()
+    {
+        $this->lineItems = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -110,11 +123,16 @@ class Order
 
     public function getStatus(): ?string
     {
+
         return $this->status;
     }
 
     public function setStatus(string $status): self
     {
+        if(!in_array($status, StatusEnum::getAvailableStatusNames())){
+            throw new \InvalidArgumentException("Invalid Type");
+        }
+
         $this->status = $status;
 
         return $this;
@@ -128,6 +146,37 @@ class Order
     public function setName(string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|LineItem[]
+     */
+    public function getLineItems(): Collection
+    {
+        return $this->lineItems;
+    }
+
+    public function addLineItem(LineItem $lineItem): self
+    {
+        if (!$this->lineItems->contains($lineItem)) {
+            $this->lineItems[] = $lineItem;
+            $lineItem->setOrderArticle($this);
+        }
+
+        return $this;
+    }
+
+    public function removeLineItem(LineItem $lineItem): self
+    {
+        if ($this->lineItems->contains($lineItem)) {
+            $this->lineItems->removeElement($lineItem);
+            // set the owning side to null (unless already changed)
+            if ($lineItem->getOrderArticle() === $this) {
+                $lineItem->setOrderArticle(null);
+            }
+        }
 
         return $this;
     }

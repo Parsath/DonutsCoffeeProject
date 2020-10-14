@@ -32,6 +32,18 @@ class LineItem
      */
     private $instructions;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Article::class, inversedBy="lineItems")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $article;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Order::class, inversedBy="lineItems")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $orderArticle;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -54,9 +66,18 @@ class LineItem
         return $this->price;
     }
 
-    public function setPrice(int $price): self
+    public function setPrice(): self
     {
-        $this->price = $price;
+        if(!$this->quantity)
+        {
+            throw new \InvalidArgumentException("Quantity not Set");
+        }
+        else if(!$this->article->getPrice())
+        {
+            throw new \InvalidArgumentException("Donut Price not Set");
+        }
+
+        $this->price = $this->quantity * $this->article->getPrice();
 
         return $this;
     }
@@ -69,6 +90,30 @@ class LineItem
     public function setInstructions(?string $instructions): self
     {
         $this->instructions = $instructions;
+
+        return $this;
+    }
+
+    public function getArticle(): ?Article
+    {
+        return $this->article;
+    }
+
+    public function setArticle(?Article $article): self
+    {
+        $this->article = $article;
+
+        return $this;
+    }
+
+    public function getOrderArticle(): ?Order
+    {
+        return $this->orderArticle;
+    }
+
+    public function setOrderArticle(?Order $orderArticle): self
+    {
+        $this->orderArticle = $orderArticle;
 
         return $this;
     }

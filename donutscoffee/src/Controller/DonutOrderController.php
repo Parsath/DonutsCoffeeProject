@@ -25,9 +25,9 @@ class DonutOrderController extends AbstractController
             ['availability' => 1]
         );
 
-        if(!$articles) {
-            throw $this->createNotFoundException(sprintf('Sorry our menu is actually Empty x_x'));
-        }
+//        if(!$articles) {
+//            throw $this->createNotFoundException(sprintf('Sorry we\'re actually encountering a problem x_x'));
+//        }
 
 
         return $this->render('home/order.html.twig', [

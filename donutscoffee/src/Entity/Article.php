@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ArticleRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
@@ -58,6 +60,16 @@ class Article
      * @Gedmo\Slug(fields={"name"})
      */
     private $slug;
+
+    /**
+     * @ORM\OneToMany(targetEntity=LineItem::class, mappedBy="article")
+     */
+    private $lineItems;
+
+    public function __construct()
+    {
+        $this->lineItems = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -143,6 +155,10 @@ class Article
 
     public function setQuantity(int $quantity): self
     {
+        if($quantity === 0)
+        {
+            $this->availability = 0;
+        }
         $this->quantity = $quantity;
 
         return $this;
@@ -156,6 +172,37 @@ class Article
     public function setAvailability(bool $availability): self
     {
         $this->availability = $availability;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|LineItem[]
+     */
+    public function getLineItems(): Collection
+    {
+        return $this->lineItems;
+    }
+
+    public function addLineItem(LineItem $lineItem): self
+    {
+        if (!$this->lineItems->contains($lineItem)) {
+            $this->lineItems[] = $lineItem;
+            $lineItem->setArticle($this);
+        }
+
+        return $this;
+    }
+
+    public function removeLineItem(LineItem $lineItem): self
+    {
+        if ($this->lineItems->contains($lineItem)) {
+            $this->lineItems->removeElement($lineItem);
+            // set the owning side to null (unless already changed)
+            if ($lineItem->getArticle() === $this) {
+                $lineItem->setArticle(null);
+            }
+        }
 
         return $this;
     }
