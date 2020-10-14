@@ -20,11 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cabe3c84-6b5f-47d6-ba55-aeaf98f62597" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Entity/StatusEnum.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/stof_doctrine_extensions.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/stof_doctrine_extensions.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/order.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/order.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../learnsheet.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../learnsheet.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Order.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +141,7 @@
       <workItem from="1602238586511" duration="11045000" />
       <workItem from="1602330341276" duration="11241000" />
       <workItem from="1602593743038" duration="7741000" />
-      <workItem from="1602674160447" duration="4067000" />
+      <workItem from="1602674160447" duration="4258000" />
     </task>
     <servers />
   </component>

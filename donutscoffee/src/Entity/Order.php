@@ -43,7 +43,7 @@ class Order
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $adress;
+    private $address;
 
     /**
      * @ORM\Column(type="string", length=50)
@@ -84,26 +84,26 @@ class Order
         return $this;
     }
 
-    public function getShippedAt(): ?\DateTimeInterface
+    public function getUpdatedAt(): ?\DateTimeInterface
     {
-        return $this->shippedAt;
+        return $this->updatedAt;
     }
 
-    public function setShippedAt(?\DateTimeInterface $shippedAt): self
+    public function setUpdatedAt(?\DateTimeInterface $updatedAt): self
     {
-        $this->shippedAt = $shippedAt;
+        $this->updatedAt = $updatedAt;
 
         return $this;
     }
 
-    public function getAdress(): ?string
+    public function getAddress(): ?string
     {
-        return $this->adress;
+        return $this->address;
     }
 
-    public function setAdress(?string $adress): self
+    public function setAddress(?string $address): self
     {
-        $this->adress = $adress;
+        $this->address = $address;
 
         return $this;
     }
