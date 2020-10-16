@@ -109,6 +109,52 @@
 .cart-buttons > *
     margin-left: 15px
 
+.cart-plus-minus
+    display: flex
+    justify-content: center
+    align-content: center
+
+.cart-plus
+    display: flex
+    align-items: center
+    justify-content: center
+    vertical-align: top
+    background-color: $dark-gray
+    padding: 3px
+    width: 30px
+    height: 30px
+    font-weight: 500
+    font-size: 30px
+    color: $white
+    text-align: center
+    border-radius: 50%
+    background-clip: padding-box
+    &:hover
+        background-color: $green
+        color: $dark-gray
+        cursor: pointer
+
+.cart-minus
+    display: flex
+    align-items: center
+    justify-content: center
+    vertical-align: top
+    background-color: $dark-gray
+    padding: 3px
+    width: 30px
+    height: 30px
+    font-weight: 500
+    font-size: 30px
+    color: $white
+    text-align: center
+    border-radius: 50%
+    margin-left: 5px
+    background-clip: padding-box
+    &:hover
+        background-color: $green
+        color: $dark-gray
+        cursor: pointer
+
 .cart-name
     display: flex
     justify-content: space-around
@@ -376,6 +422,12 @@ a.add-to-cart
 .item-add-btn
     width: 80%
     font-size: 20px
+
+a.item-add-btn
+    &:hover
+        color: $white !important
+        cursor: pointer
+
  
 .close-item-chosen-container
     position: absolute

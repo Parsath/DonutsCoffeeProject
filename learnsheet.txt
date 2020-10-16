@@ -265,7 +265,7 @@ WORKTIME: 1H33M
 Stopping time: 13/10/2020
 
 
-Day 15: 12h13 14/10/2020
+Day 16: 12h13 14/10/2020
 
     STEP 4 IN PROGRESS
 
@@ -278,6 +278,21 @@ Day 15: 12h13 14/10/2020
 WORKTIME: 3H35M
 
 Stopping time: 14/10/2020
+
+
+Day 17: 11h13 16/10/2020
+
+    STEP 4 IN PROGRESS
+
+    Notes:
+        *Created inputs for my Donuts, so that they can be added, removed updated from the card and sendable to the php. Now I need to transform some divs into inputs then get to work in regards to the backend.
+
+    References:
+        *
+
+WORKTIME: 5H36M
+
+Stopping time: 16/10/2020 19h30
 
 
 /// TODO:
@@ -300,7 +315,13 @@ Stopping time: 14/10/2020
 
             DONE 14/10/2020
 
-        -When click "Add to cart", add the donut item in the Cart, if Confirm is clicked, create Line Items then Create Order.
+        -Create the connexion between the donut add to cart button and add the js functionnalities of adding/removing/updating the cart.
+
+            DONE 16/10/2020
+
+        -When click "Add to cart", add the donut item in the Cart, if Confirm is clicked, create Order then inject Line Items.
+
+        -Make the Cart Container Unlimited
 
         -Create an Admin Panel. Reference:
             -https://www.youtube.com/watch?v=pXbEcGUtHgo

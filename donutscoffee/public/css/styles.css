@@ -1226,6 +1226,76 @@ body {
   margin-left: 15px;
 }
 
+.cart-plus-minus {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.cart-plus {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  vertical-align: top;
+  background-color: #303435;
+  padding: 3px;
+  width: 30px;
+  height: 30px;
+  font-weight: 500;
+  font-size: 30px;
+  color: #f5f6f7;
+  text-align: center;
+  border-radius: 50%;
+  background-clip: padding-box;
+}
+
+.cart-plus:hover {
+  background-color: #ABD238;
+  color: #303435;
+  cursor: pointer;
+}
+
+.cart-minus {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  vertical-align: top;
+  background-color: #303435;
+  padding: 3px;
+  width: 30px;
+  height: 30px;
+  font-weight: 500;
+  font-size: 30px;
+  color: #f5f6f7;
+  text-align: center;
+  border-radius: 50%;
+  margin-left: 5px;
+  background-clip: padding-box;
+}
+
+.cart-minus:hover {
+  background-color: #ABD238;
+  color: #303435;
+  cursor: pointer;
+}
+
 .cart-name {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1629,6 +1699,11 @@ a.add-to-cart:hover {
 .item-add-btn {
   width: 80%;
   font-size: 20px;
+}
+
+a.item-add-btn:hover {
+  color: #f5f6f7 !important;
+  cursor: pointer;
 }
 
 .close-item-chosen-container {

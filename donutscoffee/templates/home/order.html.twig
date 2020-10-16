@@ -22,60 +22,27 @@
                         <h4 class="dark-bg">Your Order</h4>
                     </div>
                     <div class="cart-content-container">
-                        <div class="cart-item">
-                            <div class="cart-details">
-                                <div class="number-container">
-                                    <span class="dark-bg number">2x</span>
-                                </div>
-                                <div class="dark-bg name">Space-nut</div>
-                                <div class="price-container">
-                                    <span class="dark-bg price">2.000dt</span>
-                                </div>
-                            </div>
-                            <div class="cart-buttons-container">
-                                <div class="cart-buttons">
-                                    <button class="edit-cart btn btn-outline-light">Edit</button>
-                                    <button class="remove-cart btn btn-outline-light">Remove</button>
-                                </div>
-                                <div class="space"></div>
-                            </div>
-                        </div>
-                        <div class="cart-item">
-                            <div class="cart-details">
-                                <div class="number-container">
-                                    <span class="dark-bg number">2x</span>
-                                </div>
-                                <div class="dark-bg name">Space-nut</div>
-                                <div class="price-container">
-                                    <span class="dark-bg price">2.000dt</span>
-                                </div>
-                            </div>
-                            <div class="cart-buttons-container">
-                                <div class="cart-buttons">
-                                    <button class="edit-cart btn btn-outline-light">Edit</button>
-                                    <button class="remove-cart btn btn-outline-light">Remove</button>
-                                </div>
-                                <div class="space"></div>
-                            </div>
-                        </div>
-                        <div class="cart-item">
-                            <div class="cart-details">
-                                <div class="number-container">
-                                    <span class="dark-bg number">2x</span>
-                                </div>
-                                <div class="dark-bg name">Space-nut</div>
-                                <div class="price-container">
-                                    <span class="dark-bg price">2.000dt</span>
-                                </div>
-                            </div>
-                            <div class="cart-buttons-container">
-                                <div class="cart-buttons">
-                                    <button class="edit-cart btn btn-outline-light">Edit</button>
-                                    <button class="remove-cart btn btn-outline-light">Remove</button>
-                                </div>
-                                <div class="space"></div>
-                            </div>
-                        </div>
+                       {# <div class="cart-item">
+                           <div class="cart-details">
+                               <div class="number-container">
+                                   <span class="dark-bg number">2x</span>
+                               </div>
+                               <div class="dark-bg name">Space-nut</div>
+                               <div class="price-container">
+                                   <span class="dark-bg price">2.000dt</span>
+                               </div>
+                           </div>
+                           <div class="cart-buttons-container">
+                               <div class="cart-buttons">
+                                   <button class="edit-cart btn btn-outline-light">Edit</button>
+                                   <button class="remove-cart btn btn-outline-light">Remove</button>
+                               </div>
+                               <div class="cart-plus-minus">
+                                    <span class="cart-plus dark-bg">+</span>
+                                    <span class="cart-minus dark-bg">-</span>
+                               </div>
+                           </div>
+                       </div> #}
                     </div>
                     <div class="cart-name">
                         <label for="client-name" class="dark-bg">Name:</label>
@@ -131,11 +98,11 @@
                                 <div class="item-desc-text"></div>
                                 <div class="item-desc-user-input">
                                     <label for="donut-instructions" class="user-input-item">Description: </label>
-                                    <textarea type="text" id="donut-instructions" class="form-control" placeholder="Specific instructions written here"></textarea>
+                                    <textarea type="text" name="instructions" id="donut-instructions" class="form-control" placeholder="Specific instructions written here"></textarea>
                                 </div>
                             </div>
                             <div class="item-add-btn-container">
-                                <button class="btn btn-outline-dark item-add-btn">Add To Cart</button>
+                                <a href="" class="btn btn-outline-dark item-add-btn js-item-add-btn">Add To Cart</a>
                             </div>
                         </div>
 

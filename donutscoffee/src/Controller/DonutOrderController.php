@@ -50,6 +50,8 @@ class DonutOrderController extends AbstractController
         return new JsonResponse([
             'name' => $article->getName(),
             'link' => $article->getLink(),
+            'slug' => $article->getSlug(),
+            'price' => $article->getPrice(),
             'description' => $article->getDescription()
         ]);
     }
