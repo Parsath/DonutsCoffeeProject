@@ -92,7 +92,7 @@ class DonutAdminController extends AbstractController
         $lineItem->setOrderArticle($order);
         $lineItem->setArticle($article);
         $lineItem->setPrice();
-        $lineItem->setInstructions("barra nayek");
+        $lineItem->setInstructions("faddiittt ya iléhi");
 
         $em->persist($lineItem);
         $em->flush();

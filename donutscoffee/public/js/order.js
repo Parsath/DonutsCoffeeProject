@@ -15,8 +15,10 @@ var addCartItem = function(i, qte, name, price, instructions){
 
     // TODO : Make it an input
     $("<span class=\"dark-bg number number-"+i+"\">"+qte+"</span>").appendTo(".number-container-"+i);
+    $("<input type=\"hidden\" class=\"quant-"+i+"\" id=\"quant-"+i+"\" value="+qte+">").appendTo(".number-container-"+i);
     // TODO : Make it an input
     $("<div class=\"dark-bg name name-"+i+"\">"+name+"</div>").appendTo(".cart-details-"+i);
+    $("<input type=\"hidden\" class=\"name-input-"+i+"\" id=\"name-input-"+i+"\" value="+name+">").appendTo(".number-container-"+i);
     
     $("<div class=\"price-container price-container-"+i+"\"></div>").appendTo(".cart-details-"+i);
 
@@ -71,6 +73,7 @@ var incrementCartItemQte = function(i){
     let qte = $(".number-"+i).html();
     qte ++;
     $(".number-"+i).html(qte);
+    $("#quant-"+i).val(qte);
     incrementCartItemPrice(i);
 }
 
@@ -90,6 +93,7 @@ var decrementCartItemQte = function(i){
     if(qte > 0)
     {
         $(".number-"+i).html(qte);
+        $("#quant-"+i).val(qte);
         decrementCartItemPrice(i);
     }
     else

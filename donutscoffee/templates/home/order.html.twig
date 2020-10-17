@@ -43,6 +43,8 @@
                                </div>
                            </div>
                        </div> #}
+{#                       <input type="hidden" name="_csrf_token"#}
+{#                            value="{{ csrf_token('authenticate') }}#}
                     </div>
                     <div class="cart-name">
                         <label for="client-name" class="dark-bg">Name:</label>
@@ -51,7 +53,7 @@
                     <div class="cart-space"></div>
                     <div class="cart-validation-choice">
                         <button class="btn btn-outline-light btn-choice">Delivery</button>
-                        <button class="btn btn-outline-light btn-choice">Pickup</button>
+                        <button href="" class="btn btn-outline-light btn-choice">Pickup</button>
                     </div>
                 </div>
             </div>

@@ -55,4 +55,25 @@ class DonutOrderController extends AbstractController
             'description' => $article->getDescription()
         ]);
     }
+
+    /**
+     * @Route("/order/pickup", name="article_display", methods={"POST"})
+     */
+//    public function pickUpOrder($slug, EntityManagerInterface $em)
+//    {
+//        $repository = $em->getRepository(Article::class);
+//
+//        /** var Article $article */
+//        $article = $repository->findOneBy(
+//            ['slug' => $slug]
+//        );
+//
+//        return new JsonResponse([
+//            'name' => $article->getName(),
+//            'link' => $article->getLink(),
+//            'slug' => $article->getSlug(),
+//            'price' => $article->getPrice(),
+//            'description' => $article->getDescription()
+//        ]);
+//    }
 }
