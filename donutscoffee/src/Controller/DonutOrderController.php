@@ -57,7 +57,7 @@ class DonutOrderController extends AbstractController
     }
 
     /**
-     * @Route("/order/pickup", name="article_display", methods={"POST"})
+     * @Route("/order/pickup", name="order_pickup", methods={"POST"})
      */
 //    public function pickUpOrder($slug, EntityManagerInterface $em)
 //    {

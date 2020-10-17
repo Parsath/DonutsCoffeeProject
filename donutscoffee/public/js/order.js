@@ -11,21 +11,14 @@ var addCartItem = function(i, qte, name, price, instructions){
     $("<div class=\"cart-details cart-details-"+i+"\"></div>").appendTo(".cart-item-"+i);
     $("<div class=\"number-container number-container-"+i+"\"></div>").appendTo(".cart-details-"+i);
 
-    $("<div class=\"cart-instructions cart-instructions-"+i+"\" hidden>"+instructions+"</div>").appendTo(".cart-item-"+i);
-
-    // TODO : Make it an input
     $("<span class=\"dark-bg number number-"+i+"\">"+qte+"</span>").appendTo(".number-container-"+i);
-    $("<input type=\"hidden\" class=\"quant-"+i+"\" id=\"quant-"+i+"\" value="+qte+">").appendTo(".number-container-"+i);
-    // TODO : Make it an input
     $("<div class=\"dark-bg name name-"+i+"\">"+name+"</div>").appendTo(".cart-details-"+i);
-    $("<input type=\"hidden\" class=\"name-input-"+i+"\" id=\"name-input-"+i+"\" value="+name+">").appendTo(".number-container-"+i);
-    
+
     $("<div class=\"price-container price-container-"+i+"\"></div>").appendTo(".cart-details-"+i);
 
         // Hidden Initial Price
     $("<span class=\"initial-price-"+i+"\" hidden>"+price+"</span>").appendTo(".cart-details-"+i);
 
-    // TODO : Make it an input
     $("<span class=\"dark-bg price price-"+i+"\">"+price+"</span>").appendTo(".price-container-"+i);
 
     $("<span class=\"dark-bg price\">dt</span>").appendTo(".price-container-"+i);
@@ -36,6 +29,16 @@ var addCartItem = function(i, qte, name, price, instructions){
     $("<div class=\"cart-plus-minus cart-plus-minus-"+i+"\"></div>").appendTo(".cart-buttons-container-"+i);
     $("<span class=\"cart-plus dark-bg cart-plus-"+i+"\">+</span>").appendTo(".cart-plus-minus-"+i);
     $("<span class=\"cart-minus dark-bg cart-minus-"+i+"\">-</span>").appendTo(".cart-plus-minus-"+i);
+
+    // TODO : Make it an input Qte
+    $("<input type=\"hidden\" class=\"quant-"+i+"\" name=\"quant-"+i+"\" id=\"quant-"+i+"\" value=\""+qte+"\">").appendTo(".cart-item-"+i);
+    // TODO : Make it an input Name
+    $("<input type=\"hidden\" class=\"name-input-"+i+"\" name=\"name-input-"+i+"\" id=\"name-input-"+i+"\" value='"+name+"'>").appendTo(".cart-item-"+i);
+    // TODO : Make it an input Price
+    $("<input type=\"hidden\" class=\"price-input-"+i+"\" name='price-input"+i+"' id=\"price-input-"+i+"\" value=\""+price+"\">").appendTo(".cart-item-"+i);
+    // TODO : Make it an input Instructions
+    $("<input type='hidden' class=\"cart-instructions cart-instructions-"+i+"\" id='cart-instructions-"+i+"' name=\"cart-instructions-"+i+"\" value='"+instructions+"'>").appendTo(".cart-item-"+i);
+    // $("<textarea class=\"cart-instructions cart-instructions-"+i+"\" name=\"cart-instructions-"+i+"\" hidden>"+instructions+"</textarea>").appendTo(".cart-item-"+i);
 }
 
 var checkCartItem = function(i, qte, name, price, instructions){
@@ -67,6 +70,7 @@ var incrementCartItemPrice = function(i){
     let price = parseFloat(priceHtml);
     price += initialPrice;
 
+    $("#price-input-"+i).val(price);
     $(".price-"+i).html(price);
 }
 var incrementCartItemQte = function(i){
@@ -85,6 +89,7 @@ var decrementCartItemPrice = function(i){
     let price = parseFloat(priceHtml);
     price -= initialPrice;
 
+    $("#price-input-"+i).val(price);
     $(".price-"+i).html(price);
 }
 var decrementCartItemQte = function(i){
@@ -122,6 +127,21 @@ var cartItemIterator = function() {
     return i;
 }
 
+class Donuts {
+    constructor(quantity, price, name, instructions) {
+        this.quantity = quantity;
+        this.price = price;
+        this.name = name;
+
+        if(typeof instructions !== 'undefined')
+        {
+            this.instructions = instructions;
+        }
+        else
+            this.instructions = "";
+    }
+}
+
 $(document).ready(function(){
     // addCartItem(1, 1,"Donut Maftoul", 4);
     // incrementCartItemQte(2);
@@ -150,6 +170,33 @@ $(document).ready(function(){
         });
     });
 
+    $("#pickup").click(function(e){
+        let i = 0;
+        var donutsArray = [];
+        $(".cart-iteration").each(function(){
+            let cartItemIteratorHtml = $(this).html();
+            let cartItemIterator = parseInt(cartItemIteratorHtml, 10);
+            console.log(cartItemIterator);
+            let cartName = $("input#name-input-"+cartItemIterator).val();
+            console.log($("#name-input-"+cartItemIterator));
+            console.log(cartName);
+            let cartQte = $("input#quant-"+cartItemIterator).val();
+            console.log(cartQte);
+            let cartPrice = $("input#price-input-"+cartItemIterator).val();
+            console.log(cartPrice);
+            let cartInstruct = $("input#cart-instructions-"+i).val();
+            console.log(cartInstruct);
+            donutsArray[i] = new Donuts(cartQte, cartPrice, cartName, cartInstruct);
+            i++;
+        });
+        console.log(donutsArray);
+        //data
+        //success
+        // $.ajax("/pickup", {
+        //
+        // })
+    });
+
     // TODO : Add The Data of the donut put in the ADD TO CART
     $(".js-item-add-btn").click(function(e){
         e.preventDefault();
@@ -160,8 +207,7 @@ $(document).ready(function(){
             method: 'POST',
             url: $link.attr('href')
         }).done(function(data) {
-            let instructions = $('#donut-instructions').val()
-            console.log(instructions);
+            let instructions = $('#donut-instructions').val();
             checkCartItem(cartItemIterator(), 1,data.name, data.price, instructions);
         });
     });

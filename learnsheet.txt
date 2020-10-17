@@ -295,6 +295,21 @@ WORKTIME: 5H36M
 Stopping time: 16/10/2020 19h30
 
 
+Day 18: 16h01 17/10/2020
+
+    STEP 4 IN PROGRESS 
+
+    Notes:
+        *Created JS classes of the lineitem class that we'll use tomorow to create the DB transfer of the Donuts.
+
+    References:
+        *
+
+WORKTIME:
+
+Stopping time: 17/10/2020 
+
+
 /// TODO:
 
         -Add a Preloader in the index page so that the page is only loaded when all files and images are loaded.
