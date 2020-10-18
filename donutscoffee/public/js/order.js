@@ -140,6 +140,19 @@ class Donuts {
         else
             this.instructions = "";
     }
+
+    getQuantity(){
+        return this.quantity;
+    }
+    getPrice(){
+        return this.price;
+    }
+    getName(){
+        return this.name;
+    }
+    getInstructions(){
+        return this.instructions;
+    }
 }
 
 $(document).ready(function(){
@@ -148,9 +161,14 @@ $(document).ready(function(){
     // updateCartItemQte(1, 23);
     // removeCartItem(3);
 
-    $("#pickup").click(function(e){
+    $("#pickup").click(function(a){
+        a.preventDefault();
+        var $link = $(a.currentTarget);
+
+
         let i = 0;
         var donutsArray = [];
+
         $(".cart-iteration").each(function(){
             let cartItemIteratorHtml = $(this).html();
             let cartItemIterator = parseInt(cartItemIteratorHtml, 10);
@@ -167,23 +185,34 @@ $(document).ready(function(){
             donutsArray[i] = new Donuts(cartQte, cartPrice, cartName, cartInstruct);
             i++;
         });
+        clientName = $("input#client-name").val();
+        console.log(clientName);
         console.log(donutsArray);
-        $.ajax({
-            type: "GET",
-            contentType:"application/json",
-            url: "/order/pickup",
-            dataType: "json",
-            data : {
-                'donutArray' : donutsArray,
-            },
-            success: function (response){
-                console.log(response);
-                console.log(donutsArray);
-            },
-            error: function (jqXhr, textStatus, errorMessage) { // error callback
-                console.log('Error: ' + errorMessage);
-            }
-        });
+        if( typeof clientName === "undefined" || clientName.length < 2 )
+        {
+            alert("To whom belongs this order, young jedi?");
+        }
+        else
+        {
+            $.ajax( {
+                method: "POST",
+                dataType: "json",
+                url: $link.attr('href'),
+                data :{
+                    'donutArray' : donutsArray,
+                    'name' : clientName
+                },
+                success: function (response){
+                    console.log(response);
+                    console.log(donutsArray);
+                },
+                error: function (jqXhr, textStatus, errorMessage) { // error callback
+                    console.log('Error: ' + errorMessage);
+                    console.log(JSON.stringify(donutsArray));
+                }
+            });
+
+        }
     });
 
 
@@ -196,7 +225,7 @@ $(document).ready(function(){
             method: 'POST',
             url: $link.attr('href')
         }).done(function(data) {
-            $(".item-add-btn").attr("href", "/order/"+data.slug);
+            $(".item-add-btn").attr("href", "/order/donut/"+data.slug);
             $(".donut-order-img-chosen").attr("src", data.link);
             $(".donut-chosen-title").html(data.name);
             $(".item-desc-text").html(data.description);

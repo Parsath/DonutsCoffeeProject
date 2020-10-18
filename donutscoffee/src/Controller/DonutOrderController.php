@@ -5,7 +5,11 @@ namespace App\Controller;
 
 
 use App\Entity\Article;
+use App\Entity\LineItem;
+use App\Entity\Order;
 use Doctrine\ORM\EntityManagerInterface;
+use Monolog\Logger;
+use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -18,8 +22,9 @@ class DonutOrderController extends AbstractController
     /**
      * @Route("/order", name="app_order")
      */
-    public function orderPage(EntityManagerInterface $em)
+    public function orderPage(EntityManagerInterface $em,LoggerInterface $logger)
     {
+        $logger->info("Onto Order");
         $repository = $em->getRepository(Article::class);
 
         /** @var array $articles */
@@ -38,10 +43,12 @@ class DonutOrderController extends AbstractController
     }
 
     /**
-     * @Route("/order/{slug}", name="article_display", methods={"POST"})
+     * @Route("/order/donut/{slug}", name="article_display", methods={"POST"})
      */
-    public function openDonut($slug, EntityManagerInterface $em)
+    public function openDonut($slug, LoggerInterface $logger, EntityManagerInterface $em)
     {
+        $logger->info("Gone into the wrong one");
+
         $repository = $em->getRepository(Article::class);
 
         /** var Article $article */
@@ -58,40 +65,47 @@ class DonutOrderController extends AbstractController
         ]);
     }
 
-//     * @Route("/order/pickup", name="order_pickup", methods={"POST"})
     /**
-     * @Route("/order/pickup", name="order_pickup")
+     * @Route("/order/pickup", name="order_pickup", methods={"POST"})
      */
-    public function pickUpOrder(Request $request, EntityManagerInterface $em)
+    public function pickUpOrder(LoggerInterface $logger,Request $request, EntityManagerInterface $em)
     {
-//        $response = new Response();
-//        $response->setContent(json_decode($request->getContent(), true));
+        $donutsArray = $request->get('donutArray');
+        $clientName = $request->get('name');
+        $logger->info("Donuts Passed");
+        if(!empty($donutsArray))
+        {
+            $order = new Order();
 
-//        $donutArray = json_decode($request->getContent());
+            $order->setStatus("ongoing");
+            $order->setName($clientName);
+            $order->setPickup(1);
+            $em->persist($order);
+            $em->flush();
+            foreach($donutsArray as $donut)
+            {
+                $logger->info($donut['name']);
+                $lineItem = new LineItem();
 
-        $donutArray = array();
-        $content = $request->getContent();
-        if(!empty($content)){
-            $donutArray = json_decode($content, true);
+
+                $repository = $em->getRepository(Article::class);
+                /** @var Article $article */
+                $article = $repository->findOneBy(
+                    ['name' => $donut['name']]
+                );
+
+                $lineItem->setQuantity($donut['quantity']);
+                $lineItem->setOrderArticle($order);
+                $lineItem->setArticle($article);
+                $lineItem->setPrice();
+                $lineItem->setInstructions($donut['instructions']);
+
+                $em->persist($lineItem);
+
+            }
+            $em->flush();
         }
 
-        $donutsArray = isset($donutArray['donutArray']) ? $donutArray['donutArray'] : null;
-
-//        dd($donutArray);
-//        $repository = $em->getRepository(Article::class);
-//
-//        /** var Article $article */
-//        $article = $repository->findOneBy(
-//            ['slug' => $slug]
-//        );
-//
-//        return new JsonResponse([
-//            'name' => $article->getName(),
-//            'link' => $article->getLink(),
-//            'slug' => $article->getSlug(),
-//            'price' => $article->getPrice(),
-//            'description' => $article->getDescription()
-//        ]);
 
         Return new JsonResponse([
                 'donuts' => $donutsArray,

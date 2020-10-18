@@ -305,9 +305,24 @@ Day 18: 16h01 17/10/2020
     References:
         *
 
-WORKTIME:
+WORKTIME: 3H07M
 
-Stopping time: 17/10/2020 
+Stopping time: 17/10/2020 20h30
+
+
+Day 19: 14h02 18/10/2020
+
+    STEP 4 IN PROGRESS 
+
+    Notes:
+        *I just added the Serverside connexion to the order page. You can now successfully pass an order and it will be Registered in the DB.
+
+    References:
+        *
+
+WORKTIME: 3H20M
+
+Stopping time: 18/10/2020 18h32
 
 
 /// TODO:
