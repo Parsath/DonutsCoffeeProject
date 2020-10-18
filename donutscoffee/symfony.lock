@@ -153,6 +153,9 @@
             "./config/packages/stof_doctrine_extensions.yaml"
         ]
     },
+    "symfony-bundles/json-request-bundle": {
+        "version": "v3.1.1"
+    },
     "symfony/asset": {
         "version": "v4.4.15"
     },

@@ -148,28 +148,6 @@ $(document).ready(function(){
     // updateCartItemQte(1, 23);
     // removeCartItem(3);
 
-
-    $(".js-add-to-cart").click(function(e){
-        e.preventDefault();
-
-        var $link = $(e.currentTarget);
-
-        $.ajax({
-            method: 'POST',
-            url: $link.attr('href')
-        }).done(function(data) {
-            $(".item-add-btn").attr("href", "/order/"+data.slug);
-            $(".donut-order-img-chosen").attr("src", data.link);
-            $(".donut-chosen-title").html(data.name);
-            $(".item-desc-text").html(data.description);
-            $(".item-chosen-container").addClass("item-chosen-popup-container");
-            $(".item-chosen").addClass("item-chosen-popup");
-            $(".item-chosen").css({
-                "z-index":"9999999"
-            });
-        });
-    });
-
     $("#pickup").click(function(e){
         let i = 0;
         var donutsArray = [];
@@ -190,11 +168,44 @@ $(document).ready(function(){
             i++;
         });
         console.log(donutsArray);
-        //data
-        //success
-        // $.ajax("/pickup", {
-        //
-        // })
+        $.ajax({
+            type: "GET",
+            contentType:"application/json",
+            url: "/order/pickup",
+            dataType: "json",
+            data : {
+                'donutArray' : donutsArray,
+            },
+            success: function (response){
+                console.log(response);
+                console.log(donutsArray);
+            },
+            error: function (jqXhr, textStatus, errorMessage) { // error callback
+                console.log('Error: ' + errorMessage);
+            }
+        });
+    });
+
+
+    $(".js-add-to-cart").click(function(e){
+        e.preventDefault();
+
+        var $link = $(e.currentTarget);
+
+        $.ajax({
+            method: 'POST',
+            url: $link.attr('href')
+        }).done(function(data) {
+            $(".item-add-btn").attr("href", "/order/"+data.slug);
+            $(".donut-order-img-chosen").attr("src", data.link);
+            $(".donut-chosen-title").html(data.name);
+            $(".item-desc-text").html(data.description);
+            $(".item-chosen-container").addClass("item-chosen-popup-container");
+            $(".item-chosen").addClass("item-chosen-popup");
+            $(".item-chosen").css({
+                "z-index":"9999999"
+            });
+        });
     });
 
     // TODO : Add The Data of the donut put in the ADD TO CART
