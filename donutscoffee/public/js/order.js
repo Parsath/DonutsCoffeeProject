@@ -1,3 +1,5 @@
+
+// The Creation of each Cart Item the client adds through the menu in the Cart.
 var addCartItem = function(i, qte, name, price, instructions){
 
     while($(".cart-item-"+i).length)
@@ -105,20 +107,6 @@ var decrementCartItemQte = function(i){
         removeCartItem(i);
 }
 
-// var updateCartItemPrice = function(i, qte){
-//     let initialPriceHtml = $(".initial-price-"+i).html();
-//     let initialPrice = parseInt(initialPriceHtml, 10);
-//     let price = initialPrice * qte;
-//     $(".price-"+i).html(price);
-// }
-// var updateCartItemQte = function(i, qte){
-//     $(".number-"+i).html(qte);
-//     updateCartItemPrice(i, qte);
-// }
-// var updateCartItemName = function(i, name){
-//     $(".name-"+i).html(name);
-// }
-
 var cartItemIterator = function() {
     let i = 0;
     $(".cart-item").each(function(){
@@ -140,26 +128,9 @@ class Donuts {
         else
             this.instructions = "";
     }
-
-    getQuantity(){
-        return this.quantity;
-    }
-    getPrice(){
-        return this.price;
-    }
-    getName(){
-        return this.name;
-    }
-    getInstructions(){
-        return this.instructions;
-    }
 }
 
 $(document).ready(function(){
-    // addCartItem(1, 1,"Donut Maftoul", 4);
-    // incrementCartItemQte(2);
-    // updateCartItemQte(1, 23);
-    // removeCartItem(3);
 
     $("#pickup").click(function(a){
         a.preventDefault();
@@ -186,11 +157,34 @@ $(document).ready(function(){
             i++;
         });
         clientName = $("input#client-name").val();
+        clientPhone = $("input#client-phone").val();
+        intRegex = /\(?([0-9]{2})\)?([ .-]?)([0-9]{3})\2([0-9]{3})/;
+
+
+
+        console.log(clientPhone);
         console.log(clientName);
         console.log(donutsArray);
-        if( typeof clientName === "undefined" || clientName.length < 2 )
+        if( typeof clientName === "undefined" || clientName.length < 3 )
         {
-            alert("To whom belongs this order, young jedi?");
+            alert('Please enter a name 3 characters or more, Young Padawan.');
+            return false;
+        }
+        else if( donutsArray.length === 0 )
+        {
+            alert("Please order something!");
+        }
+        else if(clientPhone.length !== 8 || (!intRegex.test(clientPhone)))
+        {
+            alert('Please enter a valid phone number.');
+        }
+        else if( $link.attr('id') === "pickup-done")
+        {
+            alert("Your order is ongoing!");
+        }
+        else if( $(".order-delivery").is("#delivery-done"))
+        {
+            alert("Your order is ongoing!");
         }
         else
         {
@@ -200,18 +194,132 @@ $(document).ready(function(){
                 url: $link.attr('href'),
                 data :{
                     'donutArray' : donutsArray,
-                    'name' : clientName
+                    'name' : clientName,
+                    'phone' : clientPhone
                 },
-                success: function (response){
-                    console.log(response);
-                    console.log(donutsArray);
+                success: function (a){
+                    alert("Order passed");
+                    // $("#pickup").prop('disabled', true);
+                    $("#pickup").attr("id","pickup-done");
+                    $("#delivery").attr("id","delivery-done");
+                    $link.html("Ongoing");
+                    $("#delivery-done").html("Ongoing");
                 },
                 error: function (jqXhr, textStatus, errorMessage) { // error callback
                     console.log('Error: ' + errorMessage);
                     console.log(JSON.stringify(donutsArray));
                 }
             });
+        }
+    });
 
+
+    $(".close-cart-address").click(function(){
+        $(".cart-address-container").removeClass("cart-address-container-on");
+    });
+
+    $("#delivery-confirm-btn").click(function(e){
+        e.preventDefault();
+
+       let address = $("#client-address").val();
+       if( address.length < 3)
+       {
+           alert("Please enter a valid address")
+       }
+       else
+       {
+           $("#delivery-confirm").val(1);
+           $("#delivery").trigger("click");
+           $(".cart-address-container").removeClass("cart-address-container-on");
+       }
+    });
+
+    $("#delivery").click(function(a){
+        a.preventDefault();
+        var $link = $(a.currentTarget);
+
+        let confirmHtml = $("#delivery-confirm").val();
+        let confirm = parseInt(confirmHtml, 10);
+
+        let i = 0;
+        var donutsArray = [];
+
+        $(".cart-iteration").each(function(){
+            let cartItemIteratorHtml = $(this).html();
+            let cartItemIterator = parseInt(cartItemIteratorHtml, 10);
+            console.log(cartItemIterator);
+            let cartName = $("input#name-input-"+cartItemIterator).val();
+            console.log($("#name-input-"+cartItemIterator));
+            console.log(cartName);
+            let cartQte = $("input#quant-"+cartItemIterator).val();
+            console.log(cartQte);
+            let cartPrice = $("input#price-input-"+cartItemIterator).val();
+            console.log(cartPrice);
+            let cartInstruct = $("input#cart-instructions-"+i).val();
+            console.log(cartInstruct);
+            donutsArray[i] = new Donuts(cartQte, cartPrice, cartName, cartInstruct);
+            i++;
+        });
+        clientName = $("input#client-name").val();
+        clientPhone = $("input#client-phone").val();
+        clientAddress = $("input#client-address").val();
+        intRegex = /\(?([0-9]{2})\)?([ .-]?)([0-9]{3})\2([0-9]{3})/;
+
+
+
+        console.log(clientPhone);
+        console.log(clientName);
+        console.log(clientAddress);
+        console.log(donutsArray);
+        if( typeof clientName === "undefined" || clientName.length < 3 )
+        {
+            alert('Please enter a name 3 characters or more, Young Padawan.');
+            return false;
+        }
+        else if( confirm !== 1 )
+        {
+            $(".cart-address-container").addClass("cart-address-container-on");
+        }
+        else if( donutsArray.length === 0 )
+        {
+            alert("Please order something!");
+        }
+        else if(clientPhone.length !== 8 || (!intRegex.test(clientPhone)))
+        {
+            alert('Please enter a valid phone number.');
+        }
+        else if( $link.attr('id') === "delivery-done")
+        {
+            alert("Your order is ongoing!");
+        }
+        else if( $(".order-pickup").is("#pickup-done"))
+        {
+            alert("Your order is ongoing!");
+        }
+        else
+        {
+            $.ajax( {
+                method: "POST",
+                dataType: "json",
+                url: $link.attr('href'),
+                data :{
+                    'donutArray' : donutsArray,
+                    'name' : clientName,
+                    'phone' : clientPhone,
+                    'address' : clientAddress
+                },
+                success: function (a){
+                    alert("Order passed");
+                    $link.attr('id',"delivery-done");
+                    $("#pickup").attr("id","pickup-done");
+                    $link.html("Ongoing");
+                    $("#pickup-done").html("Ongoing");
+                },
+                error: function (jqXhr, textStatus, errorMessage) { // error callback
+                    console.log('Error: ' + errorMessage);
+                    console.log(JSON.stringify(donutsArray));
+                }
+            });
         }
     });
 

@@ -49,6 +49,11 @@ class Order
     private $address;
 
     /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $totalPrice;
+
+    /**
      * @ORM\Column(type="string", length=50)
      */
     private $status;
@@ -57,6 +62,11 @@ class Order
      * @ORM\Column(type="string", length=255)
      */
     private $name;
+
+    /**
+     * @ORM\Column(type="string", length=25)
+     */
+    private $phone;
 
     /**
      * @ORM\OneToMany(targetEntity=LineItem::class, mappedBy="orderArticle")
@@ -81,6 +91,25 @@ class Order
     public function setPickup(bool $pickup): self
     {
         $this->pickup = $pickup;
+
+        return $this;
+    }
+
+    public function getPrice(): ?int
+    {
+        return $this->totalPrice;
+    }
+
+    public function setPrice(int $price): self
+    {
+        $this->totalPrice = $price;
+
+        return $this;
+    }
+
+    public function addPrice(int $price): self
+    {
+        $this->totalPrice += $price;
 
         return $this;
     }
@@ -146,6 +175,18 @@ class Order
     public function setName(string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function getPhone(): ?string
+    {
+        return $this->phone;
+    }
+
+    public function setPhone(string $phone): self
+    {
+        $this->phone = $phone;
 
         return $this;
     }

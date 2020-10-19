@@ -325,6 +325,26 @@ WORKTIME: 3H20M
 Stopping time: 18/10/2020 18h32
 
 
+Day 20: 12h20 19/10/2020
+
+    STEP 4 IN PROGRESS 
+
+    Notes:
+        *Actually Fixing Carousel
+        *Will get to fixing the db bug when passing an order
+        *Add success Popup to the delivery and pickup buttons
+        *Activate Delivery option [ Add the option to indicate your address ]
+        *Create Phone Number Field on the front end  
+        *Create Phone Number Field in the Order side
+
+    References:
+        *
+
+WORKTIME: 
+
+Stopping time: 19/10/2020 
+
+
 /// TODO:
 
         -Add a Preloader in the index page so that the page is only loaded when all files and images are loaded.
@@ -350,6 +370,40 @@ Stopping time: 18/10/2020 18h32
             DONE 16/10/2020
 
         -When click "Add to cart", add the donut item in the Cart, if Confirm is clicked, create Order then inject Line Items.
+
+            DONE 18/10/2020
+
+        -Fixed the Carousel bug by limiting the query result by 3 Items
+
+            DONE 19/10/2020
+        
+        -Will get to fixing the db bug when passing an order
+        
+            DONE 19/10/2020
+
+        -Add success Popup to the delivery and pickup buttons
+
+            DONE 19/10/2020
+
+        -Activate Delivery option [ Add the option to indicate your address ]
+
+            DONE 19/10/2020
+        
+        -Create Phone Number Field on the front end  
+
+            DONE 19/10/2020
+        
+        -Create Phone Number Field in the Order side
+
+            DONE 19/10/2020
+
+        -Add Confirm Button to delivery
+
+            DONE 19/10/2020
+
+        -Add Confirm Button to pickup ( follow the same procedure as delivery confirm )
+
+        -Add some sort of Name field confirmation
 
         -Make the Cart Container Unlimited
 

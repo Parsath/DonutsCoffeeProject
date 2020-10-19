@@ -50,10 +50,27 @@
                         <label for="client-name" class="dark-bg">Name:</label>
                         <input class="form-control name-input" placeholder="Order by the name of" aria-label="Client-name" aria-describedby="basic-addon1" type="text" id="client-name" />
                     </div>
+                    <div class="cart-phone">
+                        <label for="client-phone" class="dark-bg">Phone:</label>
+                        <input class="form-control phone-input" placeholder="Valid phone number here " aria-label="Client-phone-number" aria-describedby="basic-addon1" type="text" id="client-phone" />
+                    </div>
+                    <div class="cart-address-container">
+                        <div class="cart-address">
+                            <label for="client-address" class="white-bg">Please type in your address and confirm:</label>
+                            <input class="form-control address-input" name="client-address" placeholder="Type in your address " aria-label="Client-address" aria-describedby="basic-addon1" type="text" id="client-address" />
+                            <button id="delivery-confirm-btn" class="btn btn-outline-dark btn-choice btn-confirm-order">Confirm</button>
+
+                            <div class="close-cart-address-container">
+                                <i class="fa fa-times white close-cart-address" aria-hidden="true" role="button"></i>
+                            </div>
+                        </div>
+                    </div>
                     <div class="cart-space"></div>
                     <div class="cart-validation-choice">
-                        <button class="btn btn-outline-light btn-choice">Delivery</button>
-                        <a href="{{ path('order_pickup') }}" id="pickup" class="btn btn-outline-light btn-choice">Pickup</a>
+                        <a href="{{ path('order_delivery') }}" id="delivery" class="btn btn-outline-light btn-choice order-delivery">Delivery</a>
+                        <a href="{{ path('order_pickup') }}" id="pickup" class="btn btn-outline-light btn-choice order-pickup">Pickup</a>
+                        <input type="hidden" name="delivery-confirm" id="delivery-confirm" value="0">
+                        <input type="hidden" name="pickup-confirm" id="pickup-confirm" value="0">
                     </div>
                 </div>
             </div>

@@ -72,7 +72,8 @@ class DonutOrderController extends AbstractController
     {
         $donutsArray = $request->get('donutArray');
         $clientName = $request->get('name');
-        $logger->info("Donuts Passed");
+        $clientPhone = $request->get('phone');
+//        $logger->info("Donuts Passed");
         if(!empty($donutsArray))
         {
             $order = new Order();
@@ -80,6 +81,63 @@ class DonutOrderController extends AbstractController
             $order->setStatus("ongoing");
             $order->setName($clientName);
             $order->setPickup(1);
+            $order->setPrice(0);
+            $order->setPhone($clientPhone);
+            $em->persist($order);
+            $em->flush();
+            foreach($donutsArray as $donut)
+            {
+//                $logger->info($donut['name']);
+                $lineItem = new LineItem();
+
+
+                $repository = $em->getRepository(Article::class);
+                /** @var Article $article */
+                $article = $repository->findOneBy(
+                    ['name' => $donut['name']]
+                );
+
+                $lineItem->setQuantity($donut['quantity']);
+                $lineItem->setOrderArticle($order);
+                $lineItem->setArticle($article);
+                $lineItem->setPrice();
+                $lineItem->setInstructions($donut['instructions']);
+
+                $order->addPrice($lineItem->getPrice());
+
+                $em->persist($lineItem);
+                $em->persist($order);
+
+            }
+            $em->flush();
+        }
+
+
+        Return new JsonResponse([
+                'clientName' => $clientName,
+                'clientPhone' => $clientPhone
+        ]);
+    }
+
+    /**
+     * @Route("/order/delivery", name="order_delivery", methods={"POST"})
+     */
+    public function deliveryOrder(LoggerInterface $logger,Request $request, EntityManagerInterface $em)
+    {
+        $donutsArray = $request->get('donutArray');
+        $clientName = $request->get('name');
+        $clientPhone = $request->get('phone');
+        $clientAddress = $request->get('address');
+        $logger->info("Delivery Passed");
+        if(!empty($donutsArray))
+        {
+            $order = new Order();
+
+            $order->setStatus("ongoing");
+            $order->setName($clientName);
+            $order->setPickup(0);
+            $order->setPhone($clientPhone);
+            $order->setAddress($clientAddress);
             $em->persist($order);
             $em->flush();
             foreach($donutsArray as $donut)
@@ -100,7 +158,10 @@ class DonutOrderController extends AbstractController
                 $lineItem->setPrice();
                 $lineItem->setInstructions($donut['instructions']);
 
+                $order->addPrice($lineItem->getPrice());
+
                 $em->persist($lineItem);
+                $em->persist($order);
 
             }
             $em->flush();
@@ -108,7 +169,7 @@ class DonutOrderController extends AbstractController
 
 
         Return new JsonResponse([
-                'donuts' => $donutsArray,
+//            'donuts' => $donutsArray,
         ]);
     }
 }
