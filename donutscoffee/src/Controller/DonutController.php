@@ -20,7 +20,9 @@ class DonutController extends AbstractController
 
         /** @var array $articles */
         $articles = $repository->findBy(
-            ['carousel' => 1]
+            ['carousel' => 1],
+            NULL,
+            3
         );
 
 
