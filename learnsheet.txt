@@ -340,9 +340,9 @@ Day 20: 12h20 19/10/2020
     References:
         *
 
-WORKTIME: 
+WORKTIME: 3H31M
 
-Stopping time: 19/10/2020 
+Stopping time: 19/10/2020 16h13
 
 
 /// TODO:
