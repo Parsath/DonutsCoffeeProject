@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block metadata %}
+    {{ parent() }}
+    <meta name="description" content="">
+    <meta name="msapplication-config" content="/docs/4.5/assets/img/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#563d7c">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/starter-template/">
+{% endblock %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block body_class %}dashboard-main-container{% endblock %}
+
+{% block body %}
+    <nav class="navbar navbar-expand-md navbar-dark dash-nav">
+        <a class="navbar-brand nav-title" href="{{ path('app_homepage') }}">
+            <div class="title title-admin">Donuts Coffee</div>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item {% block dashOn %}{% endblock %}">
+                    <a class="nav-link dashnav-item" href="{{ path('app_dashboard') }}">Dashboard <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item {% block menuOn %}{% endblock %}">
+                    <a class="nav-link dashnav-item" href="{{ path('app_admin_menu') }}">Menu</a>
+                </li>
+                <li class="nav-item {% block usersOn %}{% endblock %}">
+                    <a class="nav-link dashnav-item" href="{{ path('app_admin_users') }}">Users</a>
+                </li>
+                <li class="nav-item {% block orderOn %}{% endblock %}">
+                    <a class="nav-link dashnav-item" href="{{ path('app_admin_orders') }}">Orders</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav navbar-right">
+                <li class="nav-item">
+                    <a class="nav-link dashnav-item disabled" href="#">Welcome, Souhaiel</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link dashnav-item" href="/logout">Logout</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+    {% block content %}
+
+    {% endblock %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

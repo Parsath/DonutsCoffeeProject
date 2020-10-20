@@ -1,5 +1,6 @@
 
 // The Creation of each Cart Item the client adds through the menu in the Cart.
+
 var addCartItem = function(i, qte, name, price, instructions){
 
     while($(".cart-item-"+i).length)
@@ -43,6 +44,8 @@ var addCartItem = function(i, qte, name, price, instructions){
     // $("<textarea class=\"cart-instructions cart-instructions-"+i+"\" name=\"cart-instructions-"+i+"\" hidden>"+instructions+"</textarea>").appendTo(".cart-item-"+i);
 }
 
+// Checks if the Donut already exists in the Cart before adding it
+
 var checkCartItem = function(i, qte, name, price, instructions){
 
     var loop = 0;
@@ -62,9 +65,14 @@ var checkCartItem = function(i, qte, name, price, instructions){
         addCartItem(i, qte, name, price, instructions);
 }
 
+// Removes the donut from the cart ( in the cart )
+
 var removeCartItem = function(i){
     $(".cart-item-"+i).remove();
 }
+
+// Increment the donut Price  ( in the cart )
+
 var incrementCartItemPrice = function(i){
     let initialPriceHtml = $(".initial-price-"+i).html();
     let priceHtml = $(".price-"+i).html();
@@ -75,6 +83,9 @@ var incrementCartItemPrice = function(i){
     $("#price-input-"+i).val(price);
     $(".price-"+i).html(price);
 }
+
+// Increments the donut Quantity ( and thus its price ) ( in the cart )
+
 var incrementCartItemQte = function(i){
     let qte = $(".number-"+i).html();
     qte ++;
@@ -83,6 +94,7 @@ var incrementCartItemQte = function(i){
     incrementCartItemPrice(i);
 }
 
+// Decrements a Donut price ( in the cart )
 
 var decrementCartItemPrice = function(i){
     let initialPriceHtml = $(".initial-price-"+i).html();
@@ -94,6 +106,9 @@ var decrementCartItemPrice = function(i){
     $("#price-input-"+i).val(price);
     $(".price-"+i).html(price);
 }
+
+// Decrements a donuts' quantity and thus the total price ( in the cart )
+
 var decrementCartItemQte = function(i){
     let qte = $(".number-"+i).html();
     qte --;
@@ -107,6 +122,8 @@ var decrementCartItemQte = function(i){
         removeCartItem(i);
 }
 
+// Checks how many Donuts there is
+
 var cartItemIterator = function() {
     let i = 0;
     $(".cart-item").each(function(){
@@ -114,6 +131,8 @@ var cartItemIterator = function() {
     })
     return i;
 }
+
+// Donut displayed in the Cart Class
 
 class Donuts {
     constructor(quantity, price, name, instructions) {
@@ -132,8 +151,30 @@ class Donuts {
 
 $(document).ready(function(){
 
+    // Close the Confirm popup modal of the Pickup confirmation
+
+    $(".close-cart-confirm").click(function(){
+        $(".cart-confirm-container").removeClass("cart-confirm-container-on");
+    });
+
+    // Confirming the pickup ( #delivery-confirm is a hidden input value which stocks if the pickup has already been confirmed or not)
+
+    $("#pickup-confirm-btn").click(function(e){
+        e.preventDefault();
+
+        $("#delivery-confirm").val(1);
+        $("#pickup").trigger("click");
+        $(".cart-confirm-container").removeClass("cart-confirm-container-on");
+    });
+
+    // The function that validates the pickup
+
     $("#pickup").click(function(a){
         a.preventDefault();
+
+        let confirmHtml = $("#delivery-confirm").val();
+        let confirm = parseInt(confirmHtml, 10);
+
         var $link = $(a.currentTarget);
 
 
@@ -159,20 +200,25 @@ $(document).ready(function(){
         clientName = $("input#client-name").val();
         clientPhone = $("input#client-phone").val();
         intRegex = /\(?([0-9]{2})\)?([ .-]?)([0-9]{3})\2([0-9]{3})/;
+        nameRegex = /^[a-zA-Z ]{3,30}$/;
 
 
 
         console.log(clientPhone);
         console.log(clientName);
         console.log(donutsArray);
-        if( typeof clientName === "undefined" || clientName.length < 3 )
+        if( typeof clientName === "undefined" || (!nameRegex.test(clientName)))
         {
-            alert('Please enter a name 3 characters or more, Young Padawan.');
+            alert('Please enter a valid name, Young Padawan.');
             return false;
         }
         else if( donutsArray.length === 0 )
         {
             alert("Please order something!");
+        }
+        else if( confirm !== 1 )
+        {
+            $(".cart-confirm-container").addClass("cart-confirm-container-on");
         }
         else if(clientPhone.length !== 8 || (!intRegex.test(clientPhone)))
         {
@@ -213,10 +259,13 @@ $(document).ready(function(){
         }
     });
 
+    // Close delivery confirm modal 
 
     $(".close-cart-address").click(function(){
         $(".cart-address-container").removeClass("cart-address-container-on");
     });
+
+    // Confirm delivery modal ( + input address )
 
     $("#delivery-confirm-btn").click(function(e){
         e.preventDefault();
@@ -233,6 +282,8 @@ $(document).ready(function(){
            $(".cart-address-container").removeClass("cart-address-container-on");
        }
     });
+
+    // Delivery function 
 
     $("#delivery").click(function(a){
         a.preventDefault();
@@ -264,6 +315,7 @@ $(document).ready(function(){
         clientPhone = $("input#client-phone").val();
         clientAddress = $("input#client-address").val();
         intRegex = /\(?([0-9]{2})\)?([ .-]?)([0-9]{3})\2([0-9]{3})/;
+        nameRegex = /^[a-zA-Z ]{3,30}$/;
 
 
 
@@ -271,14 +323,10 @@ $(document).ready(function(){
         console.log(clientName);
         console.log(clientAddress);
         console.log(donutsArray);
-        if( typeof clientName === "undefined" || clientName.length < 3 )
+        if( typeof clientName === "undefined" || (!nameRegex.test(clientName)) )
         {
             alert('Please enter a name 3 characters or more, Young Padawan.');
             return false;
-        }
-        else if( confirm !== 1 )
-        {
-            $(".cart-address-container").addClass("cart-address-container-on");
         }
         else if( donutsArray.length === 0 )
         {
@@ -295,6 +343,10 @@ $(document).ready(function(){
         else if( $(".order-pickup").is("#pickup-done"))
         {
             alert("Your order is ongoing!");
+        }
+        else if( confirm !== 1 )
+        {
+            $(".cart-address-container").addClass("cart-address-container-on");
         }
         else
         {
@@ -323,6 +375,7 @@ $(document).ready(function(){
         }
     });
 
+    // Displaying a donut found in the menu ( process goes in the DB to seek its information)
 
     $(".js-add-to-cart").click(function(e){
         e.preventDefault();
@@ -345,7 +398,8 @@ $(document).ready(function(){
         });
     });
 
-    // TODO : Add The Data of the donut put in the ADD TO CART
+    // Adds a donut from the menu to the cart
+
     $(".js-item-add-btn").click(function(e){
         e.preventDefault();
 
@@ -360,6 +414,7 @@ $(document).ready(function(){
         });
     });
 
+    // Removes a donut item from the cart
 
     $(document).on("click",".remove-cart", (function(e){
         var removeBtn = $(e.currentTarget);
@@ -373,6 +428,9 @@ $(document).ready(function(){
             }
         });
     }));
+
+    // Increments a Donut quantity ( while incrementing its price ) in the cart
+
     $(document).on("click",".cart-plus", (function(e){
         var incrementBtn = $(e.currentTarget);
         $(".cart-iteration").each(function(){
@@ -385,6 +443,9 @@ $(document).ready(function(){
             }
         });
     }));
+
+    // Decrements a Donut quantity ( while decrementing its price ) in the cart
+
     $(document).on("click",".cart-minus", (function(e){
         var decrementBtn = $(e.currentTarget);
         $(".cart-iteration").each(function(){

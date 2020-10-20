@@ -15,6 +15,37 @@ use Symfony\Component\Routing\Annotation\Route;
 class DonutAdminController extends AbstractController
 {
     /**
+     * @Route("/admin", name="app_dashboard")
+     */
+    public function dashboard()
+    {
+        return $this->render('admin_pannel/pannel.html.twig');
+    }
+
+    /**
+     * @Route("/admin/menu", name="app_admin_menu")
+     */
+    public function menu()
+    {
+        return $this->render('admin_pannel/menu.html.twig');
+    }
+
+    /**
+     * @Route("/admin/orders", name="app_admin_orders")
+     */
+    public function orders()
+    {
+        return $this->render('admin_pannel/orders.html.twig');
+    }
+    /**
+     * @Route("/admin/users", name="app_admin_users")
+     */
+    public function users()
+    {
+        return $this->render('admin_pannel/users.html.twig');
+    }
+
+    /**
      * @Route("/admin/donut/new")
      */
     public function new(EntityManagerInterface $em)

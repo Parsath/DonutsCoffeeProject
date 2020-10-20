@@ -345,6 +345,21 @@ WORKTIME: 3H31M
 Stopping time: 19/10/2020 16h13
 
 
+Day 21: 12h26 20/10/2020
+
+    STEP 4 IN PROGRESS 
+
+    Notes:
+        * 37min36 into the admin pannel tutorial
+
+    References:
+        *
+
+WORKTIME: 
+
+Stopping time: 20/10/2020
+
+
 /// TODO:
 
         -Add a Preloader in the index page so that the page is only loaded when all files and images are loaded.
@@ -403,12 +418,18 @@ Stopping time: 19/10/2020 16h13
 
         -Add Confirm Button to pickup ( follow the same procedure as delivery confirm )
 
+            DONE 20/10/2020
+
         -Add some sort of Name field confirmation
 
-        -Make the Cart Container Unlimited
+            DONE 20/10/2020
 
         -Create an Admin Panel. Reference:
             -https://www.youtube.com/watch?v=pXbEcGUtHgo
+
+        -Make the Cart Container Unlimited
+
+        -Make the Edit button, functionnal.
 
 ///
 
