@@ -19,6 +19,43 @@ class OrderRepository extends ServiceEntityRepository
         parent::__construct($registry, Order::class);
     }
 
+    /**
+     * @return Order[]
+     */
+    public function findOnGoingOrderedByNewest()
+    {
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.createdAt IS NOT NULL')
+            ->andWhere('a.status = :val')
+            ->setParameter('val', "ongoing")
+            ->orderBy('a.createdAt', 'DESC')
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    /**
+     * @return Order[]
+     */
+    public function findAllOrderedByNewest()
+    {
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.createdAt IS NOT NULL')
+            ->orderBy('a.createdAt', 'DESC')
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    public function countOrders()
+    {
+        return $this->createQueryBuilder('a')
+            ->select('count(a.id)')
+            ->getQuery()
+            ->getSingleScalarResult()
+            ;
+    }
+
     // /**
     //  * @return Order[] Returns an array of Order objects
     //  */

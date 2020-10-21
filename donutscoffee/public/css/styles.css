@@ -2209,4 +2209,26 @@ a.item-add-btn:hover {
 .breadcrumb a {
   color: #333333;
 }
+
+.admin-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
+  width: 100% !important;
+  height: 5vh !important;
+  padding-top: 10px !important;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.table-menu {
+  table-layout: fixed;
+  word-wrap: break-word;
+}
 /*# sourceMappingURL=styles.css.map */

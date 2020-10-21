@@ -20,21 +20,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cabe3c84-6b5f-47d6-ba55-aeaf98f62597" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/css/_dashboard.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin_pannel/admin_nav.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin_pannel/menu.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin_pannel/orders.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin_pannel/pannel.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin_pannel/users.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201021141613.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201021142333.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201021153430.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/dashboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin_pannel/edit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/embedded/_sidebar.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/donutscoffee.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/donutscoffee.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/_order.sass" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/_order.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/_dashboard.sass" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/_dashboard.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/styles.sass" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/order.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/DonutAdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DonutAdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/order.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/order.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ArticleRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ArticleRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/OrderRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/OrderRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin_pannel/admin_nav.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_pannel/admin_nav.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin_pannel/menu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_pannel/menu.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin_pannel/orders.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_pannel/orders.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin_pannel/pannel.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_pannel/pannel.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin_pannel/users.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_pannel/users.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../learnsheet.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../learnsheet.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -131,6 +146,11 @@
       <path value="$PROJECT_DIR$/vendor/symfony/security-csrf" />
       <path value="$PROJECT_DIR$/vendor/symfony/security-core" />
       <path value="$PROJECT_DIR$/vendor/symfony-bundles/json-request-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/inflector" />
+      <path value="$PROJECT_DIR$/vendor/symfony/security-http" />
+      <path value="$PROJECT_DIR$/vendor/symfony/security-guard" />
+      <path value="$PROJECT_DIR$/vendor/symfony/security-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/property-access" />
     </include_path>
   </component>
   <component name="ProjectId" id="1ibD0C1raJznvB1ZfFq7IUqFeAr" />
@@ -146,8 +166,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\DonutsCoffee\donutscoffee\templates\security" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -166,7 +192,8 @@
       <workItem from="1602947169563" duration="10371000" />
       <workItem from="1603026573348" duration="13936000" />
       <workItem from="1603106806864" duration="13292000" />
-      <workItem from="1603193584520" duration="12657000" />
+      <workItem from="1603193584520" duration="12735000" />
+      <workItem from="1603278430799" duration="23305000" />
     </task>
     <servers />
   </component>
@@ -193,10 +220,14 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="435" y="188" key="#Notifications/0.0.1360.728/1360.0.1920.1040@0.0.1360.728" timestamp="1602947633226" />
-    <state x="410" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603040263200">
+    <state x="485" y="46" key="#com.intellij.ide.util.MemberChooser" timestamp="1603291591966">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="410" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1360.728/1360.0.1920.1040@0.0.1360.728" timestamp="1603040263200" />
+    <state x="485" y="46" key="#com.intellij.ide.util.MemberChooser/0.0.1360.728/1360.0.1920.1040@0.0.1360.728" timestamp="1603291591966" />
+    <state x="410" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603290468444">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="410" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1360.728/1360.0.1920.1040@0.0.1360.728" timestamp="1603290468444" />
     <state x="460" y="119" key="FileChooserDialogImpl" timestamp="1602167209307">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -214,18 +245,18 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1360.728/1360.0.1920.1040@0.0.1360.728" timestamp="1602339744141" />
-    <state x="497" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602692590375">
+    <state x="497" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603300413398">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="497" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1360.728/1360.0.1920.1040@0.0.1360.728" timestamp="1602692590375" />
+    <state x="497" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1360.728/1360.0.1920.1040@0.0.1360.728" timestamp="1603300413398" />
     <state x="208" y="0" width="930" height="715" key="dock-window-1" timestamp="1603040735557">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="208" y="0" width="930" height="715" key="dock-window-1/0.0.1360.728/1360.0.1920.1040@0.0.1360.728" timestamp="1603040735557" />
-    <state x="441" y="158" width="672" height="475" key="search.everywhere.popup" timestamp="1602872229087">
+    <state x="441" y="158" width="672" height="475" key="search.everywhere.popup" timestamp="1603291575304">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="441" y="158" width="672" height="475" key="search.everywhere.popup/0.0.1360.728/1360.0.1920.1040@0.0.1360.728" timestamp="1602872229087" />
+    <state x="441" y="158" width="672" height="475" key="search.everywhere.popup/0.0.1360.728/1360.0.1920.1040@0.0.1360.728" timestamp="1603291575304" />
     <state x="1983" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1360.728/1360.0.1920.1040@1360.0.1920.1040" timestamp="1602251446434" />
   </component>
   <component name="XDebuggerManager">

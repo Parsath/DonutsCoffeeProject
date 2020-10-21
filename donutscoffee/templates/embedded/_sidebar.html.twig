@@ -1,0 +1,10 @@
+<div class="col-md-3">
+    <div class="list-group">
+        <a href="{{ path('app_dashboard') }}" class="list-group-item list-group-item-action active main-color-bg">
+            <i class="fa fa-cog"></i>Dashboard
+        </a>
+        <a href="{{ path('app_admin_menu') }}" class="list-group-item list-group-item-action"><i class="fa fa-list-alt"></i>Menu <span class="badge">{{ articleCount }}</span></a>
+        <a href="{{ path('app_admin_orders') }}" class="list-group-item list-group-item-action"><i class="fa fa-pencil"></i>Orders <span class="badge">{{ orderCount }}</span></a>
+        <a href="{{ path('app_admin_users') }}" class="list-group-item list-group-item-action"><i class="fa fa-user"></i>Admins <span class="badge">{{ userCount }}</span></a>
+    </div>
+</div>

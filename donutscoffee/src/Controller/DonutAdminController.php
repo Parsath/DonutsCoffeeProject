@@ -7,42 +7,126 @@ namespace App\Controller;
 use App\Entity\Article;
 use App\Entity\LineItem;
 use App\Entity\Order;
+use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class DonutAdminController extends AbstractController
 {
     /**
+     * @Route("/admin/sidebar", name="sidebar")
+     */
+    public function sidebarCounter(EntityManagerInterface $em)
+    {
+        $repository = $em->getRepository(User::class);
+
+        /** @var int $userCount */
+        $userCount = $repository->countUsers();
+
+        $repository = $em->getRepository(Article::class);
+
+        /** @var int $articleCount */
+        $articleCount = $repository->countArticles();
+
+
+        $repository = $em->getRepository(Order::class);
+
+        /** @var int $orderCount */
+        $orderCount = $repository->countOrders();
+
+        return $this->render('embedded/_sidebar.html.twig', [
+            'articleCount' => $articleCount,
+            'orderCount' => $orderCount,
+            'userCount' => $userCount,
+        ]);
+    }
+
+    /**
      * @Route("/admin", name="app_dashboard")
      */
-    public function dashboard()
+    public function dashboard(EntityManagerInterface $em)
     {
-        return $this->render('admin_pannel/pannel.html.twig');
+        $repository = $em->getRepository(User::class);
+
+        /** @var int $userCount */
+        $userCount = $repository->countUsers();
+
+        $repository = $em->getRepository(Article::class);
+
+        /** @var int $articleCount */
+        $articleCount = $repository->countArticles();
+
+        $repository = $em->getRepository(Order::class);
+
+        /** @var Order $order */
+        $ongoingOrders = $repository->findOnGoingOrderedByNewest();
+
+        /** @var int $orderCount */
+        $orderCount = $repository->countOrders();
+
+
+        return $this->render('admin_pannel/pannel.html.twig', [
+            'articleCount' => $articleCount,
+            'orderCount' => $orderCount,
+            'userCount' => $userCount,
+            'ongoingOrders' => $ongoingOrders,
+        ]);
     }
 
     /**
      * @Route("/admin/menu", name="app_admin_menu")
      */
-    public function menu()
+    public function menu(EntityManagerInterface $em)
     {
-        return $this->render('admin_pannel/menu.html.twig');
+        $repository = $em->getRepository(Article::class);
+
+        /** @var Article $article */
+        $articles = $repository->findAll();
+
+        return $this->render('admin_pannel/menu.html.twig', [
+            'articles' => $articles
+        ]);
     }
 
     /**
      * @Route("/admin/orders", name="app_admin_orders")
      */
-    public function orders()
+    public function orders(EntityManagerInterface $em)
     {
-        return $this->render('admin_pannel/orders.html.twig');
+        $repository = $em->getRepository(Order::class);
+
+        /** @var Order $order */
+        $orders = $repository->findAllOrderedByNewest();
+
+        return $this->render('admin_pannel/orders.html.twig', [
+            'orders' => $orders,
+        ]);
     }
+
     /**
      * @Route("/admin/users", name="app_admin_users")
      */
-    public function users()
+    public function users(EntityManagerInterface $em)
     {
-        return $this->render('admin_pannel/users.html.twig');
+        $repository = $em->getRepository(User::class);
+
+        /** @var User $user */
+        $users = $repository->findAll();
+
+        return $this->render('admin_pannel/users.html.twig',[
+            'users' => $users,
+        ]);
+    }
+
+    /**
+     * @Route("/admin/edit", name="app_admin_edit")
+     */
+    public function edit()
+    {
+        return $this->render('admin_pannel/edit.html.twig');
     }
 
     /**
@@ -69,6 +153,26 @@ class DonutAdminController extends AbstractController
             $article->getName(),
             $article->getPrice()
         ));
+    }
+
+    /**
+     * @Route("/admin/user/new")
+     */
+    public function admin(EntityManagerInterface $em, UserPasswordEncoderInterface $passwordEncoder)
+    {
+        $user = new User();
+        $user->setFirstName("Souhaiel");
+        $user->setUsername("souhaiel_klay");
+        $user->setPassword($passwordEncoder->encodePassword(
+            $user,
+            "IamtheOwner123Souhaiel"
+        ));
+
+        $em->persist($user);
+        $em->flush();
+
+
+        Return new Response();
     }
 
     /**

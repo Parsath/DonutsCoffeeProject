@@ -1,13 +1,12 @@
 {% extends 'admin_pannel/admin_nav.html.twig' %}
 
-{% block orderOn %}active{% endblock %}
-
-{% block headerTitle %}Orders <small>Check the orders</small>{% endblock %}
+{% block headerTitle %}Edit <small>Edit your Item menus</small>{% endblock %}
 
 {% block breadcrumbList %}
     <li><a href="{{ path('app_dashboard') }}" style="color: black;">Dashboard</a></li>
-    <li class="active">&emsp;Orders</li>
+    <li class="active">&emsp;Edit</li>
 {% endblock %}
+
 
 {% block content %}
 
@@ -25,37 +24,37 @@
 
                     <div class="card">
                         <div class="card-header main-color-bg">
-                            Orders
+                            Edit Item
                         </div>
                         <div class="card-body">
-                            <table class="table table-striped table-hover table-menu">
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Phone Number</th>
-                                    <th>Created at</th>
-                                    <th>Status</th>
-                                    <th>Type</th>
-                                    <th>Price</th>
-                                    <th>Address</th>
-                                </tr>
-                                {% for order in orders %}
-                                    <tr>
-                                        <td>{{ order.name }}</td>
-                                        <td>{{ order.phone }}</td>
-                                        <td>{{ order.createdAt|date('Y-m-d') }}</td>
-                                        <td>{{ order.status }}</td>
-                                        <td>
-                                            {% if order.pickup == 1 %}
-                                                Pickup
-                                            {% elseif order.pickup == 0 %}
-                                                Delivery
-                                            {% endif %}
-                                        </td>
-                                        <td>{{ order.price }} DT</td>
-                                        <td>{{ order.address }}</td>
-                                    </tr>
-                                {% endfor %}
-                            </table>
+                            <form>
+                                <div class="form-group">
+                                    <label>Article Name</label>
+                                    <input type="text" class="form-control" id="add-name" placeholder="Unique Item Name" value="Hungry Donut">
+                                </div>
+                                <div class="form-group">
+                                    <label>Article Description</label>
+                                    <textarea name="editor1" class="form-control" id="add-description" placeholder="Item Description" value="The hungriest donut on planet Earth"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Article Quantity Available</label>
+                                    <input type="number" class="form-control" id="add-quantity" min="0" placeholder="Item Quantity" value="5">
+                                </div>
+                                <div class="form-group">
+                                    <label>Article Price</label>
+                                    <input type="number" class="form-control" id="add-quantity" step="0.001" min="0" placeholder="Item Price" value="3.502">
+                                </div>
+                                <div class="form-group">
+                                    <label>Article Link</label>
+                                    <input type="text" class="form-control" id="add-link" placeholder="Add Source Item Image Link" value="images/beautifulDonuts.jpg">
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" id="add-carousel" value="1" Checked> Carousel
+                                    </label>
+                                </div>
+                            </form>
+                            <input type="submit" class="btn btn-primary" value="Submit">
                         </div>
                     </div>
 

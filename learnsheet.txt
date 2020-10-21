@@ -355,9 +355,24 @@ Day 21: 12h26 20/10/2020
     References:
         *
 
+WORKTIME: 3H00
+
+Stopping time: 20/10/2020 Unknown
+
+
+Day 22: 11h41 21/10/2020
+
+    STEP 4 IN PROGRESS 
+
+    Notes:
+        *Completed back-office front-end.
+
+    References:
+        *
+
 WORKTIME: 
 
-Stopping time: 20/10/2020
+Stopping time: 21/10/2020
 
 
 /// TODO:
@@ -426,6 +441,22 @@ Stopping time: 20/10/2020
 
         -Create an Admin Panel. Reference:
             -https://www.youtube.com/watch?v=pXbEcGUtHgo
+
+            DONE 21/10/2020
+
+        -Display all db info in CMS Admin Pannel
+
+            DONE 21/10/2020
+
+        -Create Secure user class and create Souhaiel user
+
+            DONE 21/10/2020
+
+        -Limit the Orders displayed in the dashboard
+
+        -Apply the Crud in the admin pannel
+
+        -Make the Shipped/Cancelled buttons in the ongoing orders functionnal
 
         -Make the Cart Container Unlimited
 

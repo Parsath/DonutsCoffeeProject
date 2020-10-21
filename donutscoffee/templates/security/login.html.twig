@@ -1,0 +1,79 @@
+{% extends 'admin_pannel/admin_nav.html.twig' %}
+
+{% block navbar %}{% endblock %}
+
+{% block headerContent %}{% endblock %}
+{% block breadcrumb %}{% endblock %}
+
+{% block content %}
+
+
+    {# Header #}
+
+    <header id="header">
+        <div class="container">
+            <div class="row header-row-1">
+                <div class="col-md-11">
+                    <h1 class="text-center"><i class="fa fa-user"></i>Admin Area <small>Account Login</small></h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    {#  Login  #}
+
+    <section id="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 ml-auto mr-auto pt-5 pb-5">
+                    <form method="post" class="card card-body">
+                        <div class="row">
+                            <div class="col-md-11">
+
+                                {% if error %}
+                                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                                {% endif %}
+
+                                {% if app.user %}
+                                    <div class="mb-3">
+                                        You are logged in as {{ app.user.username }}, <a href="{{ path('app_admin_logout') }}">Logout</a>
+                                    </div>
+                                {% endif %}
+
+                                <div class="form-group">
+                                    <label>Username</label>
+                                    <input type="text" name="username" id="inputUsername" class="form-control"  value="{{ last_username }}" placeholder="Enter Username"  required autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <label  for="inputPassword">Password</label>
+                                    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password">
+                                </div>
+
+                                <input type="hidden" name="_csrf_token"
+                                       value="{{ csrf_token('authenticate') }}"
+                                >
+
+                                <div class="checkbox mb-3">
+                                    <label>
+                                        <input type="checkbox" name="_remember_me"> Remember me
+                                    </label>
+                                </div>
+
+                                <button type="submit" class="btn btn-secondary btn-lg">Sign In</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer" class="footer admin-footer main-color-bg">
+        <p>Copyrights AdminStrap, &copy; 2020</p>
+    </footer>
+
+
+
+
+
+{% endblock %}

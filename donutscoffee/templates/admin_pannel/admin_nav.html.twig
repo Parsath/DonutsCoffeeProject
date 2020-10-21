@@ -22,34 +22,79 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item {% block dashOn %}{% endblock %}">
-                    <a class="nav-link dashnav-item" href="{{ path('app_dashboard') }}">Dashboard <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item {% block menuOn %}{% endblock %}">
-                    <a class="nav-link dashnav-item" href="{{ path('app_admin_menu') }}">Menu</a>
-                </li>
-                <li class="nav-item {% block usersOn %}{% endblock %}">
-                    <a class="nav-link dashnav-item" href="{{ path('app_admin_users') }}">Users</a>
-                </li>
-                <li class="nav-item {% block orderOn %}{% endblock %}">
-                    <a class="nav-link dashnav-item" href="{{ path('app_admin_orders') }}">Orders</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav navbar-right">
-                <li class="nav-item">
-                    <a class="nav-link dashnav-item disabled" href="#">Welcome, Souhaiel</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link dashnav-item" href="/logout">Logout</a>
-                </li>
-            </ul>
+            {% block navbar %}
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item {% block dashOn %}{% endblock %}">
+                        <a class="nav-link dashnav-item" href="{{ path('app_dashboard') }}">Dashboard <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item {% block menuOn %}{% endblock %}">
+                        <a class="nav-link dashnav-item" href="{{ path('app_admin_menu') }}">Menu</a>
+                    </li>
+                    <li class="nav-item {% block usersOn %}{% endblock %}">
+                        <a class="nav-link dashnav-item" href="{{ path('app_admin_users') }}">Users</a>
+                    </li>
+                    <li class="nav-item {% block orderOn %}{% endblock %}">
+                        <a class="nav-link dashnav-item" href="{{ path('app_admin_orders') }}">Orders</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav navbar-right">
+                    <li class="nav-item">
+                        <a class="nav-link dashnav-item disabled" href="#">Welcome, Souhaiel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link dashnav-item" href="{{ path('app_admin_logout') }}">Logout</a>
+                    </li>
+                </ul>
+            {% endblock %}
 
         </div>
     </nav>
-    {% block content %}
 
+    {# Header #}
+
+    {% block headerContent %}
+        <header id="header">
+            <div class="container">
+                <div class="row header-row-1">
+                    <div class="col-md-10">
+                        <h1><i class="fa fa-cog"></i>{% block headerTitle %}{% endblock %}</h1>
+                    </div>
+                    <div class="col-md-1">
+                        <div class="dropdown create">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Manage Items
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a type="button" class="dropdown-item" data-toggle="modal" data-target="#addDonut">Add Menu Item</a>
+                                <a type="button" class="dropdown-item" data-toggle="modal">Add Admin User</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
     {% endblock %}
+
+    {#  Dashboard  #}
+
+    {% block breadcrumb %}
+        <section id="breadcrumb md-5">
+            <div class="container">
+                <ol class="breadcrumb">
+                    {% block breadcrumbList %}
+                    {% endblock %}
+                </ol>
+            </div>
+        </section>
+    {% endblock %}
+
+    {% block content %}
+        {% block sidebar %}
+            {# if the controller is associated with a route, use the path() or url() functions #}
+            {{ render(path('sidebar')) }}
+        {% endblock %}
+    {% endblock %}
+
 {% endblock %}
 
 {% block javascripts %}
