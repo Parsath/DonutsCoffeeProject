@@ -2210,6 +2210,84 @@ a.item-add-btn:hover {
   color: #333333;
 }
 
+.confirm-add-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  visibility: hidden;
+  z-index: -1;
+  opacity: 0;
+  -webkit-transition: opacity .2s ease-out;
+  transition: opacity .2s ease-out;
+}
+
+.confirm-add-container.confirm-add-container-on {
+  visibility: visible;
+  z-index: 999;
+  opacity: 1;
+}
+
+.confirm-add {
+  position: relative;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.15);
+          box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  height: 70vh;
+  width: 50%;
+  background-color: #f5f6f7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.close-confirm-add-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4vw;
+  height: 4vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.close-confirm-add {
+  color: rgba(48, 52, 53, 0.8);
+  font-size: 25px;
+}
+
+.close-confirm-add:hover {
+  cursor: pointer;
+  color: #303435;
+}
+
 .admin-footer {
   display: -webkit-box;
   display: -ms-flexbox;

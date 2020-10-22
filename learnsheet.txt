@@ -370,9 +370,24 @@ Day 22: 11h41 21/10/2020
     References:
         *
 
-WORKTIME: 
+WORKTIME: 6H00M
 
-Stopping time: 21/10/2020
+Stopping time: 21/10/2020 19h10
+
+
+Day 23: 11h32 22/10/2020
+
+    STEP 4 IN PROGRESS 
+
+    Notes:
+        *
+
+    References:
+        *
+
+WORKTIME: 3H53
+
+Stopping time: 22/10/2020 20h38
 
 
 /// TODO:
@@ -454,11 +469,23 @@ Stopping time: 21/10/2020
 
         -Limit the Orders displayed in the dashboard
 
+            DONE 22/10/2020
+
+        -Add the Edit functionnality 
+
+        -Fix Delete so it doesn't really delete the Item, it just removes it from the dashboard.
+
+        -Add Quantity reduction when lineItem is passed
+
         -Apply the Crud in the admin pannel
+
+        -Add LineItem details about each order
 
         -Make the Shipped/Cancelled buttons in the ongoing orders functionnal
 
-        -Make the Cart Container Unlimited
+        -Make the Cart Container Unlimited ( remember overflow-y )
+
+        -Make the Instructions unlimited ( overflow-y)
 
         -Make the Edit button, functionnal.
 

@@ -169,9 +169,13 @@ class Article
         return $this->availability;
     }
 
-    public function setAvailability(bool $availability): self
+    public function setAvailability(): self
     {
-        $this->availability = $availability;
+        if($this->quantity > 0)
+            $this->availability = 1;
+
+        else
+            $this->availability = 0;
 
         return $this;
     }

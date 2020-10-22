@@ -94,57 +94,9 @@
         </div>
     </section>
 
-    {# Modals #}
-
-    <div class="modal fade" id="addDonut" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="row">
-                    <div class="col-md-11">
-                        <form>
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="form-group">
-                                    <label>Article Name</label>
-                                    <input type="text" class="form-control" id="add-name" placeholder="Unique Item Name">
-                                </div>
-                                <div class="form-group">
-                                    <label>Article Description</label>
-                                    <textarea name="editor1" class="form-control" id="add-description" placeholder="Item Description"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label>Article Quantity Available</label>
-                                    <input type="number" class="form-control" id="add-quantity" min="0" placeholder="Item Quantity">
-                                </div>
-                                <div class="form-group">
-                                    <label>Article Price</label>
-                                    <input type="number" class="form-control" id="add-quantity" step="0.001" min="0" placeholder="Item Price">
-                                </div>
-                                <div class="form-group">
-                                    <label>Article Link</label>
-                                    <input type="text" class="form-control" id="add-link" placeholder="Add Source Item Image Link">
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="add-carousel"> Carousel
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary">Save Changes</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    {% block modal %}
+        {{ parent() }}
+    {% endblock %}
 
     <footer id="footer" class="footer admin-footer main-color-bg">
         <p>Copyrights AdminStrap, &copy; 2020</p>

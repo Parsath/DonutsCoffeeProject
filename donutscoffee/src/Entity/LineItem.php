@@ -34,7 +34,7 @@ class LineItem
 
     /**
      * @ORM\ManyToOne(targetEntity=Article::class, inversedBy="lineItems")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $article;
 

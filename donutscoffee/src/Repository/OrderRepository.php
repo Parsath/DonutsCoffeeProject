@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Order;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -45,6 +46,19 @@ class OrderRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult()
             ;
+    }
+
+    /**
+     * @return Order[]
+     */
+    public function getAllOrderedByNewestQueryBuilder(): QueryBuilder
+    {
+       $qb = $this->createQueryBuilder('a')
+            ->andWhere('a.createdAt IS NOT NULL')
+            ;
+
+       return $qb
+           ->orderBy('a.createdAt', 'DESC');
     }
 
     public function countOrders()

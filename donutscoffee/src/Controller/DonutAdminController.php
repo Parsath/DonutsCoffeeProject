@@ -9,10 +9,12 @@ use App\Entity\LineItem;
 use App\Entity\Order;
 use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\HttpFoundation\Request;
 
 class DonutAdminController extends AbstractController
 {
@@ -94,15 +96,20 @@ class DonutAdminController extends AbstractController
     /**
      * @Route("/admin/orders", name="app_admin_orders")
      */
-    public function orders(EntityManagerInterface $em)
+    public function orders(EntityManagerInterface $em, Request $request, PaginatorInterface $paginator)
     {
         $repository = $em->getRepository(Order::class);
 
-        /** @var Order $order */
-        $orders = $repository->findAllOrderedByNewest();
+        $queryBuilder = $repository->getAllOrderedByNewestQueryBuilder();
+
+        $pagination = $paginator->paginate(
+            $queryBuilder,
+            $request->query->getInt('page',1),
+            10
+        );
 
         return $this->render('admin_pannel/orders.html.twig', [
-            'orders' => $orders,
+            'pagination' => $pagination,
         ]);
     }
 
@@ -138,8 +145,8 @@ class DonutAdminController extends AbstractController
         $article->setName("Donut 3ejja");
         $article->setPrice(1000.6412);
         $article->setCarousel(1);
-        $article->setAvailability(1);
         $article->setQuantity(10);
+        $article->setAvailability();
         $article->setDescription("Hey I'm Donut Gourmand Description");
         $article->setLink("/images/OrderNow/Salty.jpg");
 

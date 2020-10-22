@@ -20,6 +20,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cabe3c84-6b5f-47d6-ba55-aeaf98f62597" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/config/packages/knp_paginator.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201022192056.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/ArticleController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/article/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/donutscoffee.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/donutscoffee.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/_dashboard.sass" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/_dashboard.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DonutAdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DonutAdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Article.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/LineItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/LineItem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/OrderRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/OrderRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin_pannel/admin_nav.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_pannel/admin_nav.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin_pannel/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_pannel/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin_pannel/menu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_pannel/menu.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin_pannel/orders.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_pannel/orders.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin_pannel/pannel.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_pannel/pannel.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin_pannel/users.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_pannel/users.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/order.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/order.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../learnsheet.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../learnsheet.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -121,6 +143,10 @@
       <path value="$PROJECT_DIR$/vendor/symfony/security-guard" />
       <path value="$PROJECT_DIR$/vendor/symfony/security-bundle" />
       <path value="$PROJECT_DIR$/vendor/symfony/property-access" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
     </include_path>
   </component>
   <component name="ProjectId" id="1ibD0C1raJznvB1ZfFq7IUqFeAr" />
@@ -164,6 +190,7 @@
       <workItem from="1603106806864" duration="13292000" />
       <workItem from="1603193584520" duration="12735000" />
       <workItem from="1603278430799" duration="23605000" />
+      <workItem from="1603363210807" duration="15554000" />
     </task>
     <servers />
   </component>
@@ -194,10 +221,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="485" y="46" key="#com.intellij.ide.util.MemberChooser/0.0.1360.728/1360.0.1920.1040@0.0.1360.728" timestamp="1603291591966" />
-    <state x="410" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603290468444">
+    <state x="410" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603391480585">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="410" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1360.728/1360.0.1920.1040@0.0.1360.728" timestamp="1603290468444" />
+    <state x="410" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1360.728/1360.0.1920.1040@0.0.1360.728" timestamp="1603391480585" />
     <state x="460" y="119" key="FileChooserDialogImpl" timestamp="1602167209307">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -223,21 +250,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="208" y="0" width="930" height="715" key="dock-window-1/0.0.1360.728/1360.0.1920.1040@0.0.1360.728" timestamp="1603040735557" />
-    <state x="441" y="158" width="672" height="475" key="search.everywhere.popup" timestamp="1603291575304">
+    <state x="441" y="158" width="672" height="475" key="search.everywhere.popup" timestamp="1603392973941">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="441" y="158" width="672" height="475" key="search.everywhere.popup/0.0.1360.728/1360.0.1920.1040@0.0.1360.728" timestamp="1603291575304" />
+    <state x="441" y="158" width="672" height="475" key="search.everywhere.popup/0.0.1360.728/1360.0.1920.1040@0.0.1360.728" timestamp="1603392973941" />
     <state x="1983" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1360.728/1360.0.1920.1040@1360.0.1920.1040" timestamp="1602251446434" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/templates/home/order.html.twig</url>
-          <line>42</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
