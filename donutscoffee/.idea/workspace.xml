@@ -20,36 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cabe3c84-6b5f-47d6-ba55-aeaf98f62597" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201021141613.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201021142333.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201021153430.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/dashboard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin_pannel/edit.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/embedded/_sidebar.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/donutscoffee.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/donutscoffee.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/_dashboard.sass" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/_dashboard.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DonutAdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DonutAdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ArticleRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ArticleRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/OrderRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/OrderRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin_pannel/admin_nav.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_pannel/admin_nav.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin_pannel/menu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_pannel/menu.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin_pannel/orders.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_pannel/orders.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin_pannel/pannel.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_pannel/pannel.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin_pannel/users.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_pannel/users.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../learnsheet.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../learnsheet.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -193,7 +163,7 @@
       <workItem from="1603026573348" duration="13936000" />
       <workItem from="1603106806864" duration="13292000" />
       <workItem from="1603193584520" duration="12735000" />
-      <workItem from="1603278430799" duration="23305000" />
+      <workItem from="1603278430799" duration="23605000" />
     </task>
     <servers />
   </component>
