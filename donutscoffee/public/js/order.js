@@ -1,7 +1,7 @@
 
 // The Creation of each Cart Item the client adds through the menu in the Cart.
 
-var addCartItem = function(i, qte, name, price, instructions){
+var addCartItem = function(i, qte, name, price, instructions, quantity){
 
     while($(".cart-item-"+i).length)
         i++;
@@ -21,6 +21,7 @@ var addCartItem = function(i, qte, name, price, instructions){
 
         // Hidden Initial Price
     $("<span class=\"initial-price-"+i+"\" hidden>"+price+"</span>").appendTo(".cart-details-"+i);
+    $("<span class=\"initial-quantity-"+i+"\" hidden>"+quantity+"</span>").appendTo(".cart-details-"+i);
 
     $("<span class=\"dark-bg price price-"+i+"\">"+price+"</span>").appendTo(".price-container-"+i);
 
@@ -46,7 +47,7 @@ var addCartItem = function(i, qte, name, price, instructions){
 
 // Checks if the Donut already exists in the Cart before adding it
 
-var checkCartItem = function(i, qte, name, price, instructions){
+var checkCartItem = function(i, qte, name, price, instructions, quantity){
 
     var loop = 0;
 
@@ -62,7 +63,7 @@ var checkCartItem = function(i, qte, name, price, instructions){
     });
 
     if( loop > -1 )
-        addCartItem(i, qte, name, price, instructions);
+        addCartItem(i, qte, name, price, instructions, quantity);
 }
 
 // Removes the donut from the cart ( in the cart )
@@ -410,7 +411,7 @@ $(document).ready(function(){
             url: $link.attr('href')
         }).done(function(data) {
             let instructions = $('#donut-instructions').val();
-            checkCartItem(cartItemIterator(), 1,data.name, data.price, instructions);
+            checkCartItem(cartItemIterator(), 1,data.name, data.price, instructions, data.quantity);
         });
     });
 
@@ -436,10 +437,20 @@ $(document).ready(function(){
         $(".cart-iteration").each(function(){
             let cartItemIteratorHtml = $(this).html();
             let cartItemIterator = parseInt(cartItemIteratorHtml, 10);
+            let quantityHtml = $(".initial-quantity-"+cartItemIterator).html();
+            let quantity = parseInt(quantityHtml, 10);
+
+
             if(incrementBtn.hasClass("cart-plus-"+cartItemIterator))
             {
-                incrementCartItemQte(cartItemIterator);
-                return false;
+                if($("#quant-"+cartItemIterator).val() >= quantity){
+                    alert("No more of this Article are available.");
+                    return false;
+                }
+                else{
+                    incrementCartItemQte(cartItemIterator);
+                    return false;
+                }
             }
         });
     }));
@@ -451,6 +462,8 @@ $(document).ready(function(){
         $(".cart-iteration").each(function(){
             let cartItemIteratorHtml = $(this).html();
             let cartItemIterator = parseInt(cartItemIteratorHtml, 10);
+
+
             if(decrementBtn.hasClass("cart-minus-"+cartItemIterator))
             {
                 decrementCartItemQte(cartItemIterator);

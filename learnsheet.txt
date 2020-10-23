@@ -390,6 +390,21 @@ WORKTIME: 3H53
 Stopping time: 22/10/2020 20h38
 
 
+Day 24: 12h34 23/10/2020
+
+    STEP 4 IN PROGRESS 
+
+    Notes:
+        *Website 99% COMPLETE!!!!
+
+    References:
+        *
+
+WORKTIME: 4H20M
+
+Stopping time: 23/10/2020 22h32
+
+
 /// TODO:
 
         -Add a Preloader in the index page so that the page is only loaded when all files and images are loaded.
@@ -471,23 +486,41 @@ Stopping time: 22/10/2020 20h38
 
             DONE 22/10/2020
 
-        -Add the Edit functionnality 
-
         -Fix Delete so it doesn't really delete the Item, it just removes it from the dashboard.
+
+            DONE 23/10/2020
+
+        -Add the Edit functionnality
+
+            DONE 23/10/2020 
 
         -Add Quantity reduction when lineItem is passed
 
+            DONE 23/10/2020
+
         -Apply the Crud in the admin pannel
 
-        -Add LineItem details about each order
+            DONE 23/10/2020
 
         -Make the Shipped/Cancelled buttons in the ongoing orders functionnal
 
+            DONE 23/10/2020
+
+        -Add LineItem details about each order
+
+            DONE 23/10/2020
+
         -Make the Cart Container Unlimited ( remember overflow-y )
+
+            DONE 23/10/2020
 
         -Make the Instructions unlimited ( overflow-y)
 
+            DONE 23/10/2020
+
         -Make the Edit button, functionnal.
+
+        -Comment the whole thing
 
 ///
 

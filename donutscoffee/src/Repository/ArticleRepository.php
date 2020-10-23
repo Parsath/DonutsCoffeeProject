@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Article;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -25,6 +26,33 @@ class ArticleRepository extends ServiceEntityRepository
             ->select('count(a.id)')
             ->getQuery()
             ->getSingleScalarResult()
+            ;
+    }
+
+    /**
+     * @return Article[]
+     */
+    public function findAllNonDeletedArticles()
+    {
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.isDeleted = :val')
+            ->setParameter('val', 0)
+            ->andWhere('a.availability = :avail')
+            ->setParameter('avail', 1)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    /**
+     * @return Article[]
+     */
+    public function findAllOrderedByDeletedArticles()
+    {
+        return $this->createQueryBuilder('a')
+            ->orderBy('a.isDeleted', 'ASC')
+            ->getQuery()
+            ->getResult()
             ;
     }
 

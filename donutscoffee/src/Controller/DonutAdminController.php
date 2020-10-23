@@ -86,7 +86,7 @@ class DonutAdminController extends AbstractController
         $repository = $em->getRepository(Article::class);
 
         /** @var Article $article */
-        $articles = $repository->findAll();
+        $articles = $repository->findAllOrderedByDeletedArticles();
 
         return $this->render('admin_pannel/menu.html.twig', [
             'articles' => $articles
@@ -126,14 +126,6 @@ class DonutAdminController extends AbstractController
         return $this->render('admin_pannel/users.html.twig',[
             'users' => $users,
         ]);
-    }
-
-    /**
-     * @Route("/admin/edit", name="app_admin_edit")
-     */
-    public function edit()
-    {
-        return $this->render('admin_pannel/edit.html.twig');
     }
 
     /**

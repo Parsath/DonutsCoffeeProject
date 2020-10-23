@@ -94,4 +94,110 @@ class ArticleController extends AbstractController
             ]);
         }
     }
+
+    /**
+     * @Route("/admin/article/remove/{id}", name="remove_article", methods={"POST"})
+     */
+    public function remove($id, Request $request, EntityManagerInterface $em){
+
+        $repository = $em->getRepository(Article::class);
+
+        /** var Article $article */
+        $article = $repository->findOneBy(
+            ['id' => $id]
+        );
+
+        if ($article){
+            $articleName = $article->getName();
+
+            $article->setIsDeleted(1);
+
+            $em->persist($article);
+            $em->flush();
+
+            return new JsonResponse([
+                'name' => $articleName,
+            ]);
+        }
+        else{
+            return new JsonResponse([
+                'notFound' => 'Article Not Found',
+            ]);
+        }
+    }
+
+    /**
+     * @Route("/admin/article/edit/{id}", name="edit_article")
+     */
+    public function edit($id, Request $request, EntityManagerInterface $em){
+
+        $repository = $em->getRepository(Article::class);
+
+
+
+        /** var Article $article */
+        $article = $repository->findOneBy(
+            ['id' => $id]
+        );
+
+        if($request->isMethod('GET')){
+            if ($article){
+                return $this->render('article/edit.html.twig', [
+                    'article' => $article,
+                ]);
+            }
+            else{
+                return new JsonResponse([
+                    'notFound' => 'Article Not Found',
+                ]);
+            }
+        }
+        elseif($request->isMethod('POST')){
+            $editDonut = $request->request->all();
+
+            /** @var Article $article */
+            $taken = $repository->findOneBy(
+                ['name' => $editDonut['edit-name']]
+            );
+            $linkTaken = $repository->findOneBy(
+                ['link' => $editDonut['edit-link']]
+            );
+
+            if($taken && ($taken->getName() != $editDonut['edit-name']) )
+            {
+                return new JsonResponse([
+                    'errorName' => "Name Taken",
+                ]);
+            }
+            elseif ($linkTaken && ($linkTaken->getLink() != $editDonut['edit-link']) )
+            {
+                return new JsonResponse([
+                    'errorLink' => "Link Taken",
+                ]);
+            }
+            else{
+                $article->setName($editDonut['edit-name']);
+                $article->setDescription($editDonut['edit-description']);
+                $article->setQuantity($editDonut['edit-quantity']);
+                $article->setAvailability();
+                $article->setPrice($editDonut['edit-price']);
+                $article->setLink($editDonut['edit-link']);
+                $article->setCarousel($editDonut['edit-carousel']);
+                $article->setIsDeleted($editDonut['edit-isdeleted']);
+
+                $em->persist($article);
+                $em->flush();
+
+                return new JsonResponse([
+                    'name' => $article->getName(),
+                    'link' => $article->getLink(),
+                    'slug' => $article->getSlug(),
+                    'price' => $article->getPrice(),
+                    'description' => $article->getDescription()
+                ]);
+            }
+        }
+
+
+    }
 }

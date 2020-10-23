@@ -27,34 +27,39 @@
                             Edit Item
                         </div>
                         <div class="card-body">
-                            <form>
+                            <form method="POST" action="{{ path('edit_article', {id: article.id}) }}">
                                 <div class="form-group">
                                     <label>Article Name</label>
-                                    <input type="text" class="form-control" id="add-name" placeholder="Unique Item Name" value="Hungry Donut">
+                                    <input type="text" class="form-control" id="edit-name" placeholder="Unique Item Name" value="{{ article.name }}">
                                 </div>
                                 <div class="form-group">
                                     <label>Article Description</label>
-                                    <textarea name="editor1" class="form-control" id="add-description" placeholder="Item Description" value="The hungriest donut on planet Earth"></textarea>
+                                    <textarea name="editor1" class="form-control" id="edit-description" placeholder="Item Description" >{{ article.description }}</textarea>
                                 </div>
                                 <div class="form-group">
                                     <label>Article Quantity Available</label>
-                                    <input type="number" class="form-control" id="add-quantity" min="0" placeholder="Item Quantity" value="5">
+                                    <input type="number" class="form-control" id="edit-quantity" min="0" placeholder="Item Quantity" value="{{ article.quantity }}">
                                 </div>
                                 <div class="form-group">
                                     <label>Article Price</label>
-                                    <input type="number" class="form-control" id="add-quantity" step="0.001" min="0" placeholder="Item Price" value="3.502">
+                                    <input type="number" class="form-control" id="edit-price" step="0.001" min="0" placeholder="Item Price" value="{{ article.price }}">
                                 </div>
                                 <div class="form-group">
                                     <label>Article Link</label>
-                                    <input type="text" class="form-control" id="add-link" placeholder="Add Source Item Image Link" value="images/beautifulDonuts.jpg">
+                                    <input type="text" class="form-control" id="edit-link" placeholder="Add Source Item Image Link" value="{{ article.link }}">
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" id="add-carousel" value="1" Checked> Carousel
+                                        <input type="checkbox" id="edit-isdeleted"
+                                        {% if article.isDeleted == 1 %}Checked{% endif %}> Deleted from Menu
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="edit-carousel"
+                                        {% if article.carousel == 1 %}Checked{% endif %}> Carousel
                                     </label>
                                 </div>
                             </form>
-                            <input type="submit" class="btn btn-primary" value="Submit">
+                            <input type="submit" class="btn btn-primary" value="Submit" id="edit-submit-article" href="{{ path('edit_article', {id: article.id}) }}">
                         </div>
                     </div>
 

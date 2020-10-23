@@ -37,12 +37,14 @@
                                     <th>Type</th>
                                     <th>Price</th>
                                     <th>Address</th>
+                                    <th>Shipped or Cancelled at</th>
+                                    <th></th>
                                 </tr>
                                 {% for order in pagination %}
                                     <tr>
                                         <td>{{ order.name }}</td>
                                         <td>{{ order.phone }}</td>
-                                        <td>{{ order.createdAt|date('Y-m-d') }}</td>
+                                        <td>{{ order.createdAt|date('Y-m-d h:m:s') }}</td>
                                         <td>{{ order.status }}</td>
                                         <td>
                                             {% if order.pickup == 1 %}
@@ -53,6 +55,8 @@
                                         </td>
                                         <td>{{ order.price }} DT</td>
                                         <td>{{ order.address }}</td>
+                                        <td>{{ order.updatedAt|date('Y-m-d h:m:s') }}</td>
+                                        <td><a id="show-order" class="btn btn-success" href="{{ path('order_show', {id: order.id}) }}">Show</a></td>
                                     </tr>
                                 {% endfor %}
                             </table>

@@ -66,6 +66,11 @@ class Article
      */
     private $lineItems;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isDeleted = false;
+
     public function __construct()
     {
         $this->lineItems = new ArrayCollection();
@@ -164,6 +169,16 @@ class Article
         return $this;
     }
 
+    public function decrementQuantity(int $quantity): self
+    {
+        $this->quantity -= $quantity;
+
+        if($this->quantity < 0)
+            $this->quantity = 0;
+
+        return $this;
+    }
+
     public function getAvailability(): ?bool
     {
         return $this->availability;
@@ -207,6 +222,18 @@ class Article
                 $lineItem->setArticle(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getIsDeleted(): ?bool
+    {
+        return $this->isDeleted;
+    }
+
+    public function setIsDeleted(?bool $isDeleted): self
+    {
+        $this->isDeleted = $isDeleted;
 
         return $this;
     }

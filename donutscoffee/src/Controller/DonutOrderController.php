@@ -28,9 +28,18 @@ class DonutOrderController extends AbstractController
         $repository = $em->getRepository(Article::class);
 
         /** @var array $articles */
-        $articles = $repository->findBy(
-            ['availability' => 1]
-        );
+        $articles = $repository->findAllNonDeletedArticles();
+
+//        $articles = $repository->findBy(
+//            array('isDeleted' => 0),
+//            array('availability' => 1)
+//        );
+
+//        $articles->getDoctrine()->getRepository(FormInputs::class)->
+//        findBy(
+//            array('uid'=>$uid),
+//            array('id'=>'DESC')
+//        );
 
 //        if(!$articles) {
 //            throw $this->createNotFoundException(sprintf('Sorry we\'re actually encountering a problem x_x'));
@@ -45,10 +54,8 @@ class DonutOrderController extends AbstractController
     /**
      * @Route("/order/donut/{slug}", name="article_display", methods={"POST"})
      */
-    public function openDonut($slug, LoggerInterface $logger, EntityManagerInterface $em)
+    public function openDonut($slug, EntityManagerInterface $em)
     {
-        $logger->info("Gone into the wrong one");
-
         $repository = $em->getRepository(Article::class);
 
         /** var Article $article */
@@ -61,7 +68,8 @@ class DonutOrderController extends AbstractController
             'link' => $article->getLink(),
             'slug' => $article->getSlug(),
             'price' => $article->getPrice(),
-            'description' => $article->getDescription()
+            'description' => $article->getDescription(),
+            'quantity' => $article->getQuantity(),
         ]);
     }
 
@@ -73,7 +81,8 @@ class DonutOrderController extends AbstractController
         $donutsArray = $request->get('donutArray');
         $clientName = $request->get('name');
         $clientPhone = $request->get('phone');
-//        $logger->info("Donuts Passed");
+
+
         if(!empty($donutsArray))
         {
             $order = new Order();
@@ -87,7 +96,6 @@ class DonutOrderController extends AbstractController
             $em->flush();
             foreach($donutsArray as $donut)
             {
-//                $logger->info($donut['name']);
                 $lineItem = new LineItem();
 
 
@@ -104,7 +112,10 @@ class DonutOrderController extends AbstractController
                 $lineItem->setInstructions($donut['instructions']);
 
                 $order->addPrice($lineItem->getPrice());
+                $article->decrementQuantity($donut['quantity']);
+                $article->setAvailability();
 
+                $em->persist($article);
                 $em->persist($lineItem);
                 $em->persist($order);
 
@@ -122,15 +133,15 @@ class DonutOrderController extends AbstractController
     /**
      * @Route("/order/delivery", name="order_delivery", methods={"POST"})
      */
-    public function deliveryOrder(LoggerInterface $logger,Request $request, EntityManagerInterface $em)
+    public function deliveryOrder(Request $request, EntityManagerInterface $em)
     {
         $donutsArray = $request->get('donutArray');
         $clientName = $request->get('name');
         $clientPhone = $request->get('phone');
         $clientAddress = $request->get('address');
-        $logger->info("Delivery Passed");
         if(!empty($donutsArray))
         {
+            
             $order = new Order();
 
             $order->setStatus("ongoing");
@@ -140,9 +151,9 @@ class DonutOrderController extends AbstractController
             $order->setAddress($clientAddress);
             $em->persist($order);
             $em->flush();
+
             foreach($donutsArray as $donut)
             {
-                $logger->info($donut['name']);
                 $lineItem = new LineItem();
 
 
@@ -159,7 +170,10 @@ class DonutOrderController extends AbstractController
                 $lineItem->setInstructions($donut['instructions']);
 
                 $order->addPrice($lineItem->getPrice());
+                $article->decrementQuantity($donut['quantity']);
+                $article->setAvailability();
 
+                $em->persist($article);
                 $em->persist($lineItem);
                 $em->persist($order);
 
@@ -169,7 +183,8 @@ class DonutOrderController extends AbstractController
 
 
         Return new JsonResponse([
-//            'donuts' => $donutsArray,
+            'clientName' => $clientName,
+            'clientPhone' => $clientPhone
         ]);
     }
 }

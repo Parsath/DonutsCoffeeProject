@@ -82,7 +82,7 @@
                                         </td>
                                         <td>{{ order.price }} DT</td>
                                         <td>{{ order.address }}</td>
-                                        <td><a class="btn btn-secondary" href="#">Shipped</a><a class="btn btn-danger" href="#">Cancelled</a></td>
+                                        <td><a id="ship-order" class="btn btn-secondary" href="{{ path('order_ship', {id: order.id}) }}">Shipped</a><a id="cancel-order" class="btn btn-danger" href="{{ path('order_cancel', {id: order.id}) }}">Cancelled</a></td>
                                     </tr>
                                 {% endfor %}
 

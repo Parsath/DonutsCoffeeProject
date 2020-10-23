@@ -37,6 +37,7 @@
                                     <th>Link</th>
                                     <th>Carousel</th>
                                     <th>Availability</th>
+                                    <th>Deleted from Menu</th>
                                     <th></th>
                                 </tr>
                                 {% for article in articles %}
@@ -47,19 +48,30 @@
                                         <td>{{ article.link }}</td>
                                         <td>
                                             {% if article.carousel == 1 %}
-                                                Yes
+                                            <span style="color: lawngreen;" class="fa fa-check">
                                             {% elseif article.carousel == 0 %}
-                                                No
+                                                <span style="color: orangered;" class="fa fa-close">
                                             {% endif %}
                                         </td>
                                         <td>
                                             {% if article.availability == 1 %}
-                                                Available
+                                            <span style="color: lawngreen;" class="fa fa-check">
                                             {% elseif article.availability == 0 %}
-                                                Out of Stock
+                                                <span style="color: orangered;" class="fa fa-close">
                                             {% endif %}
                                         </td>
-                                        <td><a class="btn btn-secondary" href="{{ path('app_admin_edit') }}">Edit</a><a id="delete-article" class="btn btn-danger" href="{{ path('delete_article', {id: article.id}) }}">Delete</a></td>
+                                        <th>
+                                            {% if article.isDeleted == 1 %}
+                                                <span style="color: lawngreen;" class="fa fa-check">
+                                            {% elseif article.isDeleted == 0 %}
+                                                <span style="color: orangered;" class="fa fa-close">
+                                            {% endif %}
+                                        </th>
+                                        <td>
+                                            <a id="edit-article" class="btn btn-secondary" href="{{ path('edit_article', {id: article.id}) }}">Edit</a>
+                                            <a id="remove-article" class="btn btn-warning" href="{{ path('remove_article', {id: article.id}) }}">Remove</a>
+                                            <a id="delete-article" class="btn btn-danger" href="{{ path('delete_article', {id: article.id}) }}">DELETE</a>
+                                        </td>
                                     </tr>
                                 {% endfor %}
                             </table>
