@@ -405,19 +405,19 @@ WORKTIME: 4H20M
 Stopping time: 23/10/2020 22h32
 
 
-Day 24: 17h44 24/10/2020
+Day 25: 17h44 24/10/2020
 
     STEP 4 IN PROGRESS 
 
     Notes:
-        *
+        * Website IS COMPLEEETEEE
 
     References:
         *
 
-WORKTIME:
+WORKTIME: 37M 
 
-Stopping time: 24/10/2020 
+Stopping time: 24/10/2020 19h44
 
 
 /// TODO:
