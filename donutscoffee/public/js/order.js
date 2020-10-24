@@ -27,8 +27,9 @@ var addCartItem = function(i, qte, name, price, instructions, quantity){
 
     $("<span class=\"dark-bg price\">dt</span>").appendTo(".price-container-"+i);
     $("<div class=\"cart-buttons-container cart-buttons-container-"+i+"\"></div>").appendTo(".cart-item-"+i);
-    $("<div class=\"cart-buttons cart-buttons-"+i+"\"></div>").appendTo(".cart-buttons-container-"+i);
+    $("<div class=\"cart-buttons cart-buttons-"+i+"\"></div>").appendTo(".cart-buttons-container-"+i);;
     $("<button class=\"edit-cart btn btn-outline-light edit-cart-"+i+"\">Edit</button>").appendTo(".cart-buttons-"+i);
+    // $("<button class=\"edit-cart btn btn-outline-light edit-cart-"+i+"\" data-toggle='modal' data-target='#editInstructions' \">Edit</button>").appendTo(".cart-buttons-"+i);
     $("<button class=\"remove-cart btn btn-outline-light remove-cart-"+i+"\">Remove</button>").appendTo(".cart-buttons-"+i);
     $("<div class=\"cart-plus-minus cart-plus-minus-"+i+"\"></div>").appendTo(".cart-buttons-container-"+i);
     $("<span class=\"cart-plus dark-bg cart-plus-"+i+"\">+</span>").appendTo(".cart-plus-minus-"+i);
@@ -126,6 +127,16 @@ var decrementCartItemQte = function(i){
 // Checks how many Donuts there is
 
 var cartItemIterator = function() {
+    let i = 0;
+    $(".cart-item").each(function(){
+        i++;
+    })
+    return i;
+}
+
+// Pass Donuts instructions to Modal ( on Edit )
+
+var cartItemEditInstructions = function(iterator) {
     let i = 0;
     $(".cart-item").each(function(){
         i++;
@@ -429,6 +440,56 @@ $(document).ready(function(){
             }
         });
     }));
+
+    // Edit an article instructions in the cart
+
+    $(document).on("click",".edit-cart", (function(e){
+        e.preventDefault();
+        var editBtn = $(e.currentTarget);
+
+        $(".cart-iteration").each(function(){
+            let cartItemIteratorHtml = $(this).html();
+            let cartItemIterator = parseInt(cartItemIteratorHtml, 10);
+            let cartItemName = $(".name-"+cartItemIterator).html();
+            let cartItemInstructions = $(".cart-instructions-"+cartItemIterator).val();
+
+            console.log(cartItemName);
+            console.log(cartItemInstructions);
+
+            if(editBtn.hasClass("edit-cart-"+cartItemIterator))
+            {
+                $("#edit-article-instructions-iterator").val(cartItemIterator);
+                $("#article-name-on-edit").html(cartItemName);
+                $("#edit-article-instructions").html(cartItemInstructions);
+                $("#editInstructions").modal("toggle");
+                return false;
+            }
+        });
+    }));
+
+    // Submit edited article instructions in the cart
+
+    $(document).on("click","#submit-article-instructions", (function(e){
+        e.preventDefault();
+        var submitEditBtn = $(e.currentTarget);
+
+        let cartItemToSubmitHtml = $("#edit-article-instructions-iterator").val();
+        let cartItemToSubmit = parseInt(cartItemToSubmitHtml, 10);
+        let cartItemInsctructionsToSubmit = $("#edit-article-instructions").val();
+
+        $(".cart-iteration").each(function(){
+            let cartItemIteratorHtml = $(this).html();
+            let cartItemIterator = parseInt(cartItemIteratorHtml, 10);
+
+            if(cartItemIterator === cartItemToSubmit)
+            {
+                $(".cart-instructions-"+cartItemIterator).val(cartItemInsctructionsToSubmit);
+                $("#editInstructions").modal("hide");
+                return false;
+            }
+        });
+    }));
+
 
     // Increments a Donut quantity ( while incrementing its price ) in the cart
 

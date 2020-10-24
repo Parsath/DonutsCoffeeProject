@@ -121,6 +121,38 @@
                     </div>
                 </div>
 
+
+        <!----------------------------- Instruction Edit Modal ---------------------------->
+
+            <div class="modal fade" id="editInstructions" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="row">
+                            <div class="col-md-11">
+{#                                <form id="edit-article-instructions-form" method="POST" action="{{ path('add_article') }}">#}
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="article-name-on-edit">Article Name</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label>Your Instructions</label>
+                                            <textarea name="edit-article-instructions" class="form-control" id="edit-article-instructions" placeholder="Item Instruction"></textarea>
+                                        </div>
+                                        <input type="hidden" id="edit-article-instructions-iterator">
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary" id="submit-article-instructions">Save Changes</button>
+                                    </div>
+{#                                </form>#}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         <!----------------------------- Footer ---------------------------->
 
         <div class="footer-order">

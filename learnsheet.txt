@@ -405,6 +405,21 @@ WORKTIME: 4H20M
 Stopping time: 23/10/2020 22h32
 
 
+Day 24: 17h44 24/10/2020
+
+    STEP 4 IN PROGRESS 
+
+    Notes:
+        *
+
+    References:
+        *
+
+WORKTIME:
+
+Stopping time: 24/10/2020 
+
+
 /// TODO:
 
         -Add a Preloader in the index page so that the page is only loaded when all files and images are loaded.
@@ -518,7 +533,21 @@ Stopping time: 23/10/2020 22h32
 
             DONE 23/10/2020
 
+        -Check carousel button on edit
+
+            DONE 24/10/2020 
+
+        -Check why, Show doesn't open on left click
+
+            DONE 24/10/2020
+
+        -Add instructions in the Order Show 
+
+            DONE 24/10/2020
+
         -Make the Edit button, functionnal.
+
+            DONE 24/10/2020
 
         -Comment the whole thing
 

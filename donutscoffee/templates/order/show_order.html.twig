@@ -33,12 +33,14 @@
                                     <th>Article Name</th>
                                     <th>Quantity</th>
                                     <th>Price</th>
+                                    <th>Instructions</th>
                                 </tr>
                                 {% for lineItem in order.lineItems %}
                                     <tr>
                                         <td>{{ lineItem.article.name }}</td>
                                         <td>{{ lineItem.quantity }}</td>
                                         <td>{{ lineItem.price }}</td>
+                                        <td>{{ lineItem.instructions }}</td>
                                     </tr>
                                 {% endfor %}
                             </table>

@@ -99,8 +99,6 @@ $(document).ready(function(){
 
     $("#edit-submit-article").click(function(e){
 
-        e.preventDefault();
-
 
         var carouselHtml = $("#edit-carousel");
         var carousel = carouselHtml.is(":checked");
@@ -116,6 +114,13 @@ $(document).ready(function(){
         }
         else
             isDeleted = 1;
+
+        if(typeof carousel == "undefined" || !carousel)
+        {
+            carousel = 0;
+        }
+        else
+            carousel = 1;
 
 
         var $link = $(e.currentTarget);
@@ -197,7 +202,6 @@ $(document).ready(function(){
     // Show Order in the Order menu
 
     $(document).on("click","#show-order", (function(e){
-        e.preventDefault();
 
         var $link = $(e.currentTarget);
 
