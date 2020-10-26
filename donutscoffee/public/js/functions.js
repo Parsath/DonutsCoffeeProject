@@ -64,7 +64,7 @@ $(function(){
 
  $(document).ready(function() {
      var donutWidth = $(".donut").width();
-     var donutShadow = donutWidth * 40 /100;
+     var donutShadow = donutWidth * 30 /100;
      $(".donut-shadow").css({
          "width": " "+ donutShadow +"px"
      });

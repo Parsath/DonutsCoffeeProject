@@ -420,6 +420,21 @@ WORKTIME: 37M
 Stopping time: 24/10/2020 19h44
 
 
+Day 26: 12h33 25/10/2020
+
+    STEP 4 IN PROGRESS 
+
+    Notes:
+        * I'll fix the carousel Buttons
+
+    References:
+        *
+
+WORKTIME: 
+
+Stopping time: 25/10/2020
+
+
 /// TODO:
 
         -Add a Preloader in the index page so that the page is only loaded when all files and images are loaded.

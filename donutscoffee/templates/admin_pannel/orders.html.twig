@@ -31,9 +31,9 @@
                             <table class="table table-striped table-hover table-menu">
                                 <tr>
                                     <th>Name</th>
+                                    <th>Status</th>
                                     <th>Phone Number</th>
                                     <th>Created at</th>
-                                    <th>Status</th>
                                     <th>Type</th>
                                     <th>Price</th>
                                     <th>Address</th>
@@ -43,9 +43,17 @@
                                 {% for order in pagination %}
                                     <tr>
                                         <td>{{ order.name }}</td>
+                                        <td>
+                                            {% if order.status == "shipped" %}
+                                                <span style="color: lawngreen;" class="fa fa-check">
+                                            {% elseif order.status == "cancelled" %}
+                                                <span style="color: orangered;" class="fa fa-close">
+                                            {% else %}
+                                                {{ order.status}}
+                                            {% endif %}
+                                        </td>
                                         <td>{{ order.phone }}</td>
                                         <td>{{ order.createdAt|date('Y-m-d h:m:s') }}</td>
-                                        <td>{{ order.status }}</td>
                                         <td>
                                             {% if order.pickup == 1 %}
                                                 Pickup
@@ -74,7 +82,7 @@
     {% endblock %}
 
     <footer id="footer" class="footer admin-footer main-color-bg">
-        <p>Copyrights AdminStrap, &copy; 2020</p>
+        <p>Copyrights Parsath, &copy; 2020</p>
     </footer>
 
 

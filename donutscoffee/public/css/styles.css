@@ -446,18 +446,6 @@ body.order-body {
   display: none;
 }
 
-.arrow-next {
-  background: rgba(48, 52, 53, 0.2);
-  -webkit-box-shadow: inset 0px 0px 10px 14px rgba(48, 52, 53, 0.2);
-          box-shadow: inset 0px 0px 10px 14px rgba(48, 52, 53, 0.2);
-}
-
-.arrow-back {
-  background: rgba(48, 52, 53, 0.2);
-  -webkit-box-shadow: inset 0px 0px 10px 14px rgba(48, 52, 53, 0.2);
-          box-shadow: inset 0px 0px 10px 14px rgba(48, 52, 53, 0.2);
-}
-
 .get-it-container {
   -ms-grid-row: 1;
   -ms-grid-row-span: 3;
