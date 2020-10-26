@@ -71,6 +71,7 @@ var checkCartItem = function(i, qte, name, price, instructions, quantity){
 
 var removeCartItem = function(i){
     $(".cart-item-"+i).remove();
+    $(".cart-iteration-"+i).remove();
 }
 
 // Increment the donut Price  ( in the cart )
