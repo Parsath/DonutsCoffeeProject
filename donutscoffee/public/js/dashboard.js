@@ -83,7 +83,7 @@ $(document).ready(function(){
             }
             else if(data.errorLink){
                 $(".confirm-add-container").addClass("confirm-add-container-on");
-                $(".confirm-add-text").html("Your Article link: "+data.errorLink+" is already taken.");
+                $(".confirm-add-text").html("Error : "+data.errorLink+".");
             }
             else{
                 $(".confirm-add-container").addClass("confirm-add-container-on");
