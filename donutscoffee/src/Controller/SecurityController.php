@@ -10,6 +10,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class SecurityController extends AbstractController
 {
 
+//    User Login
     /**
      * @Route("/admin/login", name="app_admin_login")
      */
@@ -30,6 +31,7 @@ class SecurityController extends AbstractController
         ]);
     }
 
+//    User Logout
     /**
      * @Route("/admin/logout", name="app_admin_logout")
      */

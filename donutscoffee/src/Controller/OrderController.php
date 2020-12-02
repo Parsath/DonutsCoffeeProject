@@ -10,6 +10,8 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class OrderController extends AbstractController
 {
+
+//    Registers Order as Shipped
     /**
      * @Route("/admin/order/ship/{id}", name="order_ship", methods={"POST"})
      */
@@ -41,6 +43,7 @@ class OrderController extends AbstractController
         }
     }
 
+//    Registers Order as Cancelled
     /**
      * @Route("/admin/order/cancel/{id}", name="order_cancel", methods={"POST"})
      */
@@ -72,6 +75,7 @@ class OrderController extends AbstractController
         }
     }
 
+//    Displays order with its details ( Returns Order to Twig)
     /**
      * @Route("/admin/order/show/{id}", name="order_show")
      */

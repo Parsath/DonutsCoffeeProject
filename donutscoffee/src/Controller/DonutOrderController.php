@@ -19,6 +19,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class DonutOrderController extends AbstractController
 {
 
+//    Load Donuts on order page
     /**
      * @Route("/order", name="app_order")
      */
@@ -51,6 +52,7 @@ class DonutOrderController extends AbstractController
         ]);
     }
 
+//    Returns Donuts characteristics so that it gets displayed after clicking "Add To Cart" on Order page
     /**
      * @Route("/order/donut/{slug}", name="article_display", methods={"POST"})
      */
@@ -73,6 +75,7 @@ class DonutOrderController extends AbstractController
         ]);
     }
 
+//    Creates Order and Line Items if Pickup
     /**
      * @Route("/order/pickup", name="order_pickup", methods={"POST"})
      */
@@ -130,6 +133,7 @@ class DonutOrderController extends AbstractController
         ]);
     }
 
+//    Creates Order and Line Items if Delivery
     /**
      * @Route("/order/delivery", name="order_delivery", methods={"POST"})
      */
