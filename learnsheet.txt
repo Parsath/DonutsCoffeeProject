@@ -424,15 +424,36 @@ Day 26: 12h33 25/10/2020
 
     STEP 4 IN PROGRESS 
 
+    STEP 4 Completed
+
     Notes:
         * I'll fix the carousel Buttons
 
     References:
         *
 
-WORKTIME: 
+WORKTIME: ??
 
-Stopping time: 25/10/2020
+Stopping time: 25/10/2020 ??
+
+
+Day 27: 17h00 02/12/2020
+
+    STEP 5: 
+        -Add Ingredients and fix known Issues
+
+    Notes:
+        * Back again after a months worth of pausing and studying
+
+    References:
+        *
+
+WORKTIME:
+
+Stopping time: 02/12/2020
+
+
+
 
 
 /// TODO:

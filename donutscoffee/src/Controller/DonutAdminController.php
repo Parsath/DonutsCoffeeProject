@@ -128,6 +128,8 @@ class DonutAdminController extends AbstractController
         ]);
     }
 
+//    Delete all the functions below, used only on the first stage of development
+
     /**
      * @Route("/admin/donut/new")
      */

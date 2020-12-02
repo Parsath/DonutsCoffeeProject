@@ -20,9 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cabe3c84-6b5f-47d6-ba55-aeaf98f62597" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/order.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin_pannel/admin_nav.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_pannel/admin_nav.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DonutAdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DonutAdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learnsheet.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../learnsheet.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +143,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -176,6 +178,8 @@
       <workItem from="1603558056321" duration="5397000" />
       <workItem from="1603642151957" duration="20000" />
       <workItem from="1603723608971" duration="905000" />
+      <workItem from="1606924322187" duration="2158000" />
+      <workItem from="1606927421397" duration="301000" />
     </task>
     <servers />
   </component>
@@ -235,10 +239,11 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="208" y="0" width="930" height="715" key="dock-window-1/0.0.1360.728/1360.0.1920.1040@0.0.1360.728" timestamp="1603040735557" />
-    <state x="441" y="158" width="672" height="475" key="search.everywhere.popup" timestamp="1603471909413">
-      <screen x="0" y="0" width="1360" height="728" />
+    <state x="623" y="226" width="949" height="679" key="search.everywhere.popup" timestamp="1606924410085">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="441" y="158" width="672" height="475" key="search.everywhere.popup/0.0.1360.728/1360.0.1920.1040@0.0.1360.728" timestamp="1603471909413" />
     <state x="1983" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1360.728/1360.0.1920.1040@1360.0.1920.1040" timestamp="1602251446434" />
+    <state x="623" y="226" width="949" height="679" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606924410085" />
   </component>
 </project>

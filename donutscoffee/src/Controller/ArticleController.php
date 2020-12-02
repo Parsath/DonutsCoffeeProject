@@ -12,7 +12,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ArticleController extends AbstractController
 {
-//     * @Route("/admin/article/new", name="add_article", )
     /**
      * @Route("/admin/article/new", name="add_article", methods={"POST"})
      */

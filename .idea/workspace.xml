@@ -19,16 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78eefde1-11fc-48e1-8306-5004a97884e9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/DonutsCoffee.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DonutsCoffee.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/symfony2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/donutscoffee/src/Controller/DonutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/donutscoffee/src/Controller/DonutController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/donutscoffee/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/donutscoffee/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/donutscoffee/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/donutscoffee/templates/home/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/donutscoffee/templates/home/order.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/donutscoffee/templates/home/order.html.twig" afterDir="false" />
-    </list>
+    <list default="true" id="78eefde1-11fc-48e1-8306-5004a97884e9" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -131,6 +122,7 @@
       <workItem from="1602088171056" duration="8761000" />
       <workItem from="1602159824401" duration="3167000" />
       <workItem from="1602166248731" duration="912000" />
+      <workItem from="1606924281561" duration="37000" />
     </task>
     <servers />
   </component>
@@ -154,11 +146,12 @@
       <screen x="1360" y="0" width="1920" height="1040" />
     </state>
     <state x="2067" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1360.728/1360.0.1920.1040@1360.0.1920.1040" timestamp="1602093759904" />
-    <state x="524" y="183" key="FileChooserDialogImpl" timestamp="1602167169003">
-      <screen x="0" y="0" width="1360" height="728" />
+    <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1606924319845">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="524" y="183" key="FileChooserDialogImpl/0.0.1360.728/1360.0.1920.1040@0.0.1360.728" timestamp="1602167169003" />
     <state x="2100" y="261" key="FileChooserDialogImpl/0.0.1360.728/1360.0.1920.1040@1360.0.1920.1040" timestamp="1602166771143" />
+    <state x="740" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606924319845" />
     <state x="2063" y="243" key="NewPhpClassDialog" timestamp="1602093605891">
       <screen x="1360" y="0" width="1920" height="1040" />
     </state>
