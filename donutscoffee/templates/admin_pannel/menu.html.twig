@@ -2,7 +2,8 @@
 
 {% block menuOn %}active{% endblock %}
 
-{% block headerTitle %}Menu <small>Manage Your Menu Items</small>{% endblock %}
+{% block headerTitle %}Menu{% endblock %}
+{% block headerSubTitle %}Manage Your Menu Items{% endblock %}
 
 {% block breadcrumbList %}
     <li><a href="{{ path('app_dashboard') }}" style="color: black;">Dashboard</a></li>
@@ -67,9 +68,9 @@
                                                 <span style="color: orangered;" class="fa fa-close">
                                             {% endif %}
                                         </th>
-                                        <td>
-                                            <a id="edit-article" class="btn btn-secondary" href="{{ path('edit_article', {id: article.id}) }}">Edit</a>
-                                            <a id="remove-article" class="btn btn-warning" href="{{ path('remove_article', {id: article.id}) }}">Remove</a>
+                                        <td class="dashboard-menu-btn-container">
+                                            <a id="edit-article" class="btn btn-info mb-1" href="{{ path('edit_article', {id: article.id}) }}">Edit</a>
+                                            <a id="remove-article" class="btn btn-warning mb-1" href="{{ path('remove_article', {id: article.id}) }}">Remove</a>
                                             <a id="delete-article" class="btn btn-danger" href="{{ path('delete_article', {id: article.id}) }}">DELETE</a>
                                         </td>
                                     </tr>

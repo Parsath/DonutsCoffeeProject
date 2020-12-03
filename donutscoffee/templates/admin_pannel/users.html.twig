@@ -2,7 +2,9 @@
 
 {% block usersOn %}active{% endblock %}
 
-{% block headerTitle %}Users <small>Manage Your Admins</small>{% endblock %}
+{% block headerTitle %}Users{% endblock %}
+{% block headerSubTitle %}Manage Your Admins{% endblock %}
+
 
 {% block breadcrumbList %}
     <li><a href="{{ path('app_dashboard') }}" style="color: black;">Dashboard</a></li>
@@ -37,7 +39,10 @@
                                     <tr>
                                         <td>{{ user.username }}</td>
                                         <td>{{ user.firstName }}</td>
-                                        <td><a class="btn btn-secondary" href="#">Edit</a><a class="btn btn-danger" href="#">Delete</a></td>
+                                        <td class="dashboard-user-btn-container">
+                                            <a class="btn btn-info mb-1" href="#">Edit</a>
+                                            <a class="btn btn-danger" href="#">Delete</a>
+                                        </td>
                                     </tr>
                                 {% endfor %}
                             </table>

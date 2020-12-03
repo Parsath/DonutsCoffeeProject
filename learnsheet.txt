@@ -454,6 +454,21 @@ WORKTIME: 1H30M
 Stopping time: 02/12/2020 18h32
 
 
+Day 28: 18h41 03/12/2020
+
+    STEP 5 IN PROGRESS
+
+    Notes:
+        *Added Insta icon to the website and Fixed the Dashboard front-end.
+
+    References:
+        *
+
+WORKTIME: 1H36M
+
+Stopping time: 03/12/2020 20h15 
+
+
 
 
 
@@ -587,6 +602,30 @@ Stopping time: 02/12/2020 18h32
             DONE 24/10/2020
 
         -Comment the whole thing
+
+        -Add Insta icons to the website
+
+            DONE 03/12/2020
+
+        -Fix Dashboard front-end
+
+            DONE 03/12/2020
+
+        -Plan Topping Class
+
+        -Plan front-end interface to the Topping class
+
+        -Add Topping class and Create its CRUD and everything to make it functionnal
+
+        -Create front-end interface to the Topping Class
+
+        -Fix File Upload, upon adding and editting a Donut in the menu
+
+        -Create Front to back connection to Topping Class
+
+        -Find a solution in order to let the client test the website
+
+        -Fix Apostrophe problem on instructions in the customer order
 
 ///
 

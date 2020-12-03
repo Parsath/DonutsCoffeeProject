@@ -2,7 +2,8 @@
 
 {% block orderOn %}active{% endblock %}
 
-{% block headerTitle %}Order <small>Check this order</small>{% endblock %}
+{% block headerTitle %}Order{% endblock %}
+{% block headerSubTitle %}Check This Order{% endblock %}
 
 {% block breadcrumbList %}
     <li><a href="{{ path('app_dashboard') }}" style="color: black;">Dashboard</a></li>
@@ -43,9 +44,9 @@
                                     <td>{{ order.name }}</td>
                                     <td>
                                         {% if order.status == "shipped" %}
-                                            <span style="color: lawngreen;" class="fa fa-check">
+                                            <span style="color: lawngreen;" class="fa fa-check"></span>
                                         {% elseif order.status == "cancelled" %}
-                                            <span style="color: orangered;" class="fa fa-close">
+                                            <span style="color: orangered;" class="fa fa-close"></span>
                                         {% else %}
                                             {{ order.status}}
                                         {% endif %}

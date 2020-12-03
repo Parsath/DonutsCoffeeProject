@@ -2,7 +2,8 @@
 
 {% block dashOn %}active{% endblock %}
 
-{% block headerTitle %}Dashboard <small>Manage Your Site</small>{% endblock %}
+{% block headerTitle %}Dashboard{% endblock %}
+{% block headerSubTitle %}Manage Your Website{% endblock %}
 
 {% block breadcrumbList %}
     <li class="active">Dashboard</li>
@@ -82,7 +83,12 @@
                                         </td>
                                         <td>{{ order.price }} DT</td>
                                         <td>{{ order.address }}</td>
-                                        <td><a id="ship-order" class="btn btn-secondary" href="{{ path('order_ship', {id: order.id}) }}">Shipped</a><a id="cancel-order" class="btn btn-danger" href="{{ path('order_cancel', {id: order.id}) }}">Cancelled</a></td>
+                                        <td class="shipping-btn-container">
+                                            <a id="show-order" class="btn btn-primary mb-1" href="{{ path('order_show', {id: order.id}) }}">Show</a>
+                                            <a id="ship-order" class="btn btn-success mb-1" href="{{ path('order_ship', {id: order.id}) }}">Shipped</a>
+                                            <a id="cancel-order" class="btn btn-danger" href="{{ path('order_cancel', {id: order.id}) }}">Cancelled</a>
+
+                                        </td>
                                     </tr>
                                 {% endfor %}
 
