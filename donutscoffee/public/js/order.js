@@ -28,8 +28,8 @@ var addCartItem = function(i, qte, name, price, instructions, quantity){
     $("<span class=\"dark-bg price\">dt</span>").appendTo(".price-container-"+i);
     $("<div class=\"cart-buttons-container cart-buttons-container-"+i+"\"></div>").appendTo(".cart-item-"+i);
     $("<div class=\"cart-buttons cart-buttons-"+i+"\"></div>").appendTo(".cart-buttons-container-"+i);
-    $("<button class=\"edit-cart btn btn-outline-light edit-cart-"+i+"\">Edit</button>").appendTo(".cart-buttons-"+i);
-    // $("<button class=\"edit-cart btn btn-outline-light edit-cart-"+i+"\" data-toggle='modal' data-target='#editInstructions' \">Edit</button>").appendTo(".cart-buttons-"+i);
+    // $("<button class=\"edit-cart btn btn-outline-light edit-cart-"+i+"\">Edit</button>").appendTo(".cart-buttons-"+i);
+    $("<button class=\"edit-cart btn btn-outline-light edit-cart-"+i+"\" data-toggle='modal' data-target='#editInstructions' \">Edit</button>").appendTo(".cart-buttons-"+i);
     $("<button class=\"remove-cart btn btn-outline-light remove-cart-"+i+"\">Remove</button>").appendTo(".cart-buttons-"+i);
     $("<div class=\"cart-plus-minus cart-plus-minus-"+i+"\"></div>").appendTo(".cart-buttons-container-"+i);
     $("<span class=\"cart-plus dark-bg cart-plus-"+i+"\">+</span>").appendTo(".cart-plus-minus-"+i);
@@ -42,7 +42,7 @@ var addCartItem = function(i, qte, name, price, instructions, quantity){
     // TODO : Make it an input Price
     $("<input type=\"hidden\" class=\"price-input-"+i+"\" name='price-input"+i+"' id=\"price-input-"+i+"\" value=\""+price+"\">").appendTo(".cart-item-"+i);
     // TODO : Make it an input Instructions
-    $("<input type='hidden' class=\"cart-instructions cart-instructions-"+i+"\" id='cart-instructions-"+i+"' name=\"cart-instructions-"+i+"\" value='"+instructions+"'>").appendTo(".cart-item-"+i);
+    $("<input type='hidden' class=\"cart-instructions cart-instructions-"+i+"\" id='cart-instructions-"+i+"' name=\"cart-instructions-"+i+"\" value=\""+instructions+"\">").appendTo(".cart-item-"+i);
     // $("<textarea class=\"cart-instructions cart-instructions-"+i+"\" name=\"cart-instructions-"+i+"\" hidden>"+instructions+"</textarea>").appendTo(".cart-item-"+i);
 }
 
@@ -424,6 +424,8 @@ $(document).ready(function(){
         }).done(function(data) {
             let instructions = $('#donut-instructions').val();
             checkCartItem(cartItemIterator(), 1,data.name, data.price, instructions, data.quantity);
+            console.log(instructions);
+            $(".close-item-chosen").trigger("click");
         });
     });
 

@@ -21,18 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cabe3c84-6b5f-47d6-ba55-aeaf98f62597" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/_dashboard.sass" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/_dashboard.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/_index.sass" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/_index.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin_pannel/admin_nav.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_pannel/admin_nav.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin_pannel/menu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_pannel/menu.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin_pannel/orders.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_pannel/orders.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin_pannel/pannel.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_pannel/pannel.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin_pannel/users.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_pannel/users.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/article/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/order/show_order.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/order/show_order.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/order.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../learnsheet.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../learnsheet.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -190,6 +179,7 @@
       <workItem from="1606924322187" duration="2158000" />
       <workItem from="1606927421397" duration="2571000" />
       <workItem from="1607017263250" duration="5750000" />
+      <workItem from="1607096765991" duration="2912000" />
     </task>
     <servers />
   </component>

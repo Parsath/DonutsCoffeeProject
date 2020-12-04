@@ -469,6 +469,21 @@ WORKTIME: 1H36M
 Stopping time: 03/12/2020 20h15 
 
 
+Day 29: 16h45 04/12/2020
+
+    STEP 5 IN PROGRESS
+
+    Notes:
+        *Planned front end Topping class and its diagram class + fixed the apostrophe problem on the instructions 
+        
+    References:
+        *
+
+WORKTIME: 1H03M 
+
+Stopping time: 04/12/2020 18h36
+
+
 
 
 
@@ -613,7 +628,15 @@ Stopping time: 03/12/2020 20h15
 
         -Plan Topping Class
 
+            DONE 04/12/2020
+
         -Plan front-end interface to the Topping class
+
+            DONE 04/12/2020
+
+        -Fix Apostrophe problem on instructions in the customer order
+
+            DONE 04/12/2020
 
         -Add Topping class and Create its CRUD and everything to make it functionnal
 
@@ -624,8 +647,6 @@ Stopping time: 03/12/2020 20h15
         -Create Front to back connection to Topping Class
 
         -Find a solution in order to let the client test the website
-
-        -Fix Apostrophe problem on instructions in the customer order
 
 ///
 
