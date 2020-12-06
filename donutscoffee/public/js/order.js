@@ -31,6 +31,8 @@ var addCartItem = function(i, qte, name, price, instructions, quantity){
     // $("<button class=\"edit-cart btn btn-outline-light edit-cart-"+i+"\">Edit</button>").appendTo(".cart-buttons-"+i);
     $("<button class=\"edit-cart btn btn-outline-light edit-cart-"+i+"\" data-toggle='modal' data-target='#editInstructions' \">Edit</button>").appendTo(".cart-buttons-"+i);
     $("<button class=\"remove-cart btn btn-outline-light remove-cart-"+i+"\">Remove</button>").appendTo(".cart-buttons-"+i);
+    // TODO : Make it a modal to edit Topping choices made by user ( like Edit )
+    $("<button class=\"toppings-cart btn btn-outline-light toppings-cart-"+i+"\">Toppings</button>").appendTo(".cart-buttons-"+i);
     $("<div class=\"cart-plus-minus cart-plus-minus-"+i+"\"></div>").appendTo(".cart-buttons-container-"+i);
     $("<span class=\"cart-plus dark-bg cart-plus-"+i+"\">+</span>").appendTo(".cart-plus-minus-"+i);
     $("<span class=\"cart-minus dark-bg cart-minus-"+i+"\">-</span>").appendTo(".cart-plus-minus-"+i);
@@ -408,6 +410,21 @@ $(document).ready(function(){
             $(".item-chosen").css({
                 "z-index":"9999999"
             });
+        });
+    });
+
+    // Displaying the topping menu
+
+    $(".js-show-topping-menu").click(function(e){
+        e.preventDefault();
+
+        $(".topping-menu-container").addClass("topping-menu-container-show");
+        $(".topping-menu-container").css({
+            "z-index":"99999999"
+        });
+        $(".topping-menu").addClass("topping-menu-show");
+        $(".topping-menu").css({
+            "z-index":"999999999"
         });
     });
 

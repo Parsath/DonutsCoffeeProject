@@ -316,6 +316,16 @@ $(function(){
             "z-index":"-1"
         });
     });
+    $(".close-topping-menu").click(function(){
+        $(".topping-menu-container").removeClass("topping-menu-container-show");
+        $(".topping-menu").removeClass("topping-menu-show");
+        $(".topping-menu-container").css({
+            "z-index":"-1"
+        });
+        $(".topping-menu").css({
+            "z-index":"-1"
+        });
+    });
     // $(".add-to-cart").click(function(){
     //     $(".item-chosen-container").addClass("item-chosen-popup-container");
     //     $(".item-chosen").addClass("item-chosen-popup");

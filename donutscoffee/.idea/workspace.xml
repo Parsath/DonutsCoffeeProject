@@ -21,7 +21,12 @@
   <component name="ChangeListManager">
     <list default="true" id="cabe3c84-6b5f-47d6-ba55-aeaf98f62597" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/_order.sass" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/_order.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/functions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/order.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/order.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/order.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../learnsheet.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../learnsheet.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -180,6 +185,7 @@
       <workItem from="1606927421397" duration="2571000" />
       <workItem from="1607017263250" duration="5750000" />
       <workItem from="1607096765991" duration="2912000" />
+      <workItem from="1607275931211" duration="5787000" />
     </task>
     <servers />
   </component>

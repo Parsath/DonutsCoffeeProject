@@ -364,6 +364,8 @@
 @media screen and ( max-width: 450px )
     .btn-choice
         font-size: 5vw
+    .edit-cart, .remove-cart, .toppings-cart 
+        font-size: .74rem
     
     
     
@@ -504,6 +506,7 @@ a.add-to-cart
     transition: opacity .4s ease
     z-index: -1
     opacity: 0
+    overflow-y: auto
     &.item-chosen-popup
         opacity: 1
 
@@ -542,6 +545,9 @@ a.add-to-cart
 
 .item-desc-user-input
     flex-grow: 1
+
+.user-input-item
+    font-style: oblique
 
 #donut-instructions
     width: 90%
@@ -584,6 +590,9 @@ a.item-add-btn
 
 .item-chosen img
     flex-grow: 1
+
+.show-toppings-btn
+    font-size: 1.3rem
 
 @media screen and ( max-width: 1300px )
     .item-chosen
@@ -650,6 +659,105 @@ a.item-add-btn
     .close-cart-address-container
         width: 7.5vw
         height: 7.5vw
+
+
+
+
+// Topping Menu Popup
+
+.topping-menu-container
+    display: flex
+    justify-content: center
+    align-items: center
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: -1
+    background-color: transparentize(black, .4 )
+    transition: opacity .4s ease
+    opacity: 0
+    &.topping-menu-container-show
+        opacity: 1
+
+.topping-menu
+    display: grid
+    border-radius: 20px
+    grid-template-columns: 1fr 1fr 1fr
+    grid-template-rows: auto
+    grid-gap: 70px
+    background-color: white
+    position: fixed
+    border-radius: 15px
+    align-self: center
+    height: 90vh
+    width: 90vw
+    flex-direction: column
+    align-items: center
+    transition: opacity .4s ease
+    z-index: -1
+    opacity: 0
+    overflow-y: auto
+    max-height: 90vh
+    padding-top: 10px
+    padding-bottom: 10px
+    &.topping-menu-show
+        opacity: 1
+
+.close-topping-menu-container
+    position: absolute
+    top: 0
+    right: 0
+    width: 4vw
+    height: 4vw
+    display: flex
+    justify-content: center
+    align-items: center
+
+.close-topping-menu
+    color: transparentize( $dark-gray , .2 )
+    font-size: 25px
+    &:hover
+        cursor: pointer
+        color: $dark-gray 
+
+.topping-item-container
+    display: flex
+    justify-content: center
+    align-items: center
+
+.topping-item
+    width: 50%
+    height: 30%
+    border: 1px solid #ccc
+    padding: 5px
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.15)
+    border-radius: 5px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    
+
+@media screen and ( max-width: 1270px )
+    .topping-menu
+        grid-template-columns: 1fr 1fr
+
+@media screen and ( max-width: 1000px )
+    .topping-menu
+        grid-template-columns: 1fr
+
+@media screen and ( max-width: 600px )
+    .close-topping-menu-container
+        width: 6vw
+        height: 6vw
+
+@media screen and ( max-width: 360px )
+    .close-topping-menu-container
+        width: 7.5vw
+        height: 7.5vw
+
+
 
     
     

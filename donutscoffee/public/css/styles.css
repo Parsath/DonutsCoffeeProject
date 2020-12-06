@@ -1613,6 +1613,9 @@ body {
   .btn-choice {
     font-size: 5vw;
   }
+  .edit-cart, .remove-cart, .toppings-cart {
+    font-size: .74rem;
+  }
 }
 
 .menu {
@@ -1810,6 +1813,7 @@ a.add-to-cart:hover {
   transition: opacity .4s ease;
   z-index: -1;
   opacity: 0;
+  overflow-y: auto;
 }
 
 .item-chosen.item-chosen-popup {
@@ -1886,6 +1890,10 @@ a.add-to-cart:hover {
           flex-grow: 1;
 }
 
+.user-input-item {
+  font-style: oblique;
+}
+
 #donut-instructions {
   width: 90%;
   font-size: 16px;
@@ -1947,6 +1955,10 @@ a.item-add-btn:hover {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+}
+
+.show-toppings-btn {
+  font-size: 1.3rem;
 }
 
 @media screen and (max-width: 1300px) {
@@ -2049,6 +2061,155 @@ a.item-add-btn:hover {
     height: 7.5vw;
   }
   .close-cart-address-container {
+    width: 7.5vw;
+    height: 7.5vw;
+  }
+}
+
+.topping-menu-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.6);
+  -webkit-transition: opacity .4s ease;
+  transition: opacity .4s ease;
+  opacity: 0;
+}
+
+.topping-menu-container.topping-menu-container-show {
+  opacity: 1;
+}
+
+.topping-menu {
+  display: -ms-grid;
+  display: grid;
+  border-radius: 20px;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  grid-gap: 70px;
+  background-color: white;
+  position: fixed;
+  border-radius: 15px;
+  -ms-grid-row-align: center;
+      align-self: center;
+  height: 90vh;
+  width: 90vw;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: opacity .4s ease;
+  transition: opacity .4s ease;
+  z-index: -1;
+  opacity: 0;
+  overflow-y: auto;
+  max-height: 90vh;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.topping-menu.topping-menu-show {
+  opacity: 1;
+}
+
+.close-topping-menu-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4vw;
+  height: 4vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.close-topping-menu {
+  color: rgba(48, 52, 53, 0.8);
+  font-size: 25px;
+}
+
+.close-topping-menu:hover {
+  cursor: pointer;
+  color: #303435;
+}
+
+.topping-item-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.topping-item {
+  width: 50%;
+  height: 30%;
+  border: 1px solid #ccc;
+  padding: 5px;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.15);
+          box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 1270px) {
+  .topping-menu {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .topping-menu {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .close-topping-menu-container {
+    width: 6vw;
+    height: 6vw;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .close-topping-menu-container {
     width: 7.5vw;
     height: 7.5vw;
   }

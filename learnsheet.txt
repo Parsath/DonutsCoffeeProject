@@ -484,6 +484,21 @@ WORKTIME: 1H03M
 Stopping time: 04/12/2020 18h36
 
 
+Day 30: 18h30 06/12/2020
+
+    STEP 5 IN PROGRESS
+
+    Notes:
+        *Front-end interface complete for front-office ( back-office is copy paste once the back end is complete )
+        
+    References:
+        *
+
+WORKTIME: 1H42M
+
+Stopping time: 06/12/2020 20h20
+
+
 
 
 
@@ -638,9 +653,11 @@ Stopping time: 04/12/2020 18h36
 
             DONE 04/12/2020
 
-        -Add Topping class and Create its CRUD and everything to make it functionnal
+        -Create front-end interface to the Topping Class ( Front-office )
 
-        -Create front-end interface to the Topping Class
+            DONE 06/12/2020
+
+        -Add Topping class and Create its CRUD and everything to make it functionnal
 
         -Fix File Upload, upon adding and editting a Donut in the menu
 
