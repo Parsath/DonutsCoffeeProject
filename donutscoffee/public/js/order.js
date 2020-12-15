@@ -1,7 +1,7 @@
 
 // The Creation of each Cart Item the client adds through the menu in the Cart.
 
-var addCartItem = function(i, qte, name, price, instructions, quantity){
+var addCartItem = function(i, qte, name, price, instructions, quantity, toppings){
 
     while($(".cart-item-"+i).length)
         i++;
@@ -43,6 +43,9 @@ var addCartItem = function(i, qte, name, price, instructions, quantity){
     $("<input type=\"hidden\" class=\"name-input-"+i+"\" name=\"name-input-"+i+"\" id=\"name-input-"+i+"\" value='"+name+"'>").appendTo(".cart-item-"+i);
     // TODO : Make it an input Price
     $("<input type=\"hidden\" class=\"price-input-"+i+"\" name='price-input"+i+"' id=\"price-input-"+i+"\" value=\""+price+"\">").appendTo(".cart-item-"+i);
+    // TODO : Make it an input Toppings Array
+    $("<input type=\"hidden\" class=\"topping-input-"+i+"\" name='topping-input-"+i+"' id=\"topping-input-"+i+"\" value=\"\">").appendTo(".cart-item-"+i);
+    $("#topping-input-"+i).attr("data-assessments", JSON.stringify(toppings));
     // TODO : Make it an input Instructions
     $("<input type='hidden' class=\"cart-instructions cart-instructions-"+i+"\" id='cart-instructions-"+i+"' name=\"cart-instructions-"+i+"\" value=\""+instructions+"\">").appendTo(".cart-item-"+i);
     // $("<textarea class=\"cart-instructions cart-instructions-"+i+"\" name=\"cart-instructions-"+i+"\" hidden>"+instructions+"</textarea>").appendTo(".cart-item-"+i);
@@ -50,7 +53,7 @@ var addCartItem = function(i, qte, name, price, instructions, quantity){
 
 // Checks if the Donut already exists in the Cart before adding it
 
-var checkCartItem = function(i, qte, name, price, instructions, quantity){
+var checkCartItem = function(i, qte, name, price, instructions, quantity, toppings){
 
     var loop = 0;
 
@@ -66,7 +69,7 @@ var checkCartItem = function(i, qte, name, price, instructions, quantity){
     });
 
     if( loop > -1 )
-        addCartItem(i, qte, name, price, instructions, quantity);
+        addCartItem(i, qte, name, price, instructions, quantity, toppings);
 }
 
 // Removes the donut from the cart ( in the cart )
@@ -147,13 +150,24 @@ var cartItemEditInstructions = function(iterator) {
     return i;
 }
 
+// Topping Class
+
+class Topping {
+    constructor(slug, price, name) {
+        this.slug = slug;
+        this.price = price;
+        this.name = name;
+    }
+}
+
 // Donut displayed in the Cart Class
 
 class Donuts {
-    constructor(quantity, price, name, instructions) {
+    constructor(quantity, price, name, instructions,toppings) {
         this.quantity = quantity;
         this.price = price;
         this.name = name;
+        this.toppings = toppings;
 
         if(typeof instructions !== 'undefined')
         {
@@ -418,6 +432,15 @@ $(document).ready(function(){
     $(".js-show-topping-menu").click(function(e){
         e.preventDefault();
 
+        let toppingNumber = $("#total-topping-iterations").val();
+
+        for( let i = 0; i<toppingNumber ; i++)
+        {
+            $("#topping-"+i).prop("checked",false);
+        }
+
+
+
         $(".topping-menu-container").addClass("topping-menu-container-show");
         $(".topping-menu-container").css({
             "z-index":"99999999"
@@ -426,6 +449,34 @@ $(document).ready(function(){
         $(".topping-menu").css({
             "z-index":"999999999"
         });
+    });
+
+    // Button confirming the Topping Choices of the user
+
+    $(".js-confirm-toppings").click(function(e){
+       e.preventDefault();
+
+       let toppingNumber = $("#total-topping-iterations").val();
+       let t = 0;
+       var toppingsArray = [];
+
+       for( let i = 0; i<toppingNumber ; i++)
+       {
+           let toppingChecked = $("#topping-"+i).is(":checked");
+           if(toppingChecked)
+           {
+               let slug = $("#topping-slug-"+i).val();
+               let name = $("#topping-name-"+i) .val();
+               let price = $("#topping-price-"+i).val();
+
+               toppingsArray[t] = new Topping(slug,price,name);
+               t++;
+           }
+       }
+       console.log(toppingsArray);
+        $("#topping-array").attr("data-assessments", JSON.stringify(toppingsArray));
+
+       $(".close-topping-menu").trigger("click");
     });
 
     // Adds a donut from the menu to the cart
@@ -440,9 +491,12 @@ $(document).ready(function(){
             url: $link.attr('href')
         }).done(function(data) {
             let instructions = $('#donut-instructions').val();
-            checkCartItem(cartItemIterator(), 1,data.name, data.price, instructions, data.quantity);
+            let toppingArray = JSON.parse($("#topping-array").attr("data-assessments"));
+            console.log(toppingArray);
+            checkCartItem(cartItemIterator(), 1,data.name, data.price, instructions, data.quantity, toppingArray);
             console.log(instructions);
             $(".close-item-chosen").trigger("click");
+            $("#topping-array").removeAttr('data-assessments');
         });
     });
 

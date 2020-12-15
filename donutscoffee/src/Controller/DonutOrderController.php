@@ -7,6 +7,7 @@ namespace App\Controller;
 use App\Entity\Article;
 use App\Entity\LineItem;
 use App\Entity\Order;
+use App\Entity\Topping;
 use Doctrine\ORM\EntityManagerInterface;
 use Monolog\Logger;
 use Psr\Log\LoggerInterface;
@@ -27,9 +28,13 @@ class DonutOrderController extends AbstractController
     {
         $logger->info("Onto Order");
         $repository = $em->getRepository(Article::class);
+        $toppingRepository = $em->getRepository(Topping::class);
 
         /** @var array $articles */
         $articles = $repository->findAllNonDeletedArticles();
+
+        /** @var array $toppings */
+        $toppings = $toppingRepository->findAllByAvailability();
 
 //        $articles = $repository->findBy(
 //            array('isDeleted' => 0),
@@ -49,6 +54,7 @@ class DonutOrderController extends AbstractController
 
         return $this->render('home/order.html.twig', [
             'articles' => $articles,
+            'toppings' => $toppings
         ]);
     }
 

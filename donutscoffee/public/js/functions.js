@@ -315,6 +315,7 @@ $(function(){
         $(".item-chosen").css({
             "z-index":"-1"
         });
+        $("#topping-array").removeAttr('data-assessments');
     });
     $(".close-topping-menu").click(function(){
         $(".topping-menu-container").removeClass("topping-menu-container-show");
@@ -325,6 +326,7 @@ $(function(){
         $(".topping-menu").css({
             "z-index":"-1"
         });
+
     });
     // $(".add-to-cart").click(function(){
     //     $(".item-chosen-container").addClass("item-chosen-popup-container");

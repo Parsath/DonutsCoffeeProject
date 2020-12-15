@@ -499,6 +499,25 @@ WORKTIME: 1H42M
 Stopping time: 06/12/2020 20h20
 
 
+Day 31: 15h00 15/12/2020
+
+    STEP 5 IN PROGRESS
+
+    Notes:
+        *Created Topping Array which gets transferred to the cart
+        TODO: 
+            -Make toppings editable in Cart 
+            -Edit the validation in the Cart addition of a Donut ( which now depends only on name existence ). I need to make it depending on name addition + Toppings. 
+            -Adapt Price Calculation to toppings added
+        
+    References:
+        *
+
+WORKTIME: 2H30M
+
+Stopping time: 15/12/2020 17h39
+
+
 
 
 
