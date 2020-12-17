@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ToppingRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
@@ -38,6 +40,17 @@ class Topping
      * @ORM\Column(type="float")
      */
     private $price;
+
+    /**
+     * @ORM\OneToMany(targetEntity=ToppingLineItem::class, mappedBy="topping")
+     */
+    private $toppingLineItems;
+
+    public function __construct()
+    {
+        $this->topping = new ArrayCollection();
+        $this->toppingLineItems = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -88,6 +101,37 @@ class Topping
     public function setPrice(float $price): self
     {
         $this->price = $price;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ToppingLineItem[]
+     */
+    public function getToppingLineItems(): Collection
+    {
+        return $this->toppingLineItems;
+    }
+
+    public function addToppingLineItem(ToppingLineItem $toppingLineItem): self
+    {
+        if (!$this->toppingLineItems->contains($toppingLineItem)) {
+            $this->toppingLineItems[] = $toppingLineItem;
+            $toppingLineItem->setTopping($this);
+        }
+
+        return $this;
+    }
+
+    public function removeToppingLineItem(ToppingLineItem $toppingLineItem): self
+    {
+        if ($this->toppingLineItems->contains($toppingLineItem)) {
+            $this->toppingLineItems->removeElement($toppingLineItem);
+            // set the owning side to null (unless already changed)
+            if ($toppingLineItem->getTopping() === $this) {
+                $toppingLineItem->setTopping(null);
+            }
+        }
 
         return $this;
     }

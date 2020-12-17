@@ -49,7 +49,7 @@ class Order
     private $address;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="float", nullable=true)
      */
     private $totalPrice;
 
@@ -95,19 +95,19 @@ class Order
         return $this;
     }
 
-    public function getPrice(): ?int
+    public function getPrice(): ?float
     {
         return $this->totalPrice;
     }
 
-    public function setPrice(int $price): self
+    public function setPrice(float $price): self
     {
         $this->totalPrice = $price;
 
         return $this;
     }
 
-    public function addPrice(int $price): self
+    public function addPrice(float $price): self
     {
         $this->totalPrice += $price;
 

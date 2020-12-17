@@ -11,11 +11,40 @@ var addCartItem = function(i, qte, name, price, instructions, quantity, toppings
             // Hidden Iterator
     $("<div class=\"cart-iteration cart-iteration-"+i+"\" hidden>"+i+"</div>").appendTo(".cart-content-container");
 
-    $("<div class=\"cart-details cart-details-"+i+"\"></div>").appendTo(".cart-item-"+i);
+    //NEW ADDITION
+    $("<div class=\"cart-details-container cart-details-container-"+i+"\"></div>").appendTo(".cart-item-"+i);
+    //END NEW ADDITION
+
+    $("<div class=\"cart-details cart-details-"+i+"\"></div>").appendTo(".cart-details-container-"+i);
     $("<div class=\"number-container number-container-"+i+"\"></div>").appendTo(".cart-details-"+i);
 
     $("<span class=\"dark-bg number number-"+i+"\">"+qte+"</span>").appendTo(".number-container-"+i);
     $("<div class=\"dark-bg name name-"+i+"\">"+name+"</div>").appendTo(".cart-details-"+i);
+
+    // NEW ADDITION
+    if(toppings !== 0)
+    {
+        $("<div class=\"cart-toppings-container cart-toppings-container-"+i+"\"></div>").appendTo(".cart-details-container-"+i);
+        let toppingNameArray = [];
+        let t = 0;
+        $.each(toppings,function(i,v){
+            console.log(v);
+            toppingNameArray[t] = v.name;
+            t++;
+        });
+        console.log("Topping array: " + toppingNameArray);
+        $("<span class=\"dark-bg choices-title choices-title-"+i+"\">Toppings: </span>").appendTo(".cart-toppings-container-"+i);
+        $("<div class=\"dark-bg choices-container choices-container-"+i+"\"></div>").appendTo(".cart-toppings-container-"+i);
+        let arrayLength = toppingNameArray.length;
+        $.each(toppingNameArray, function(key,v){
+            if(key === arrayLength - 1)
+                $("<span class=\"dark-bg choices choices-"+i+"\"> "+v+" </span>").appendTo(".choices-container-"+i);
+            else
+                $("<span class=\"dark-bg choices choices-"+i+"\"> "+v+" ,</span>").appendTo(".choices-container-"+i);
+            console.log("this is a toppingnamearray span element: "+v);
+        });
+    }
+    // END NEW ADDITION
 
     $("<div class=\"price-container price-container-"+i+"\"></div>").appendTo(".cart-details-"+i);
 
@@ -32,7 +61,7 @@ var addCartItem = function(i, qte, name, price, instructions, quantity, toppings
     $("<button class=\"edit-cart btn btn-outline-light edit-cart-"+i+"\" data-toggle='modal' data-target='#editInstructions' \">Edit</button>").appendTo(".cart-buttons-"+i);
     $("<button class=\"remove-cart btn btn-outline-light remove-cart-"+i+"\">Remove</button>").appendTo(".cart-buttons-"+i);
     // TODO : Make it a modal to edit Topping choices made by user ( like Edit )
-    $("<button class=\"toppings-cart btn btn-outline-light toppings-cart-"+i+"\">Toppings</button>").appendTo(".cart-buttons-"+i);
+    // $("<button class=\"toppings-cart btn btn-outline-light toppings-cart-"+i+"\">Toppings</button>").appendTo(".cart-buttons-"+i);
     $("<div class=\"cart-plus-minus cart-plus-minus-"+i+"\"></div>").appendTo(".cart-buttons-container-"+i);
     $("<span class=\"cart-plus dark-bg cart-plus-"+i+"\">+</span>").appendTo(".cart-plus-minus-"+i);
     $("<span class=\"cart-minus dark-bg cart-minus-"+i+"\">-</span>").appendTo(".cart-plus-minus-"+i);
@@ -45,7 +74,10 @@ var addCartItem = function(i, qte, name, price, instructions, quantity, toppings
     $("<input type=\"hidden\" class=\"price-input-"+i+"\" name='price-input"+i+"' id=\"price-input-"+i+"\" value=\""+price+"\">").appendTo(".cart-item-"+i);
     // TODO : Make it an input Toppings Array
     $("<input type=\"hidden\" class=\"topping-input-"+i+"\" name='topping-input-"+i+"' id=\"topping-input-"+i+"\" value=\"\">").appendTo(".cart-item-"+i);
-    $("#topping-input-"+i).attr("data-assessments", JSON.stringify(toppings));
+
+    if(toppings !== 0)
+        $("#topping-input-"+i).attr("data-assessments", JSON.stringify(toppings));
+
     // TODO : Make it an input Instructions
     $("<input type='hidden' class=\"cart-instructions cart-instructions-"+i+"\" id='cart-instructions-"+i+"' name=\"cart-instructions-"+i+"\" value=\""+instructions+"\">").appendTo(".cart-item-"+i);
     // $("<textarea class=\"cart-instructions cart-instructions-"+i+"\" name=\"cart-instructions-"+i+"\" hidden>"+instructions+"</textarea>").appendTo(".cart-item-"+i);
@@ -56,16 +88,71 @@ var addCartItem = function(i, qte, name, price, instructions, quantity, toppings
 var checkCartItem = function(i, qte, name, price, instructions, quantity, toppings){
 
     var loop = 0;
+    var validation = 1;
 
     $(".cart-item").each(function(){
         let nameHtml = $(".name-"+loop).html();
+
+
         if(String(nameHtml) === name )
         {
-            loop=-1;
-            return false;
+            let attr = $("#topping-input-"+loop).attr("data-assessments");
+
+            if (typeof attr !== typeof undefined && attr !== false) {
+                if(toppings !== 0){
+
+                    let toppingArray = JSON.parse(attr);
+                    let toppingArrayLength = toppingArray.length;
+                    let toppingMatches = 0;
+
+                    if(toppingArrayLength !== toppings.length)
+                    {
+                        validation = 1;
+                    }
+                    else
+                    {
+                        $.each(toppingArray, function(key, v){
+                            $.each(toppings,function(key2, v2){
+                                if(v.name === v2.name)
+                                    toppingMatches++;
+                            });
+                        });
+                        if(toppingMatches === toppingArrayLength)
+                            validation = 0;
+                    }
+
+                    if( validation === 0 )
+                    {
+                        loop=-1;
+                        return false;
+                    }
+                    else
+                        loop++;
+                }
+                else
+                    loop++;
+            }
+            else if(toppings !== 0){
+                loop++;
+            }
+            else{
+                loop=-1;
+                return false;
+            }
         }
         else
             loop++;
+
+    //     let nameHtml = $(".name-"+loop).html();
+    //         if(String(nameHtml) === name )
+    //         {
+    //             loop=-1;
+    //             return false;
+    //         }
+    //         else
+    //             loop++;
+
+
     });
 
     if( loop > -1 )
@@ -223,7 +310,15 @@ $(document).ready(function(){
             console.log(cartPrice);
             let cartInstruct = $("input#cart-instructions-"+i).val();
             console.log(cartInstruct);
-            donutsArray[i] = new Donuts(cartQte, cartPrice, cartName, cartInstruct);
+            let attr = $("input#topping-input-"+i).attr("data-assessments");
+            let toppingArray = [];
+            if (typeof attr !== typeof undefined && attr !== false) {
+                toppingArray = JSON.parse(attr);
+                donutsArray[i] = new Donuts(cartQte, cartPrice, cartName, cartInstruct,toppingArray);
+                console.log(toppingArray);
+            }
+            else
+                donutsArray[i] = new Donuts(cartQte, cartPrice, cartName, cartInstruct);
             i++;
         });
         clientName = $("input#client-name").val();
@@ -245,13 +340,13 @@ $(document).ready(function(){
         {
             alert("Please order something!");
         }
-        else if( confirm !== 1 )
-        {
-            $(".cart-confirm-container").addClass("cart-confirm-container-on");
-        }
         else if(clientPhone.length !== 8 || (!intRegex.test(clientPhone)))
         {
             alert('Please enter a valid phone number.');
+        }
+        else if( confirm !== 1 )
+        {
+            $(".cart-confirm-container").addClass("cart-confirm-container-on");
         }
         else if( $link.attr('id') === "pickup-done")
         {
@@ -327,17 +422,19 @@ $(document).ready(function(){
         $(".cart-iteration").each(function(){
             let cartItemIteratorHtml = $(this).html();
             let cartItemIterator = parseInt(cartItemIteratorHtml, 10);
-            console.log(cartItemIterator);
             let cartName = $("input#name-input-"+cartItemIterator).val();
-            console.log($("#name-input-"+cartItemIterator));
-            console.log(cartName);
             let cartQte = $("input#quant-"+cartItemIterator).val();
-            console.log(cartQte);
             let cartPrice = $("input#price-input-"+cartItemIterator).val();
-            console.log(cartPrice);
             let cartInstruct = $("input#cart-instructions-"+i).val();
-            console.log(cartInstruct);
-            donutsArray[i] = new Donuts(cartQte, cartPrice, cartName, cartInstruct);
+            let attr = $("input#topping-input-"+i).attr("data-assessments");
+            let toppingArray = [];
+            if (typeof attr !== typeof undefined && attr !== false) {
+                toppingArray = JSON.parse(attr);
+                donutsArray[i] = new Donuts(cartQte, cartPrice, cartName, cartInstruct,toppingArray);
+                console.log(toppingArray);
+            }
+            else
+                donutsArray[i] = new Donuts(cartQte, cartPrice, cartName, cartInstruct);
             i++;
         });
         clientName = $("input#client-name").val();
@@ -491,12 +588,25 @@ $(document).ready(function(){
             url: $link.attr('href')
         }).done(function(data) {
             let instructions = $('#donut-instructions').val();
-            let toppingArray = JSON.parse($("#topping-array").attr("data-assessments"));
-            console.log(toppingArray);
-            checkCartItem(cartItemIterator(), 1,data.name, data.price, instructions, data.quantity, toppingArray);
-            console.log(instructions);
+            let attr = $("#topping-array").attr("data-assessments");
+
+            if (typeof attr !== typeof undefined && attr !== false) {
+                let toppingArray = JSON.parse(attr);
+                let toppingPriceAdded = 0;
+                // console.log(toppingArray);
+                $.each(toppingArray,function(price,v){
+                    toppingPriceAdded += parseFloat(v.price);
+                });
+                // console.log(toppingPriceAdded);
+                checkCartItem(cartItemIterator(), 1,data.name, data.price+toppingPriceAdded, instructions, data.quantity, toppingArray);
+                // console.log(instructions);
+                $("#topping-array").removeAttr('data-assessments');
+            }
+            else{
+                let toppingArray = 0;
+                checkCartItem(cartItemIterator(), 1,data.name, data.price, instructions, data.quantity, toppingArray);
+            }
             $(".close-item-chosen").trigger("click");
-            $("#topping-array").removeAttr('data-assessments');
         });
     });
 

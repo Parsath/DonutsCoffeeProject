@@ -54,7 +54,7 @@
                                             {% endif %}
                                         </td>
                                         <td>{{ order.phone }}</td>
-                                        <td>{{ order.createdAt|date('Y-m-d h:m:s') }}</td>
+                                        <td>{{ order.createdAt|date('Y-m-d H:i:s') }}</td>
                                         <td>
                                             {% if order.pickup == 1 %}
                                                 Pickup
@@ -64,7 +64,7 @@
                                         </td>
                                         <td>{{ order.price }} DT</td>
                                         <td>{{ order.address }}</td>
-                                        <td>{{ order.updatedAt|date('Y-m-d h:m:s') }}</td>
+                                        <td>{{ order.updatedAt|date('Y-m-d H:i:s') }}</td>
                                         <td><a id="show-order" class="btn btn-success" href="{{ path('order_show', {id: order.id}) }}">Show</a></td>
                                     </tr>
                                 {% endfor %}

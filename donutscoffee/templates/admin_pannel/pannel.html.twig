@@ -72,7 +72,7 @@
                                     <tr>
                                         <td>{{ order.name }}</td>
                                         <td>{{ order.phone }}</td>
-                                        <td>{{ order.createdAt|date('Y-m-d') }}</td>
+                                        <td>{{ order.createdAt|date('Y-m-d H:i:s') }}</td>
                                         <td>{{ order.status }}</td>
                                         <td>
                                             {% if order.pickup == 1 %}

@@ -6,6 +6,7 @@ namespace App\Controller;
 
 use App\Entity\Article;
 use App\Entity\LineItem;
+use App\Entity\ToppingLineItem;
 use App\Entity\Order;
 use App\Entity\Topping;
 use Doctrine\ORM\EntityManagerInterface;
@@ -92,6 +93,7 @@ class DonutOrderController extends AbstractController
         $clientPhone = $request->get('phone');
 
 
+
         if(!empty($donutsArray))
         {
             $order = new Order();
@@ -107,8 +109,28 @@ class DonutOrderController extends AbstractController
             {
                 $lineItem = new LineItem();
 
+                if(gettype($donut['toppings']) == "array"){
+
+                    foreach($donut['toppings'] as $topping){
+                        $toppingLineItem = new toppingLineItem();
+
+                        $toppingRepository = $em->getRepository(Topping::class);
+
+                        /** @var Topping $toppingAdded */
+                        $toppingAdded = $toppingRepository->findOneBy(
+                            ['name' => $topping['name']]
+                        );
+
+                        $toppingLineItem->setTopping($toppingAdded);
+                        $toppingLineItem->setToppingPrice($toppingAdded->getPrice());
+                        $lineItem->addToppingLineItem($toppingLineItem);
+
+                        $em->persist($toppingLineItem);
+                    }
+                }
 
                 $repository = $em->getRepository(Article::class);
+
                 /** @var Article $article */
                 $article = $repository->findOneBy(
                     ['name' => $donut['name']]
@@ -135,7 +157,8 @@ class DonutOrderController extends AbstractController
 
         Return new JsonResponse([
                 'clientName' => $clientName,
-                'clientPhone' => $clientPhone
+                'clientPhone' => $clientPhone,
+                dump($donutsArray)
         ]);
     }
 
@@ -165,6 +188,26 @@ class DonutOrderController extends AbstractController
             foreach($donutsArray as $donut)
             {
                 $lineItem = new LineItem();
+
+                if(gettype($donut['toppings']) == "array"){
+
+                    foreach($donut['toppings'] as $topping){
+                        $toppingLineItem = new toppingLineItem();
+
+                        $toppingRepository = $em->getRepository(Topping::class);
+
+                        /** @var Topping $toppingAdded */
+                        $toppingAdded = $toppingRepository->findOneBy(
+                            ['name' => $topping['name']]
+                        );
+
+                        $toppingLineItem->setTopping($toppingAdded);
+                        $toppingLineItem->setToppingPrice($toppingAdded->getPrice());
+                        $lineItem->addToppingLineItem($toppingLineItem);
+
+                        $em->persist($toppingLineItem);
+                    }
+                }
 
 
                 $repository = $em->getRepository(Article::class);

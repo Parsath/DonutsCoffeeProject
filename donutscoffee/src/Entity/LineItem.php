@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\LineItemRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -23,7 +25,7 @@ class LineItem
     private $quantity;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="float")
      */
     private $price;
 
@@ -44,6 +46,17 @@ class LineItem
      */
     private $orderArticle;
 
+    /**
+     * @ORM\OneToMany(targetEntity=ToppingLineItem::class, mappedBy="lineItem")
+     */
+    private $toppingLineItems;
+
+    public function __construct()
+    {
+        $this->topping = new ArrayCollection();
+        $this->toppingLineItems = new ArrayCollection();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -61,7 +74,7 @@ class LineItem
         return $this;
     }
 
-    public function getPrice(): ?int
+    public function getPrice(): ?float
     {
         return $this->price;
     }
@@ -77,7 +90,21 @@ class LineItem
             throw new \InvalidArgumentException("Donut Price not Set");
         }
 
-        $this->price = $this->quantity * $this->article->getPrice();
+        dump($this->getToppingLineItems());
+
+        if($this->toppingLineItems != NULL)
+        {
+            $toppingTotalPrice = 0;
+            $toppingsArray = $this->toppingLineItems;
+            foreach( $toppingsArray as $topping )
+            {
+                $toppingTotalPrice = $toppingTotalPrice + $topping->getToppingPrice();
+            }
+
+            $this->price = $toppingTotalPrice + $this->quantity * $this->article->getPrice();
+        }
+        else
+            $this->price = $this->quantity * $this->article->getPrice();
 
         return $this;
     }
@@ -114,6 +141,37 @@ class LineItem
     public function setOrderArticle(?Order $orderArticle): self
     {
         $this->orderArticle = $orderArticle;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ToppingLineItem[]
+     */
+    public function getToppingLineItems(): Collection
+    {
+        return $this->toppingLineItems;
+    }
+
+    public function addToppingLineItem(ToppingLineItem $toppingLineItem): self
+    {
+        if (!$this->toppingLineItems->contains($toppingLineItem)) {
+            $this->toppingLineItems[] = $toppingLineItem;
+            $toppingLineItem->setLineItem($this);
+        }
+
+        return $this;
+    }
+
+    public function removeToppingLineItem(ToppingLineItem $toppingLineItem): self
+    {
+        if ($this->toppingLineItems->contains($toppingLineItem)) {
+            $this->toppingLineItems->removeElement($toppingLineItem);
+            // set the owning side to null (unless already changed)
+            if ($toppingLineItem->getLineItem() === $this) {
+                $toppingLineItem->setLineItem(null);
+            }
+        }
 
         return $this;
     }
