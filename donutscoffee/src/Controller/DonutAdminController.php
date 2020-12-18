@@ -7,6 +7,7 @@ namespace App\Controller;
 use App\Entity\Article;
 use App\Entity\LineItem;
 use App\Entity\Order;
+use App\Entity\Topping;
 use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
@@ -39,10 +40,17 @@ class DonutAdminController extends AbstractController
         /** @var int $orderCount */
         $orderCount = $repository->countOrders();
 
+
+        $repository = $em->getRepository(Topping::class);
+
+        /** @var int $toppingCount */
+        $toppingCount = $repository->countToppings();
+
         return $this->render('embedded/_sidebar.html.twig', [
             'articleCount' => $articleCount,
             'orderCount' => $orderCount,
             'userCount' => $userCount,
+            'toppingCount' => $toppingCount,
         ]);
     }
 

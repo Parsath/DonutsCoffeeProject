@@ -151,6 +151,61 @@
 
 
 
+//////////////////////// CONFIRM TOPPINGS ////////////////////////    
+
+
+
+.confirm-add-topping-container
+    position: fixed
+    left: 0
+    top: 0
+    background: transparentize(black, 0.5 )
+    width: 100%
+    height: 100vh
+    display: flex
+    justify-content: center
+    align-items: center
+    visibility: hidden
+    z-index: -1
+    opacity: 0
+    transition: opacity .2s ease-out
+    &.confirm-add-topping-container-on
+        visibility: visible
+        z-index: 999
+        opacity: 1
+
+
+.confirm-add-topping
+    position: relative
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.15)
+    border-radius: 5px
+    height: 70vh
+    width: 50%
+    background-color: $white
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    align-items: center
+
+.close-confirm-add-topping-container
+    position: absolute
+    top: 0
+    right: 0
+    width: 4vw
+    height: 4vw
+    display: flex
+    justify-content: center
+    align-items: center
+
+.close-confirm-add-topping
+    color: transparentize( $dark-gray , .2 )
+    font-size: 25px
+    &:hover
+        cursor: pointer
+        color: $dark-gray 
+
+
+
 
 //////////////////////// FOOTER ////////////////////////    
 

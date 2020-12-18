@@ -53,7 +53,6 @@ class LineItem
 
     public function __construct()
     {
-        $this->topping = new ArrayCollection();
         $this->toppingLineItems = new ArrayCollection();
     }
 

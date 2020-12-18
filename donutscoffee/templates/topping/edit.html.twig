@@ -1,0 +1,70 @@
+{% extends 'admin_pannel/admin_nav.html.twig' %}
+
+{% block headerTitle %}Edit{% endblock %}
+{% block headerSubTitle %}Edit Your Toppings{% endblock %}
+
+{% block breadcrumbList %}
+    <li><a href="{{ path('app_dashboard') }}" style="color: black;">Dashboard</a></li>
+    <li class="active">&emsp;Edit</li>
+{% endblock %}
+
+
+{% block content %}
+
+    <section id="main">
+        <div class="container">
+            <div class="row">
+
+                {% block sidebar %}
+                    {{ parent() }}
+                {% endblock %}
+
+                <div class="col-md-8 ml-auto">
+
+                    {# WEBSITE OVERVIEW #}
+
+                    <div class="card">
+                        <div class="card-header main-color-bg">
+                            Edit Topping
+                        </div>
+                        <div class="card-body">
+                            <form method="POST" action="{{ path('edit_topping', {id: topping.id}) }}">
+                                <div class="form-group">
+                                    <label>Topping Name</label>
+                                    <input type="text" class="form-control" id="edit-topping-name" placeholder="Unique Item Name" value="{{ topping.name }}">
+                                </div>
+                                <div class="form-group">
+                                    <label>Topping Price</label>
+                                    <input type="number" class="form-control" id="edit-topping-price" step="0.001" min="0" placeholder="Item Price" value="{{ topping.price }}">
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" id="edit-topping-isdeleted"
+                                               {% if topping.isDeleted == 1 %}Checked{% endif %}> Deleted from Menu
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="edit-topping-availability"
+                                               {% if topping.isAvailable == 1 %}Checked{% endif %}> Is it available?
+                                    </label>
+                                </div>
+                                <input type="hidden" id="edit-topping-id" value="{{ topping.id }}">
+                            </form>
+                            <input type="submit" class="btn btn-primary" value="Submit" id="edit-submit-topping" href="{{ path('edit_topping', {id: topping.id}) }}">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% block modal %}
+        {{ parent() }}
+    {% endblock %}
+
+    <footer id="footer" class="footer admin-footer main-color-bg">
+        <p>Copyrights Parsath, &copy; 2020</p>
+    </footer>
+
+
+{% endblock %}

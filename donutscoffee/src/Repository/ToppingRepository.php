@@ -49,6 +49,42 @@ class ToppingRepository extends ServiceEntityRepository
             ;
     }
 
+    /**
+     * @return Topping[]
+     */
+    public function findAllOrderedByDeletedArticles()
+    {
+        return $this->createQueryBuilder('a')
+            ->orderBy('a.isDeleted', 'ASC')
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    public function countToppings()
+    {
+        return $this->createQueryBuilder('a')
+            ->select('count(a.id)')
+            ->getQuery()
+            ->getSingleScalarResult()
+            ;
+    }
+
+    /**
+     * @return Topping[]
+     */
+    public function findAllAvailableNonDeletedArticles()
+    {
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.isDeleted = :val')
+            ->setParameter('val', 0)
+            ->andWhere('a.isAvailable = :avail')
+            ->setParameter('avail', 1)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
     /*
     public function findOneBySomeField($value): ?Topping
     {

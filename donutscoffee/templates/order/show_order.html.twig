@@ -71,6 +71,7 @@
                                     <th>Quantity</th>
                                     <th>Price</th>
                                     <th>Instructions</th>
+                                    <th>Toppings</th>
                                 </tr>
                                 {% for lineItem in order.lineItems %}
                                     <tr>
@@ -78,6 +79,11 @@
                                         <td>{{ lineItem.quantity }}</td>
                                         <td>{{ lineItem.price }}</td>
                                         <td>{{ lineItem.instructions }}</td>
+                                        <td>
+                                            {% for topping in lineItem.toppinglineitems %}
+                                                {{ topping.topping.name }}
+                                            {% endfor %}
+                                        </td>
                                     </tr>
                                 {% endfor %}
                             </table>

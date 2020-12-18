@@ -42,13 +42,17 @@ class Topping
     private $price;
 
     /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isDeleted = false;
+
+    /**
      * @ORM\OneToMany(targetEntity=ToppingLineItem::class, mappedBy="topping")
      */
     private $toppingLineItems;
 
     public function __construct()
     {
-        $this->topping = new ArrayCollection();
         $this->toppingLineItems = new ArrayCollection();
     }
 
@@ -132,6 +136,18 @@ class Topping
                 $toppingLineItem->setTopping(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getIsDeleted(): ?bool
+    {
+        return $this->isDeleted;
+    }
+
+    public function setIsDeleted(?bool $isDeleted): self
+    {
+        $this->isDeleted = $isDeleted;
 
         return $this;
     }

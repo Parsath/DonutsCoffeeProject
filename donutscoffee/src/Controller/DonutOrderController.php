@@ -35,7 +35,7 @@ class DonutOrderController extends AbstractController
         $articles = $repository->findAllNonDeletedArticles();
 
         /** @var array $toppings */
-        $toppings = $toppingRepository->findAllByAvailability();
+        $toppings = $toppingRepository->findAllAvailableNonDeletedArticles();
 
 //        $articles = $repository->findBy(
 //            array('isDeleted' => 0),
@@ -121,6 +121,8 @@ class DonutOrderController extends AbstractController
                             ['name' => $topping['name']]
                         );
 
+                        dump($toppingAdded);
+
                         $toppingLineItem->setTopping($toppingAdded);
                         $toppingLineItem->setToppingPrice($toppingAdded->getPrice());
                         $lineItem->addToppingLineItem($toppingLineItem);
@@ -200,6 +202,7 @@ class DonutOrderController extends AbstractController
                         $toppingAdded = $toppingRepository->findOneBy(
                             ['name' => $topping['name']]
                         );
+
 
                         $toppingLineItem->setTopping($toppingAdded);
                         $toppingLineItem->setToppingPrice($toppingAdded->getPrice());

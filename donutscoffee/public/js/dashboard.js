@@ -129,6 +129,7 @@ $(document).ready(function(){
             method: 'POST',
             url: $link.attr('href'),
             data: {
+                'edit-id' : $('#edit-id').val(),
                 'edit-name' : $('#edit-name').val(),
                 'edit-description' : $('#edit-description').val(),
                 'edit-quantity' : $('#edit-quantity').val(),

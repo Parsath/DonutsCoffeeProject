@@ -59,6 +59,7 @@
                                         {% if article.carousel == 1 %}Checked{% endif %}> Carousel
                                     </label>
                                 </div>
+                                <input type="hidden" id="edit-id" value="{{ article.id }}">
                             </form>
                             <input type="submit" class="btn btn-primary" value="Submit" id="edit-submit-article" href="{{ path('edit_article', {id: article.id}) }}">
                         </div>

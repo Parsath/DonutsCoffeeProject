@@ -29,7 +29,7 @@ class ToppingLineItem
     private $topping;
 
     /**
-     * @ORM\ManyToOne(targetEntity=lineItem::class, inversedBy="toppingLineItems")
+     * @ORM\ManyToOne(targetEntity=LineItem::class, inversedBy="toppingLineItems")
      * @ORM\JoinColumn(nullable=false)
      */
     private $lineItem;

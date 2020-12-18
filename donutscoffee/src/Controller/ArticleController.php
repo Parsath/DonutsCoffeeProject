@@ -162,13 +162,13 @@ class ArticleController extends AbstractController
                 ['link' => $editDonut['edit-link']]
             );
 
-            if($taken && ($taken->getName() != $editDonut['edit-name']) )
+            if($taken && ($taken->getId() != $editDonut['edit-id']) )
             {
                 return new JsonResponse([
                     'errorName' => "Name Taken",
                 ]);
             }
-            elseif ($linkTaken && ($linkTaken->getLink() != $editDonut['edit-link']) )
+            elseif ($linkTaken && ($taken->getId() != $editDonut['edit-id']) )
             {
                 return new JsonResponse([
                     'errorLink' => "Link Taken",
