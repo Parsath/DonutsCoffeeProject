@@ -3,11 +3,13 @@
 namespace App\Controller;
 
 use App\Entity\Article;
+use App\Service\FileUploader;
 use Doctrine\ORM\EntityManagerInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ArticleController extends AbstractController
@@ -15,8 +17,31 @@ class ArticleController extends AbstractController
     /**
      * @Route("/admin/article/new", name="add_article", methods={"POST"})
      */
-    public function add(LoggerInterface $logger, Request $request, EntityManagerInterface $em)
+    public function add(LoggerInterface $logger,FileUploader $uploader, string $uploadDir, Request $request, EntityManagerInterface $em)
     {
+
+//        File Upload Check
+        $token = $request->get("token");
+
+        if (!$this->isCsrfTokenValid('upload', $token))
+        {
+            $logger->info("CSRF failure");
+
+            return new Response("Operation not allowed",  Response::HTTP_BAD_REQUEST,
+                ['content-type' => 'text/plain']);
+        }
+
+        $file = $request->files->get('add-link');
+
+        if (empty($file))
+        {
+            return new Response("No file specified",
+                Response::HTTP_UNPROCESSABLE_ENTITY, ['content-type' => 'text/plain']);
+        }
+
+        $filename = $file->getClientOriginalName();
+        $uploader->upload($uploadDir, $file, $filename);
+
         $article = new Article();
 
         $newDonut = $request->request->all();
@@ -28,7 +53,7 @@ class ArticleController extends AbstractController
             ['name' => $newDonut['add-name']]
         );
         $linkTaken = $repository->findOneBy(
-            ['link' => $newDonut['add-link']]
+            ['link' => $filename]
         );
 
         if($taken)
@@ -49,7 +74,7 @@ class ArticleController extends AbstractController
             $article->setQuantity($newDonut['add-quantity']);
             $article->setAvailability();
             $article->setPrice($newDonut['add-price']);
-            $article->setLink($newDonut['add-link']);
+            $article->setLink($filename);
             $article->setCarousel($newDonut['add-carousel']);
 
             $em->persist($article);
@@ -128,7 +153,8 @@ class ArticleController extends AbstractController
     /**
      * @Route("/admin/article/edit/{id}", name="edit_article")
      */
-    public function edit($id, Request $request, EntityManagerInterface $em){
+    public function edit($id, LoggerInterface $logger,FileUploader $uploader, string $uploadDir, Request $request, EntityManagerInterface $em)
+    {
 
         $repository = $em->getRepository(Article::class);
 
@@ -152,6 +178,29 @@ class ArticleController extends AbstractController
             }
         }
         elseif($request->isMethod('POST')){
+
+            //        File Upload Check
+            $token = $request->get("token");
+
+            if (!$this->isCsrfTokenValid('upload', $token))
+            {
+                $logger->info("CSRF failure");
+
+                return new Response("Operation not allowed",  Response::HTTP_BAD_REQUEST,
+                    ['content-type' => 'text/plain']);
+            }
+
+            $file = $request->files->get('edit-link');
+
+            if (empty($file))
+            {
+                return new Response("No file specified",
+                    Response::HTTP_UNPROCESSABLE_ENTITY, ['content-type' => 'text/plain']);
+            }
+
+            $filename = $file->getClientOriginalName();
+            $uploader->upload($uploadDir, $file, $filename);
+
             $editDonut = $request->request->all();
 
             /** @var Article $article */
@@ -159,7 +208,7 @@ class ArticleController extends AbstractController
                 ['name' => $editDonut['edit-name']]
             );
             $linkTaken = $repository->findOneBy(
-                ['link' => $editDonut['edit-link']]
+                ['link' => $filename]
             );
 
             if($taken && ($taken->getId() != $editDonut['edit-id']) )
@@ -168,7 +217,7 @@ class ArticleController extends AbstractController
                     'errorName' => "Name Taken",
                 ]);
             }
-            elseif ($linkTaken && ($taken->getId() != $editDonut['edit-id']) )
+            elseif ($linkTaken && ($linkTaken->getId() != $filename) )
             {
                 return new JsonResponse([
                     'errorLink' => "Link Taken",
@@ -180,7 +229,7 @@ class ArticleController extends AbstractController
                 $article->setQuantity($editDonut['edit-quantity']);
                 $article->setAvailability();
                 $article->setPrice($editDonut['edit-price']);
-                $article->setLink($editDonut['edit-link']);
+                $article->setLink($filename);
                 $article->setCarousel($editDonut['edit-carousel']);
                 $article->setIsDeleted($editDonut['edit-isdeleted']);
 

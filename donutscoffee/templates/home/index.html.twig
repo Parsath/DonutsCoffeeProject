@@ -98,12 +98,12 @@
                         {% for article in articles %}
                             {% if var > 1 %}
                                 <div class="carousel-item donut-{{ var }}">
-                                    <img class="d-block w-100 donut" src="{{ article.link }}" alt="">
+                                    <img class="d-block w-100 donut" src="{{ 'images\\' ~ article.link }}" alt="">
                                 </div>
                                 {% set var = var + 1 %}
                             {% elseif var == 1 %}
                                 <div class="carousel-item active donut-{{ var }}">
-                                    <img class="d-block w-100 donut" src="{{ article.link }}" loading="eager" alt="">
+                                    <img class="d-block w-100 donut" src="{{ 'images\\' ~ article.link }}" loading="eager" alt="">
                                 </div>
                                 {% set var = var + 1 %}
                             {% endif %}

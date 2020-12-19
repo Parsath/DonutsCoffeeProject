@@ -20,28 +20,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cabe3c84-6b5f-47d6-ba55-aeaf98f62597" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201218145702.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/topping.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin_pannel/toppings.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/topping/new.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/Chocolat damier.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/Donut Gourmand.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/DonutCarousel1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/DonutCarousel2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/DonutCarousel3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/Gauffre.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/MoanutR.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/Oreo Donut.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/Salty.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/Speculoos Donut.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/Strawberry Donut.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/FileUploader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/exception/error.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/_dashboard.sass" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/_dashboard.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Carousel/DonutCarousel1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Carousel/DonutCarousel2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Carousel/DonutCarousel3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/OrderNow/Donut Gourmand.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/OrderNow/MoanutR.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/OrderNow/Oreo Donut.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/OrderNow/Salty.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/OrderNow/Speculoos Donut.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/OrderNow/Strawberry Donut.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/order.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DonutAdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DonutAdminController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/DonutOrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DonutOrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ToppingAdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ToppingAdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/LineItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/LineItem.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Topping.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Topping.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/ToppingLineItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ToppingLineItem.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ToppingRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ToppingRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin_pannel/admin_nav.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_pannel/admin_nav.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/article/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/embedded/_sidebar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/embedded/_sidebar.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/order/show_order.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/order/show_order.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/topping/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/topping/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/order.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/order.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../learnsheet.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../learnsheet.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -212,6 +222,7 @@
       <workItem from="1608039141983" duration="10538000" />
       <workItem from="1608210727458" duration="18494000" />
       <workItem from="1608301389880" duration="9715000" />
+      <workItem from="1608403471845" duration="9440000" />
     </task>
     <servers />
   </component>
@@ -255,12 +266,12 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="460" y="119" key="FileChooserDialogImpl/0.0.1360.728/1360.0.1920.1040@0.0.1360.728" timestamp="1602167209307" />
-    <state x="703" y="243" key="NewPhpClassDialog" timestamp="1608041408457">
+    <state x="703" y="243" key="NewPhpClassDialog" timestamp="1608414728382">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="498" y="170" key="NewPhpClassDialog/0.0.1360.728/1360.0.1920.1040@0.0.1360.728" timestamp="1602690324142" />
     <state x="2063" y="243" key="NewPhpClassDialog/0.0.1360.728/1360.0.1920.1040@1360.0.1920.1040" timestamp="1602247772128" />
-    <state x="703" y="243" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608041408457" />
+    <state x="703" y="243" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608414728382" />
     <state x="256" y="13" key="SettingsEditor" timestamp="1608042529586">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

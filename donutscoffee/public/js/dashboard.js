@@ -58,6 +58,9 @@ $(document).ready(function(){
 
         console.log(carousel);
 
+        var file_data = $('#add-link').prop('files')[0];
+        var form_data = new FormData($('#add-article')[0]);
+
         if(typeof carousel == "undefined" || !carousel)
         {
             carousel = 0;
@@ -65,17 +68,18 @@ $(document).ready(function(){
         else
             carousel = 1;
 
+        form_data.append('add-carousel', carousel);
+        form_data.append('add-link', file_data);
+
+        console.log(form_data);
+        console.log(file_data);
+
         $.ajax({
             method: 'POST',
             url: "/admin/article/new",
-            data: {
-                'add-name' : $('#add-name').val(),
-                'add-description' : $('#add-description').val(),
-                'add-quantity' : $('#add-quantity').val(),
-                'add-price' : $('#add-price').val(),
-                'add-link' : $('#add-link').val(),
-                'add-carousel' : carousel,
-            }
+            data: form_data, // The form with the file    inputs.
+            processData: false,                          // Using FormData, no need to process data.
+            contentType:false
         }).done(function(data) {
             if(data.errorName){
                 $(".confirm-add-container").addClass("confirm-add-container-on");
@@ -122,22 +126,22 @@ $(document).ready(function(){
         else
             carousel = 1;
 
+        var file_data = $('#edit-link').prop('files')[0];
+        var form_data = new FormData($('#edit-article')[0]);
+
+        form_data.append('edit-carousel', carousel);
+        form_data.append('edit-isdeleted', isDeleted);
+        form_data.append('edit-link', file_data);
+
 
         var $link = $(e.currentTarget);
 
         $.ajax({
             method: 'POST',
             url: $link.attr('href'),
-            data: {
-                'edit-id' : $('#edit-id').val(),
-                'edit-name' : $('#edit-name').val(),
-                'edit-description' : $('#edit-description').val(),
-                'edit-quantity' : $('#edit-quantity').val(),
-                'edit-price' : $('#edit-price').val(),
-                'edit-link' : $('#edit-link').val(),
-                'edit-carousel' : carousel,
-                'edit-isdeleted' : isDeleted,
-            }
+            data: form_data,
+            processData: false,                          // Using FormData, no need to process data.
+            contentType:false
         }).done(function(data) {
             if(data.errorName){
                 $(".confirm-add-container").addClass("confirm-add-container-on");

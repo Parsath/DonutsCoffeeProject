@@ -513,7 +513,7 @@ $(document).ready(function(){
             url: $link.attr('href')
         }).done(function(data) {
             $(".item-add-btn").attr("href", "/order/donut/"+data.slug);
-            $(".donut-order-img-chosen").attr("src", data.link);
+            $(".donut-order-img-chosen").attr("src", "images\\"+data.link);
             $(".donut-chosen-title").html(data.name);
             $(".item-desc-text").html(data.description);
             $(".item-chosen-container").addClass("item-chosen-popup-container");

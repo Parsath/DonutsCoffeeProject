@@ -122,7 +122,7 @@
                     <div class="modal-content">
                         <div class="row">
                             <div class="col-md-11">
-                                <form id="add-article" method="POST" action="{{ path('add_article') }}">
+                                <form id="add-article" method="POST" action="{{ path('add_article') }}" enctype="multipart/form-data">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="exampleModalLabel">Add Article</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -146,10 +146,14 @@
                                             <label>Article Price</label>
                                             <input type="number" class="form-control" name="add-price" id="add-price" step="0.001" min="0" placeholder="Item Price">
                                         </div>
+
+                                        <input type="hidden" name="token" value="{{ csrf_token('upload') }}" />
                                         <div class="form-group">
-                                            <label>Article Link</label>
-                                            <input type="text" class="form-control" name="add-link" id="add-link" placeholder="Add Source Item Image Link">
+                                            <label>Article Image File</label>
+                                            <input type="file" class="form-control-file" name="add-link" id="add-link">
                                         </div>
+
+
                                         <div class="checkbox">
                                             <label>
                                                 <input type="checkbox" name="add-carousel" id="add-carousel" value="0"> Carousel
