@@ -99,6 +99,7 @@ class LineItem
             {
                 $toppingTotalPrice = $toppingTotalPrice + $topping->getToppingPrice();
             }
+            $toppingTotalPrice *= $this->getQuantity();
 
             $this->price = $toppingTotalPrice + $this->quantity * $this->article->getPrice();
         }

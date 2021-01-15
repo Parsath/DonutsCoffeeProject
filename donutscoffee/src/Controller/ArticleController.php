@@ -192,58 +192,65 @@ class ArticleController extends AbstractController
 
             $file = $request->files->get('edit-link');
 
-            if (empty($file))
-            {
-                return new Response("No file specified",
-                    Response::HTTP_UNPROCESSABLE_ENTITY, ['content-type' => 'text/plain']);
-            }
-
-            $filename = $file->getClientOriginalName();
-            $uploader->upload($uploadDir, $file, $filename);
-
             $editDonut = $request->request->all();
 
             /** @var Article $article */
             $taken = $repository->findOneBy(
                 ['name' => $editDonut['edit-name']]
             );
-            $linkTaken = $repository->findOneBy(
-                ['link' => $filename]
-            );
 
-            if($taken && ($taken->getId() != $editDonut['edit-id']) )
+            if (empty($file))
             {
-                return new JsonResponse([
-                    'errorName' => "Name Taken",
-                ]);
+                if($taken && ($taken->getId() != $editDonut['edit-id']) )
+                {
+                    return new JsonResponse([
+                        'errorName' => "Name Taken",
+                    ]);
+                }
             }
-            elseif ($linkTaken && ($linkTaken->getId() != $filename) )
+            else
             {
-                return new JsonResponse([
-                    'errorLink' => "Link Taken",
-                ]);
-            }
-            else{
-                $article->setName($editDonut['edit-name']);
-                $article->setDescription($editDonut['edit-description']);
-                $article->setQuantity($editDonut['edit-quantity']);
-                $article->setAvailability();
-                $article->setPrice($editDonut['edit-price']);
-                $article->setLink($filename);
-                $article->setCarousel($editDonut['edit-carousel']);
-                $article->setIsDeleted($editDonut['edit-isdeleted']);
+                $filename = $file->getClientOriginalName();
+                $uploader->upload($uploadDir, $file, $filename);
 
-                $em->persist($article);
-                $em->flush();
+                $linkTaken = $repository->findOneBy(
+                    ['link' => $filename]
+                );
 
-                return new JsonResponse([
-                    'name' => $article->getName(),
-                    'link' => $article->getLink(),
-                    'slug' => $article->getSlug(),
-                    'price' => $article->getPrice(),
-                    'description' => $article->getDescription()
-                ]);
+                if($taken && ($taken->getId() != $editDonut['edit-id']) )
+                {
+                    return new JsonResponse([
+                        'errorName' => "Name Taken",
+                    ]);
+                }
+                elseif ($linkTaken && ($linkTaken->getId() != $filename) )
+                {
+                    return new JsonResponse([
+                        'errorLink' => "Link Taken",
+                    ]);
+                }
+                else{
+                    $article->setLink($filename);
+                }
             }
+            $article->setName($editDonut['edit-name']);
+            $article->setDescription($editDonut['edit-description']);
+            $article->setQuantity($editDonut['edit-quantity']);
+            $article->setAvailability();
+            $article->setPrice($editDonut['edit-price']);
+            $article->setCarousel($editDonut['edit-carousel']);
+            $article->setIsDeleted($editDonut['edit-isdeleted']);
+
+            $em->persist($article);
+            $em->flush();
+
+            return new JsonResponse([
+                'name' => $article->getName(),
+                'link' => $article->getLink(),
+                'slug' => $article->getSlug(),
+                'price' => $article->getPrice(),
+                'description' => $article->getDescription()
+            ]);
         }
 
 

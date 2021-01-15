@@ -548,6 +548,21 @@ WORKTIME: 2H30M
 Stopping time: 18/12/2020 18h10
 
 
+Day 34: 21h00 19/12/2020
+
+    STEP 5 IN PROGRESS
+
+    Notes:
+        *File Upload: Dooneee, the website is complete. I just need to test and everything will be over. 
+        
+    References:
+        *
+
+WORKTIME: 3H12M
+
+Stopping time: 20/12/2020 00h57 
+
+
 
 
 
@@ -723,6 +738,8 @@ Stopping time: 18/12/2020 18h10
             DONE 18/12/2020
 
         -Fix File Upload, upon adding and editting a Donut in the menu
+
+            DONE 19/12/2020
 
         -Find a solution in order to let the client test the website
 

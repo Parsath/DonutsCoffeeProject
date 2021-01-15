@@ -20,38 +20,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cabe3c84-6b5f-47d6-ba55-aeaf98f62597" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/images/Chocolat damier.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/Donut Gourmand.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/DonutCarousel1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/DonutCarousel2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/DonutCarousel3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/Gauffre.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/MoanutR.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/Oreo Donut.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/Salty.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/Speculoos Donut.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/Strawberry Donut.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/FileUploader.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/exception/error.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/OrderNow/DonutCarousel1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/OrderNow/DonutCarousel2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/OrderNow/DonutCarousel3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/Other/amine.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/amine.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/donut abyedh.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/Carousel/DonutCarousel1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/Carousel/DonutCarousel2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/Carousel/DonutCarousel3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/OrderNow/Donut Gourmand.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/OrderNow/MoanutR.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/OrderNow/Oreo Donut.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/OrderNow/Salty.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/OrderNow/Speculoos Donut.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/OrderNow/Strawberry Donut.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/order.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Chocolat damier.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Donut Gourmand.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Gauffre.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/MoanutR.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Oreo Donut.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Speculoos Donut.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Strawberry Donut.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DonutOrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DonutOrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin_pannel/admin_nav.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_pannel/admin_nav.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/article/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/order.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/order.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../learnsheet.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../learnsheet.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -223,6 +206,10 @@
       <workItem from="1608210727458" duration="18494000" />
       <workItem from="1608301389880" duration="9715000" />
       <workItem from="1608403471845" duration="9440000" />
+      <workItem from="1608497356140" duration="1821000" />
+      <workItem from="1608559359289" duration="249000" />
+      <workItem from="1608561316523" duration="2527000" />
+      <workItem from="1609791638455" duration="87000" />
     </task>
     <servers />
   </component>
@@ -294,6 +281,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="667" y="119" width="585" height="801" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1608043267201" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1608498099594">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1608498099594" />
     <state x="623" y="226" width="949" height="679" key="search.everywhere.popup" timestamp="1608306773010">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
