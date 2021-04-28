@@ -1,2 +1,0 @@
-Largeur: 100%
-Hauteur: 75%
